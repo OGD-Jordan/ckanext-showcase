@@ -8,7 +8,10 @@ from ckan.logic.schema import (default_tags_schema,
 from ckanext.showcase.logic.validators import (
     convert_package_name_or_id_to_id_for_type_dataset,
     convert_package_name_or_id_to_id_for_type_showcase,
-    is_valid_status
+    is_valid_filter_status,
+    is_valid_status,
+    validate_reuse_types,
+    validate_status_feedback
     )
 
 if tk.check_ckan_version("2.10"):
@@ -32,6 +35,12 @@ ignore_not_package_admin = tk.get_validator("ignore_not_package_admin")
 url_validator = tk.get_validator("url_validator")
 convert_to_extras = tk.get_validator("convert_to_extras")
 convert_from_extras = tk.get_validator("convert_from_extras")
+ignore_empty = tk.get_validator("ignore_empty")
+isodate = tk.get_validator("isodate")
+natural_number_validator = tk.get_validator("natural_number_validator")
+int_validator = tk.get_validator("int_validator")
+
+
 
 
 def showcase_base_schema():
@@ -45,6 +54,7 @@ def showcase_base_schema():
         'author_email': [ignore_missing, unicode_safe],
         'notes': [not_empty, unicode_safe],
         'notes_ar': [convert_to_extras, not_empty, unicode_safe],
+        'reuse_type': [convert_to_extras, not_empty, validate_reuse_types],
         'url': [ignore_missing, url_validator],
         'state': [ignore_not_package_admin, ignore_missing],
         'type': [ignore_missing, unicode_safe],
@@ -97,6 +107,7 @@ def showcase_show_schema():
         'state': [ignore_missing],
         'title_ar': [convert_from_extras, ignore_missing, unicode_safe],
         'notes_ar': [convert_from_extras, ignore_missing, unicode_safe],
+        'reuse_type': [convert_from_extras, ignore_missing, unicode_safe],
         })
 
     # Remove validators for several keys from the schema so validation doesn't
@@ -169,6 +180,20 @@ def showcase_status_update_schema():
             ignore_missing,
             is_valid_status
         ],
-        "feedback": [ignore_missing, unicode_safe]
+        "feedback": [ignore_missing, unicode_safe],
+        '__after': [validate_status_feedback],
     }
+    return schema
+
+def showcase_search_schema():
+    schema = {
+        'q':[ignore_missing, unicode_safe],
+        "created_start": [ignore_missing, isodate],
+        "created_end": [ignore_missing, isodate],
+        'status': [ignore_empty, is_valid_filter_status],
+        'page': [ignore_empty, natural_number_validator],
+        'limit': [ignore_empty, int_validator],
+        'sort': [ignore_missing, unicode_safe],
+    }
+
     return schema

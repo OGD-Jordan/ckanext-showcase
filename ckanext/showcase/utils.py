@@ -13,7 +13,8 @@ import ckan.logic as logic
 import ckan.lib.navl.dictization_functions as dict_fns
 import ckan.lib.helpers as h
 import ckan.plugins.toolkit as tk
-from ckanext.showcase.model import ShowcasePackageAssociation
+from ckanext.showcase.data.constants import ApprovalStatus
+from ckanext.showcase.model import ShowcaseApprovalStatus, ShowcasePackageAssociation
 
 _ = tk._
 abort = tk.abort
@@ -58,7 +59,7 @@ def check_new_view_auth():
     try:
         tk.check_access('ckanext_showcase_create', context)
     except tk.NotAuthorized:
-        return tk.abort(401, _('Unauthorized to create a package'))
+        return tk.abort(401, _('Unauthorized to create a reuse case'))
 
 
 def read_view(id):
@@ -73,11 +74,11 @@ def read_view(id):
 
     # check if showcase exists
     try:
-        tk.g.pkg_dict = tk.get_action('package_show')(context, data_dict)
+        tk.g.pkg_dict = tk.get_action('ckanext_showcase_show')(context, data_dict)
     except tk.ObjectNotFound:
-        return tk.abort(404, _('Showcase not found'))
+        return tk.abort(404, _('Reuse Case not found'))
     except tk.NotAuthorized:
-        return tk.abort(401, _('Unauthorized to read showcase'))
+        return tk.abort(401, _('Unauthorized to read reuse case'))
 
     # get showcase packages
     tk.g.showcase_pkgs = tk.get_action('ckanext_showcase_package_list')(
@@ -392,6 +393,9 @@ def url_with_params(url, params):
     return url + '?' + urlencode(params)
 
 
+
+
+
 def delete_view(id):
     if 'cancel' in tk.request.args:
         tk.redirect_to('showcase_blueprint.edit', id=id)
@@ -554,3 +558,62 @@ def upload():
         tk.abort(401, _('Unauthorized to upload file %s') % id)
 
     return json.dumps(url)
+
+
+
+def check_dashboard_list_view_auth():
+    context = {
+        'model': model,
+        'session': model.Session,
+        'user': tk.g.user or tk.g.author,
+        'auth_user_obj': tk.g.userobj,
+    }
+
+    try:
+        tk.check_access('ckanext_showcase_list', context)
+    except tk.NotAuthorized:
+        return tk.abort(
+            401,
+            _('User not authorized to view the Reuse Cases Dashboard')
+        )
+
+# Dashboard
+def pager_url(params_nopage,
+               q = None,  # noqa
+               page = None) -> str:
+    params = list(params_nopage)
+    params.append((u'page', page))
+    return _url_with_params(h.url_for('showcase_blueprint.dashboard_index'), params)
+
+def _url_with_params(url: str, params) -> str:
+    params = _encode_params(params)
+    return url + u'?' + urlencode(params)
+
+def _encode_params(params):
+    return [(k, v.encode(u'utf-8') if isinstance(v, str) else str(v))
+            for k, v in params]
+
+
+def check_status_update_view_auth(id):
+    context = {
+        'model': model,
+        'session': model.Session,
+        'user': tk.g.user or tk.g.author,
+        'auth_user_obj': tk.g.userobj,
+    }
+
+    try:
+        tk.check_access('ckanext_showcase_status_show', context)
+    except tk.NotAuthorized:
+        return tk.abort(
+            401,
+            _('User not authorized to update the Reuse Cases status')
+        )
+    
+
+def get_approved_showcase_ids():
+    q = ShowcaseApprovalStatus.filter_showcases(status=ApprovalStatus.APPROVED.value)
+    return [
+        showcase.id
+        for showcase in q.all()
+    ]
