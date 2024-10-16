@@ -1,121 +1,183 @@
 # Translations template for ckanext-showcase.
-# Copyright (C) 2015 ORGANIZATION
+# Copyright (C) 2024 ORGANIZATION
 # This file is distributed under the same license as the ckanext-showcase
 # project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2015.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: ckanext-showcase 1.0.0b1\n"
+"Project-Id-Version: ckanext-showcase 1.6.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2015-09-23 14:49+0100\n"
+"POT-Creation-Date: 2024-10-13 12:09+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 0.9.6\n"
+"Generated-By: Babel 2.10.3\n"
 
-#: ckanext/showcase/controller.py:56
-msgid "Unauthorized to create a package"
-msgstr ""
-
-#: ckanext/showcase/controller.py:71 ckanext/showcase/controller.py:267
+#: ckanext/showcase/utils.py:41 ckanext/showcase/utils.py:108
 msgid "User not authorized to edit {showcase_id}"
 msgstr ""
 
-#: ckanext/showcase/controller.py:147 ckanext/showcase/controller.py:184
-#: ckanext/showcase/controller.py:224 ckanext/showcase/controller.py:238
-#: ckanext/showcase/controller.py:274
+#: ckanext/showcase/utils.py:62
+msgid "Unauthorized to create a reuse case"
+msgstr ""
+
+#: ckanext/showcase/utils.py:79 ckanext/showcase/views.py:315
+msgid "Reuse Case not found"
+msgstr ""
+
+#: ckanext/showcase/utils.py:81
+msgid "Unauthorized to read reuse case"
+msgstr ""
+
+#: ckanext/showcase/utils.py:115 ckanext/showcase/utils.py:427
+#: ckanext/showcase/utils.py:477 ckanext/showcase/utils.py:493
 msgid "Showcase not found"
 msgstr ""
 
-#: ckanext/showcase/controller.py:149 ckanext/showcase/controller.py:276
+#: ckanext/showcase/utils.py:117
 msgid "Unauthorized to read showcase"
 msgstr ""
 
-#: ckanext/showcase/controller.py:171 ckanext/showcase/controller.py:182
-msgid "Unauthorized to delete showcase"
-msgstr ""
-
-#: ckanext/showcase/controller.py:176
-msgid "Showcase has been deleted."
-msgstr ""
-
-#: ckanext/showcase/controller.py:201 ckanext/showcase/controller.py:210
-msgid "Dataset not found"
-msgstr ""
-
-#: ckanext/showcase/controller.py:203
-msgid "Not authorized to see this page"
-msgstr ""
-
-#: ckanext/showcase/controller.py:212
-msgid "Unauthorized to read package"
-msgstr ""
-
-#: ckanext/showcase/controller.py:227 ckanext/showcase/controller.py:329
-msgid "The dataset has been added to the showcase."
-msgid_plural "The datasets have been added to the showcase."
-msgstr[0] ""
-msgstr[1] ""
-
-#: ckanext/showcase/controller.py:241 ckanext/showcase/controller.py:297
+#: ckanext/showcase/utils.py:142 ckanext/showcase/utils.py:496
 msgid "The dataset has been removed from the showcase."
 msgid_plural "The datasets have been removed from the showcase."
 msgstr[0] ""
 msgstr[1] ""
 
-#: ckanext/showcase/controller.py:462 ckanext/showcase/templates/header.html:6
+#: ckanext/showcase/utils.py:174 ckanext/showcase/utils.py:480
+msgid "The dataset has been added to the showcase."
+msgid_plural "The datasets have been added to the showcase."
+msgstr[0] ""
+msgstr[1] ""
+
+#: ckanext/showcase/utils.py:313
 msgid "Organizations"
 msgstr ""
 
-#: ckanext/showcase/controller.py:463 ckanext/showcase/templates/header.html:7
-#: ckanext/showcase/templates/package/read_base.html:5
+#: ckanext/showcase/utils.py:314
 msgid "Groups"
 msgstr ""
 
-#: ckanext/showcase/controller.py:464 ckanext/showcase/plugin.py:103
-#: ckanext/showcase/templates/showcase/new_package_form.html:33
+#: ckanext/showcase/utils.py:315
 msgid "Tags"
 msgstr ""
 
-#: ckanext/showcase/controller.py:465
+#: ckanext/showcase/utils.py:316
 msgid "Formats"
 msgstr ""
 
-#: ckanext/showcase/controller.py:466
+#: ckanext/showcase/utils.py:317
 msgid "Licenses"
 msgstr ""
 
-#: ckanext/showcase/controller.py:516
+#: ckanext/showcase/utils.py:377
 msgid "Parameter '{parameter_name}' is not an integer"
 msgstr ""
 
-#: ckanext/showcase/controller.py:531 ckanext/showcase/controller.py:567
-msgid "User not authorized to view page"
+#: ckanext/showcase/utils.py:413 ckanext/showcase/utils.py:425
+msgid "Unauthorized to delete showcase"
 msgstr ""
 
-#: ckanext/showcase/controller.py:540 ckanext/showcase/controller.py:581
-msgid "Unauthorized to perform that action"
+#: ckanext/showcase/utils.py:421
+msgid "Showcase has been deleted."
 msgstr ""
 
-#: ckanext/showcase/controller.py:542
-msgid "User '{user_name}' not found."
+#: ckanext/showcase/utils.py:446 ckanext/showcase/utils.py:457
+msgid "Dataset not found"
 msgstr ""
 
-#: ckanext/showcase/controller.py:547
-msgid "The user is now a Showcase Admin"
+#: ckanext/showcase/utils.py:448
+msgid "Not authorized to see this page"
 msgstr ""
 
-#: ckanext/showcase/controller.py:583
-msgid "The user is not a Showcase Admin"
+#: ckanext/showcase/utils.py:459
+msgid "Unauthorized to read package"
 msgstr ""
 
-#: ckanext/showcase/controller.py:585
-msgid "The user is no longer a Showcase Admin"
+#: ckanext/showcase/utils.py:541
+msgid "Only Posting is availiable"
+msgstr ""
+
+#: ckanext/showcase/utils.py:558
+#, python-format
+msgid "Unauthorized to upload file %s"
+msgstr ""
+
+#: ckanext/showcase/utils.py:577
+msgid "User not authorized to view the Reuse Cases Dashboard"
+msgstr ""
+
+#: ckanext/showcase/utils.py:610
+msgid "User not authorized to update the Reuse Cases status"
+msgstr ""
+
+#: ckanext/showcase/views.py:317
+msgid "User not authorized to view this Reuse Case"
+msgstr ""
+
+#: ckanext/showcase/data/constants.py:12
+#: ckanext/showcase/templates/showcase/dashboard/snippets/stats-indicators.html:15
+msgid "Pending"
+msgstr ""
+
+#: ckanext/showcase/data/constants.py:13
+#: ckanext/showcase/templates/showcase/dashboard/snippets/stats-indicators.html:39
+msgid "Needs Revision"
+msgstr ""
+
+#: ckanext/showcase/data/constants.py:14
+#: ckanext/showcase/templates/showcase/dashboard/snippets/stats-indicators.html:26
+msgid "Rejected"
+msgstr ""
+
+#: ckanext/showcase/data/constants.py:15
+#: ckanext/showcase/templates/showcase/dashboard/snippets/stats-indicators.html:52
+msgid "Approved"
+msgstr ""
+
+#: ckanext/showcase/data/constants.py:28
+msgid "Mobile Application"
+msgstr ""
+
+#: ckanext/showcase/data/constants.py:29
+msgid "Web Application"
+msgstr ""
+
+#: ckanext/showcase/data/constants.py:30
+msgid "Writing a newspaper article, blog article, or research paper"
+msgstr ""
+
+#: ckanext/showcase/data/constants.py:31
+msgid "Conducting scientific research or analysis"
+msgstr ""
+
+#: ckanext/showcase/data/constants.py:32
+msgid "Development API"
+msgstr ""
+
+#: ckanext/showcase/logic/auth.py:59 ckanext/showcase/logic/auth.py:69
+msgid "User not authorized to delete a submitted Reuse"
+msgstr ""
+
+#: ckanext/showcase/logic/auth.py:81 ckanext/showcase/logic/auth.py:146
+msgid "Reuse does not exist"
+msgstr ""
+
+#: ckanext/showcase/logic/auth.py:91
+msgid "User not authorized to view this Reuse"
+msgstr ""
+
+#: ckanext/showcase/logic/auth.py:156
+msgid "User not authorized to view the status"
+msgstr ""
+
+#: ckanext/showcase/logic/auth.py:163
+msgid "User not authorized to update Reuse status"
 msgstr ""
 
 #: ckanext/showcase/logic/converters.py:24 ckanext/showcase/logic/validators.py:29
@@ -123,346 +185,724 @@ msgid "Not found"
 msgstr ""
 
 #: ckanext/showcase/logic/converters.py:24 ckanext/showcase/logic/validators.py:29
-#: ckanext/showcase/templates/package/read_base.html:4
 msgid "Dataset"
 msgstr ""
 
-#: ckanext/showcase/templates/header.html:5
-msgid "Datasets"
+#: ckanext/showcase/logic/helpers.py:66
+msgid "Select Status"
 msgstr ""
 
-#: ckanext/showcase/templates/header.html:8
+#: ckanext/showcase/logic/helpers.py:75
+#: ckanext/showcase/templates/showcase/dashboard/actions.html:46
+msgid "Title En"
+msgstr ""
+
+#: ckanext/showcase/logic/helpers.py:80
+#: ckanext/showcase/templates/showcase/dashboard/actions.html:47
+msgid "Title Ar"
+msgstr ""
+
+#: ckanext/showcase/logic/helpers.py:85
+msgid "Slug"
+msgstr ""
+
+#: ckanext/showcase/logic/helpers.py:90
+msgid "Description En"
+msgstr ""
+
+#: ckanext/showcase/logic/helpers.py:95
+msgid "Description Ar"
+msgstr ""
+
+#: ckanext/showcase/logic/helpers.py:100
+msgid "Date Created"
+msgstr ""
+
+#: ckanext/showcase/logic/helpers.py:105
+msgid "Reuse Case Type"
+msgstr ""
+
+#: ckanext/showcase/logic/helpers.py:110
+#: ckanext/showcase/templates/showcase/dashboard/snippets/list.html:12
+msgid "The User"
+msgstr ""
+
+#: ckanext/showcase/logic/helpers.py:115
+#: ckanext/showcase/templates/showcase/dashboard/snippets/list.html:13
+#: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_search_form.html:92
+msgid "Status"
+msgstr ""
+
+#: ckanext/showcase/logic/helpers.py:120
+msgid "Admin Feedback"
+msgstr ""
+
+#: ckanext/showcase/logic/helpers.py:125
+#: ckanext/showcase/templates/showcase/dashboard/search.html:37
+msgid "Last Status Update"
+msgstr ""
+
+#: ckanext/showcase/logic/helpers.py:130
+msgid "Submitted Author Name"
+msgstr ""
+
+#: ckanext/showcase/logic/helpers.py:135
+msgid "Submitted Author Email"
+msgstr ""
+
+#: ckanext/showcase/logic/helpers.py:140
+msgid "Image Url"
+msgstr ""
+
+#: ckanext/showcase/logic/helpers.py:146
+msgid "External Link"
+msgstr ""
+
+#: ckanext/showcase/logic/helpers.py:152
+#: ckanext/showcase/templates/showcase/dashboard/actions.html:70
+msgid "Associated Datasets"
+msgstr ""
+
+#: ckanext/showcase/logic/helpers.py:160
+msgid "Reuse Case Public Display"
+msgstr ""
+
+#: ckanext/showcase/logic/validators.py:50 ckanext/showcase/logic/validators.py:57
+#, python-format
+msgid "Invalid status: %s. Must be one of: %s"
+msgstr ""
+
+#: ckanext/showcase/logic/validators.py:70
+msgid "Feedback must be provided with the selected status"
+msgstr ""
+
+#: ckanext/showcase/logic/validators.py:81
+msgid "Invalid input: Reuse types must be a list"
+msgstr ""
+
+#: ckanext/showcase/logic/validators.py:89
+#, python-format
+msgid "Invalid type: %s. Must be one of: %s"
+msgstr ""
+
+#: ckanext/showcase/templates/emails.py:19
+msgid "Have a nice day."
+msgstr ""
+
+#: ckanext/showcase/templates/emails.py:21
+#, python-format
+msgid "Message sent by %s (%s)"
+msgstr ""
+
+#: ckanext/showcase/templates/emails.py:29
+#, python-format
+msgid "Dear %s,"
+msgstr ""
+
+#: ckanext/showcase/templates/emails.py:42
+#, python-format
+msgid "%s resuse case was submitted to Portal Supervisor for review."
+msgstr ""
+
+#: ckanext/showcase/templates/emails.py:43
+#, python-format
+msgid "You can check the current status of your resuse case at %s"
+msgstr ""
+
+#: ckanext/showcase/templates/emails.py:55
+#, python-format
+msgid "Status of reuse case '%s' was updated to %s."
+msgstr ""
+
+#: ckanext/showcase/templates/emails.py:56
+#, python-format
+msgid "You can check the current status of resuse at %s"
+msgstr ""
+
+#: ckanext/showcase/templates/emails.py:67
+#, python-format
+msgid "Reuse case '%s' was submitted for review.display_title"
+msgstr ""
+
+#: ckanext/showcase/templates/emails.py:74
+#, python-format
+msgid "Reuse case '%s' status was updated.display_title"
+msgstr ""
+
+#: ckanext/showcase/templates/emails.py:92
+#, python-format
+msgid "%s resuse case was submitted to the Portal Supervisor for review."
+msgstr ""
+
+#: ckanext/showcase/templates/emails.py:102
+#, python-format
+msgid "Status of reuse case '%s' was updated to {showcase['status']}.display_title"
+msgstr ""
+
+#: ckanext/showcase/templates/header.html:7
 #: ckanext/showcase/templates/package/dataset_showcase_list.html:3
-#: ckanext/showcase/templates/package/read_base.html:7
-#: ckanext/showcase/templates/showcase/edit_base.html:5
-#: ckanext/showcase/templates/showcase/edit_base.html:17
-#: ckanext/showcase/templates/showcase/edit_base.html:21
-#: ckanext/showcase/templates/showcase/read.html:6
-#: ckanext/showcase/templates/showcase/read.html:33
-#: ckanext/showcase/templates/showcase/search.html:4
-#: ckanext/showcase/templates/showcase/search.html:7
-msgid "Showcases"
+#: ckanext/showcase/templates/package/read_base.html:6
+#: ckanext/showcase/templates/showcase/edit_base.html:12
+#: ckanext/showcase/templates/showcase/edit_base.html:24
+#: ckanext/showcase/templates/showcase/edit_base.html:28
+#: ckanext/showcase/templates/showcase/read.html:13
+#: ckanext/showcase/templates/showcase/read.html:43
+#: ckanext/showcase/templates/showcase/search.html:8
+#: ckanext/showcase/templates/showcase/search.html:11
+msgid "Reuses"
 msgstr ""
 
-#: ckanext/showcase/templates/header.html:9
-msgid "About"
-msgstr ""
-
-#: ckanext/showcase/templates/admin/confirm_remove_showcase_admin.html:3
-#: ckanext/showcase/templates/admin/confirm_remove_showcase_admin.html:16
+#: ckanext/showcase/templates/admin/confirm_remove_showcase_admin.html:4
+#: ckanext/showcase/templates/admin/confirm_remove_showcase_admin.html:18
 msgid "Confirm Remove"
 msgstr ""
 
-#: ckanext/showcase/templates/admin/confirm_remove_showcase_admin.html:11
-msgid "Are you sure you want to remove this user as a Showcase Admin - {name}?"
+#: ckanext/showcase/templates/admin/confirm_remove_showcase_admin.html:12
+msgid "Are you sure you want to remove this user as a Reuse Admin - {name}?"
 msgstr ""
 
-#: ckanext/showcase/templates/admin/confirm_remove_showcase_admin.html:15
-#: ckanext/showcase/templates/showcase/confirm_delete.html:14
+#: ckanext/showcase/templates/admin/confirm_remove_showcase_admin.html:17
+#: ckanext/showcase/templates/showcase/confirm_delete.html:20
+#: ckanext/showcase/templates/showcase/dashboard/snippets/confirmation-modal.html:14
 msgid "Cancel"
 msgstr ""
 
-#: ckanext/showcase/templates/admin/manage_showcase_admins.html:9
-msgid "Manage Showcase Admins"
-msgstr ""
-
-#: ckanext/showcase/templates/admin/manage_showcase_admins.html:16
-msgid "Add an Existing User"
+#: ckanext/showcase/templates/admin/manage_showcase_admins.html:11
+msgid "Manage Reuse Admins"
 msgstr ""
 
 #: ckanext/showcase/templates/admin/manage_showcase_admins.html:19
-msgid "To make an existing user a Showcase Admin, search for their username below."
+msgid "Add an Existing User"
 msgstr ""
 
-#: ckanext/showcase/templates/admin/manage_showcase_admins.html:23
+#: ckanext/showcase/templates/admin/manage_showcase_admins.html:22
+msgid "To make an existing user a Reuse Admin, search for their username below."
+msgstr ""
+
+#: ckanext/showcase/templates/admin/manage_showcase_admins.html:26
 msgid "Username"
 msgstr ""
 
-#: ckanext/showcase/templates/admin/manage_showcase_admins.html:32
+#: ckanext/showcase/templates/admin/manage_showcase_admins.html:35
 msgid "Add User"
 msgstr ""
 
-#: ckanext/showcase/templates/admin/manage_showcase_admins.html:38
-msgid "Showcase Admins"
+#: ckanext/showcase/templates/admin/manage_showcase_admins.html:41
+msgid "Reuse Admins"
 msgstr ""
 
-#: ckanext/showcase/templates/admin/manage_showcase_admins.html:43
+#: ckanext/showcase/templates/admin/manage_showcase_admins.html:46
 msgid "User"
 msgstr ""
 
-#: ckanext/showcase/templates/admin/manage_showcase_admins.html:51
-msgid "Are you sure you want to remove this user from the Showcase Admin list?"
+#: ckanext/showcase/templates/admin/manage_showcase_admins.html:54
+msgid "Are you sure you want to remove this user from the Reuse Admin list?"
 msgstr ""
 
-#: ckanext/showcase/templates/admin/manage_showcase_admins.html:53
-#: ckanext/showcase/templates/showcase/snippets/showcase_item.html:46
+#: ckanext/showcase/templates/admin/manage_showcase_admins.html:56
+#: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_search_form.html:35
+#: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_search_form.html:50
+#: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_search_form.html:64
+#: ckanext/showcase/templates/showcase/snippets/showcase_item.html:53
 msgid "Remove"
 msgstr ""
 
-#: ckanext/showcase/templates/admin/manage_showcase_admins.html:61
-msgid "There are currently no Showcase Admins."
+#: ckanext/showcase/templates/admin/manage_showcase_admins.html:64
+msgid "There are currently no Reuse Admins."
 msgstr ""
 
-#: ckanext/showcase/templates/admin/manage_showcase_admins.html:69
+#: ckanext/showcase/templates/admin/manage_showcase_admins.html:72
 msgid ""
-" <p><strong>Showcase Admin:</strong> Can create and remove showcases. Can add"
-" and remove datasets from showcases.</p> "
-msgstr ""
-
-#: ckanext/showcase/templates/home/snippets/stats.html:5
-msgid "{site_title} statistics"
+"<p><strong>Reuse Admin:</strong> Can create and remove reuses. Can add and "
+"remove datasets from reuses.</p>"
 msgstr ""
 
 #: ckanext/showcase/templates/home/snippets/stats.html:10
+msgid "{site_title} statistics"
+msgstr ""
+
+#: ckanext/showcase/templates/home/snippets/stats.html:15
 msgid "dataset"
 msgid_plural "datasets"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ckanext/showcase/templates/home/snippets/stats.html:16
+#: ckanext/showcase/templates/home/snippets/stats.html:21
 msgid "organization"
 msgid_plural "organizations"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ckanext/showcase/templates/home/snippets/stats.html:22
+#: ckanext/showcase/templates/home/snippets/stats.html:27
 msgid "group"
 msgid_plural "groups"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ckanext/showcase/templates/home/snippets/stats.html:28
+#: ckanext/showcase/templates/home/snippets/stats.html:33
 msgid "showcase"
 msgid_plural "showcases"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ckanext/showcase/templates/package/dataset_showcase_list.html:13
-msgid "Associate this showcase with this dataset"
+#: ckanext/showcase/templates/package/dataset_showcase_list.html:14
+msgid "Associate this reuse with this dataset"
 msgstr ""
 
-#: ckanext/showcase/templates/package/dataset_showcase_list.html:13
-msgid "Add to showcase"
+#: ckanext/showcase/templates/package/dataset_showcase_list.html:14
+msgid "Add to reuse"
 msgstr ""
 
-#: ckanext/showcase/templates/package/dataset_showcase_list.html:17
-msgid "Showcases featuring {dataset_name}"
+#: ckanext/showcase/templates/package/dataset_showcase_list.html:18
+msgid "Reuses featuring {dataset_name}"
 msgstr ""
 
-#: ckanext/showcase/templates/package/dataset_showcase_list.html:22
-msgid "There are no showcases that feature this dataset"
-msgstr ""
-
-#: ckanext/showcase/templates/package/read_base.html:6
-msgid "Activity Stream"
+#: ckanext/showcase/templates/package/dataset_showcase_list.html:23
+msgid "There are no reuses that feature this dataset"
 msgstr ""
 
 #: ckanext/showcase/templates/showcase/add_datasets.html:3
-msgid "Showcases - Add datasets"
+msgid "Reuses - Add datasets"
 msgstr ""
 
 #: ckanext/showcase/templates/showcase/add_datasets.html:21
 #: ckanext/showcase/templates/showcase/manage_datasets.html:24
-#: ckanext/showcase/templates/showcase/search.html:27
+#: ckanext/showcase/templates/showcase/search.html:31
 msgid "Relevance"
 msgstr ""
 
 #: ckanext/showcase/templates/showcase/add_datasets.html:22
+#: ckanext/showcase/templates/showcase/dashboard/search.html:34
 #: ckanext/showcase/templates/showcase/manage_datasets.html:25
-#: ckanext/showcase/templates/showcase/search.html:28
+#: ckanext/showcase/templates/showcase/search.html:32
 msgid "Name Ascending"
 msgstr ""
 
 #: ckanext/showcase/templates/showcase/add_datasets.html:23
+#: ckanext/showcase/templates/showcase/dashboard/search.html:35
 #: ckanext/showcase/templates/showcase/manage_datasets.html:26
-#: ckanext/showcase/templates/showcase/search.html:29
+#: ckanext/showcase/templates/showcase/search.html:33
 msgid "Name Descending"
 msgstr ""
 
 #: ckanext/showcase/templates/showcase/add_datasets.html:24
 #: ckanext/showcase/templates/showcase/manage_datasets.html:27
-#: ckanext/showcase/templates/showcase/search.html:30
+#: ckanext/showcase/templates/showcase/search.html:34
 msgid "Last Modified"
 msgstr ""
 
 #: ckanext/showcase/templates/showcase/add_datasets.html:25
 #: ckanext/showcase/templates/showcase/manage_datasets.html:28
-#: ckanext/showcase/templates/showcase/search.html:31
+#: ckanext/showcase/templates/showcase/search.html:35
 msgid "Popular"
 msgstr ""
 
 #: ckanext/showcase/templates/showcase/add_datasets.html:31
 #: ckanext/showcase/templates/showcase/manage_datasets.html:36
-msgid "Datasets available to add to this showcase"
+msgid "Datasets available to add to this reuse"
 msgstr ""
 
-#: ckanext/showcase/templates/showcase/add_datasets.html:48
-#: ckanext/showcase/templates/showcase/manage_datasets.html:51
-msgid "Add to Showcase"
+#: ckanext/showcase/templates/showcase/add_datasets.html:49
+#: ckanext/showcase/templates/showcase/manage_datasets.html:52
+msgid "Add to Reuse"
 msgstr ""
 
-#: ckanext/showcase/templates/showcase/add_datasets.html:78
-#: ckanext/showcase/templates/showcase/manage_datasets.html:88
+#: ckanext/showcase/templates/showcase/add_datasets.html:79
+#: ckanext/showcase/templates/showcase/manage_datasets.html:89
 msgid "No datasets could be found"
 msgstr ""
 
-#: ckanext/showcase/templates/showcase/confirm_delete.html:3
-#: ckanext/showcase/templates/showcase/confirm_delete.html:15
+#: ckanext/showcase/templates/showcase/confirm_delete.html:6
+#: ckanext/showcase/templates/showcase/confirm_delete.html:21
 msgid "Confirm Delete"
 msgstr ""
 
-#: ckanext/showcase/templates/showcase/confirm_delete.html:11
-msgid "Are you sure you want to delete showcase - {showcase_name}?"
+#: ckanext/showcase/templates/showcase/confirm_delete.html:16
+msgid "Are you sure you want to delete reuse - {showcase_name}?"
 msgstr ""
 
-#: ckanext/showcase/templates/showcase/edit_base.html:19
+#: ckanext/showcase/templates/showcase/edit_base.html:26
 msgid "Edit"
 msgstr ""
 
-#: ckanext/showcase/templates/showcase/edit_base.html:22
+#: ckanext/showcase/templates/showcase/edit_base.html:29
 #: ckanext/showcase/templates/showcase/new.html:3
-#: ckanext/showcase/templates/showcase/new_package_form.html:63
-msgid "Create Showcase"
-msgstr ""
-
-#: ckanext/showcase/templates/showcase/edit_base.html:35
-msgid "View showcase"
-msgstr ""
-
-#: ckanext/showcase/templates/showcase/edit_base.html:41
-msgid "Edit showcase"
+#: ckanext/showcase/templates/showcase/new_package_form.html:113
+msgid "Submit Reuse"
 msgstr ""
 
 #: ckanext/showcase/templates/showcase/edit_base.html:42
+msgid "View reuse"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/edit_base.html:48
+msgid "Edit reuse"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/edit_base.html:49
 msgid "Manage datasets"
 msgstr ""
 
 #: ckanext/showcase/templates/showcase/manage_datasets.html:3
-msgid "Showcases - Manage datasets"
+msgid "Reuses - Manage datasets"
 msgstr ""
 
-#: ckanext/showcase/templates/showcase/manage_datasets.html:96
-msgid "Datasets in this showcase"
+#: ckanext/showcase/templates/showcase/manage_datasets.html:97
+msgid "Datasets in this reuse"
 msgstr ""
 
-#: ckanext/showcase/templates/showcase/manage_datasets.html:109
-msgid "Remove from Showcase"
+#: ckanext/showcase/templates/showcase/manage_datasets.html:111
+msgid "Remove from Reuse"
 msgstr ""
 
-#: ckanext/showcase/templates/showcase/manage_datasets.html:140
-msgid "This showcase has no datasets associated to it"
+#: ckanext/showcase/templates/showcase/manage_datasets.html:142
+msgid "This reuse has no datasets associated to it"
 msgstr ""
 
 #: ckanext/showcase/templates/showcase/new.html:8
-msgid "Create a Showcase"
+msgid "Submit a Reuse"
 msgstr ""
 
-#: ckanext/showcase/templates/showcase/new_package_form.html:15
-msgid "Title"
+#: ckanext/showcase/templates/showcase/new_package_form.html:17
+msgid "Title English"
 msgstr ""
 
-#: ckanext/showcase/templates/showcase/new_package_form.html:15
-msgid "eg. A descriptive title"
+#: ckanext/showcase/templates/showcase/new_package_form.html:17
+msgid "eg. A descriptive title in English"
 msgstr ""
 
-#: ckanext/showcase/templates/showcase/new_package_form.html:24
+#: ckanext/showcase/templates/showcase/new_package_form.html:18
+msgid "Title Arabic"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/new_package_form.html:18
+msgid "eg. A descriptive title in Arabic"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/new_package_form.html:27
 msgid "URL"
 msgstr ""
 
-#: ckanext/showcase/templates/showcase/new_package_form.html:24
+#: ckanext/showcase/templates/showcase/new_package_form.html:27
 msgid "eg. my-showcase"
 msgstr ""
 
-#: ckanext/showcase/templates/showcase/new_package_form.html:28
-msgid "Description"
+#: ckanext/showcase/templates/showcase/dashboard/actions.html:49
+#: ckanext/showcase/templates/showcase/new_package_form.html:41
+#: ckanext/showcase/templates/showcase/new_package_form.html:52
+msgid "Description English"
 msgstr ""
 
-#: ckanext/showcase/templates/showcase/new_package_form.html:28
+#: ckanext/showcase/templates/showcase/new_package_form.html:41
+#: ckanext/showcase/templates/showcase/new_package_form.html:50
+#: ckanext/showcase/templates/showcase/new_package_form.html:52
+#: ckanext/showcase/templates/showcase/new_package_form.html:53
 msgid "eg. Some useful notes about the data"
 msgstr ""
 
-#: ckanext/showcase/templates/showcase/new_package_form.html:33
-msgid "eg. economy, mental health, government"
+#: ckanext/showcase/templates/showcase/dashboard/actions.html:50
+#: ckanext/showcase/templates/showcase/new_package_form.html:50
+#: ckanext/showcase/templates/showcase/new_package_form.html:53
+msgid "Description Arabic"
 msgstr ""
 
-#: ckanext/showcase/templates/showcase/new_package_form.html:44
+#: ckanext/showcase/templates/showcase/dashboard/actions.html:59
+#: ckanext/showcase/templates/showcase/new_package_form.html:66
 msgid "External link"
 msgstr ""
 
-#: ckanext/showcase/templates/showcase/new_package_form.html:44
+#: ckanext/showcase/templates/showcase/new_package_form.html:66
 msgid "http://www.example.com"
 msgstr ""
 
-#: ckanext/showcase/templates/showcase/new_package_form.html:48
+#: ckanext/showcase/templates/showcase/dashboard/actions.html:108
+#: ckanext/showcase/templates/showcase/new_package_form.html:72
+msgid "Reuse Type"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/dashboard/actions.html:113
+#: ckanext/showcase/templates/showcase/new_package_form.html:77
+msgid "Missing value"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/dashboard/actions.html:114
+#: ckanext/showcase/templates/showcase/new_package_form.html:78
+msgid "Please select the Reuse Type"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/dashboard/actions.html:53
+#: ckanext/showcase/templates/showcase/new_package_form.html:98
 msgid "Submitted By"
 msgstr ""
 
-#: ckanext/showcase/templates/showcase/new_package_form.html:48
+#: ckanext/showcase/templates/showcase/new_package_form.html:98
 msgid "Joe Bloggs"
 msgstr ""
 
-#: ckanext/showcase/templates/showcase/new_package_form.html:50
+#: ckanext/showcase/templates/showcase/dashboard/actions.html:54
+#: ckanext/showcase/templates/showcase/new_package_form.html:100
 msgid "Submitter Email"
 msgstr ""
 
-#: ckanext/showcase/templates/showcase/new_package_form.html:50
+#: ckanext/showcase/templates/showcase/new_package_form.html:100
 msgid "joe@example.com"
 msgstr ""
 
-#: ckanext/showcase/templates/showcase/new_package_form.html:58
-msgid "Are you sure you want to delete this showcase?"
+#: ckanext/showcase/templates/showcase/new_package_form.html:108
+msgid "Are you sure you want to delete this reuse?"
 msgstr ""
 
-#: ckanext/showcase/templates/showcase/new_package_form.html:59
+#: ckanext/showcase/templates/showcase/new_package_form.html:109
 msgid "Delete"
 msgstr ""
 
-#: ckanext/showcase/templates/showcase/new_package_form.html:63
-msgid "Update Showcase"
+#: ckanext/showcase/templates/showcase/new_package_form.html:113
+msgid "Update Reuse"
 msgstr ""
 
-#: ckanext/showcase/templates/showcase/read.html:46
+#: ckanext/showcase/templates/showcase/read.html:49
+msgid "Reuse Details"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/read.html:58
 msgid "Manage"
 msgstr ""
 
-#: ckanext/showcase/templates/showcase/read.html:53
-msgid "Private"
-msgstr ""
-
-#: ckanext/showcase/templates/showcase/read.html:60
+#: ckanext/showcase/templates/showcase/dashboard/detail.html:46
+#: ckanext/showcase/templates/showcase/read.html:74
 msgid "Draft"
 msgstr ""
 
-#: ckanext/showcase/templates/showcase/read.html:78
+#: ckanext/showcase/templates/showcase/read.html:96
 #: ckanext/showcase/templates/showcase/snippets/showcase_info.html:27
 msgid "Launch website"
 msgstr ""
 
-#: ckanext/showcase/templates/showcase/search.html:13
-msgid "Add Showcase"
+#: ckanext/showcase/templates/showcase/search.html:17
+msgid "Add Reuse"
 msgstr ""
 
-#: ckanext/showcase/templates/showcase/search.html:33
-msgid "Search showcases..."
+#: ckanext/showcase/templates/showcase/search.html:37
+msgid "Search reuses..."
 msgstr ""
 
-#: ckanext/showcase/templates/showcase/snippets/helper.html:4
-msgid "What are Showcases?"
+#: ckanext/showcase/templates/showcase/dashboard/actions.html:15
+#: ckanext/showcase/templates/showcase/dashboard/detail.html:16
+msgid "Reuse Case Management"
 msgstr ""
 
-#: ckanext/showcase/templates/showcase/snippets/helper.html:8
+#: ckanext/showcase/templates/showcase/dashboard/actions.html:18
+#: ckanext/showcase/templates/showcase/dashboard/detail.html:19
+#: ckanext/showcase/templates/showcase/dashboard/search.html:15
+#: ckanext/showcase/templates/showcase/dashboard/search.html:19
+#: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_search_form.html:12
+msgid "Reuse Cases"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/dashboard/actions.html:30
+msgid "View"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/dashboard/actions.html:34
+#: ckanext/showcase/templates/showcase/dashboard/actions.html:142
+msgid "Reuse Case Actions"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/dashboard/actions.html:40
+msgid "Manage Reuse Case"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/dashboard/actions.html:63
+msgid "Visit External Link"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/dashboard/actions.html:82
+msgid "Go to Dataset"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/dashboard/actions.html:93
+msgid "Reuse Case Image"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/dashboard/actions.html:130
+#: ckanext/showcase/templates/showcase/dashboard/actions.html:146
+msgid "Reuse Case Status"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/dashboard/actions.html:133
+#: ckanext/showcase/templates/showcase/dashboard/actions.html:147
+msgid "Admin feedback"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/dashboard/actions.html:153
+msgid "Update Status"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/dashboard/actions.html:163
+msgid "Back"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/dashboard/detail.html:28
+msgid "Take Action"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/dashboard/detail.html:33
+msgid "Reuse Case Details"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/dashboard/detail.html:72
+msgid "Showcase Metadata"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/dashboard/search.html:18
+msgid "User Dashboard"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/dashboard/search.html:25
+msgid "Submit Reuse Case"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/dashboard/search.html:36
+msgid "Last Created"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/dashboard/search.html:42
+msgid "Search reuse cases..."
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/dashboard/snippets/confirmation-modal.html:5
+msgid "Confirmation"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/dashboard/snippets/confirmation-modal.html:15
+msgid "Confirm"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/dashboard/snippets/helper.html:4
+msgid "What are Data Requests?"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/dashboard/snippets/helper.html:8
+msgid ""
+"The \"Data Request\" feature allows users to request datasets that are not "
+"yet available in the portal. Whether you're looking for specific data to "
+"support your research, project, or decision-making process, you can submit a "
+"request directly to the data providers. This feature enables collaboration "
+"between the public and data publishers, helping to expand the portal’s "
+"dataset offerings. Simply submit your request and track its progress as data "
+"providers work to make the requested information available."
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/dashboard/snippets/list.html:10
+msgid "Date"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/dashboard/snippets/list.html:11
+msgid "Use Case Title"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/dashboard/snippets/list.html:14
+msgid "Actions"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/dashboard/snippets/list.html:37
+msgid "View All"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_item.html:19
+msgid "Approve Reuse Case"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_item.html:21
+msgid "Are you sure you want to approve this reuse case?"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_item.html:31
+msgid "Reject Reuse Case"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_item.html:34
+msgid "Are you sure you want to reject this reuse case?"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_item.html:47
+msgid "More Details"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_search_form.html:24
+msgid "Filter By"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_search_form.html:31
+msgid "Clear Status"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_search_form.html:46
+msgid "Clear Start Date"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_search_form.html:61
+msgid "Clear End Date"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_search_form.html:78
+msgid "Clear Filters"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_search_form.html:113
+msgid "From Date"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_search_form.html:127
+msgid "To Date"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_search_form.html:143
+msgid "Order By"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_search_result_text.html:2
+msgid "{number} reuse case found for '{query}'"
+msgid_plural "{number} reuse cases found for '{query}'"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_search_result_text.html:3
+msgid "No reuse cases found for '{query}'"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_search_result_text.html:4
+msgid "{number} reuse case found"
+msgid_plural "{number} reuse cases found"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_search_result_text.html:5
+msgid "No reuse cases found"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/dashboard/snippets/stats-indicators.html:5
+msgid "Total"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/dashboard/snippets/user_info.html:4
+msgid "The User Information"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/dashboard/snippets/user_info.html:12
+msgid "Submitted on"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/snippets/helper.html:6
+msgid "What are Reuses?"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/snippets/helper.html:10
 msgid ""
 "Datasets have been used to build apps, websites and visualizations. They've "
 "been featured in articles, and written about in news reports and blog posts. "
-"Showcases collect together the best examples of datasets in use, to provide "
+"Reuses collect together the best examples of datasets in use, to provide "
 "further insight, ideas, and inspiration."
-msgstr ""
-
-#: ckanext/showcase/templates/showcase/snippets/helper.html:12
-#, python-format
-msgid ""
-"Sysadmins can manage Showcase Admins from the <a href='%(url)s'>Showcase "
-"configuration page</a>."
 msgstr ""
 
 #: ckanext/showcase/templates/showcase/snippets/showcase_info.html:21
@@ -470,53 +910,53 @@ msgid "Submitted by"
 msgstr ""
 
 #: ckanext/showcase/templates/showcase/snippets/showcase_info.html:37
-msgid "Datasets in Showcase"
+msgid "Datasets in Reuse"
 msgstr ""
 
 #: ckanext/showcase/templates/showcase/snippets/showcase_info.html:47
-msgid "There are no Datasets in this Showcase"
+msgid "There are no Datasets in this Reuse"
 msgstr ""
 
-#: ckanext/showcase/templates/showcase/snippets/showcase_item.html:30
-msgid "This showcase has no description"
+#: ckanext/showcase/templates/showcase/snippets/showcase_item.html:34
+msgid "This reuse has no description"
 msgstr ""
 
-#: ckanext/showcase/templates/showcase/snippets/showcase_item.html:35
+#: ckanext/showcase/templates/showcase/snippets/showcase_item.html:39
 msgid "{num} Dataset"
 msgid_plural "{num} Datasets"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ckanext/showcase/templates/showcase/snippets/showcase_item.html:37
+#: ckanext/showcase/templates/showcase/snippets/showcase_item.html:41
 msgid "0 Datasets"
 msgstr ""
 
-#: ckanext/showcase/templates/showcase/snippets/showcase_item.html:41
-#: ckanext/showcase/templates/showcase/snippets/showcase_item.html:42
+#: ckanext/showcase/templates/showcase/snippets/showcase_item.html:45
+#: ckanext/showcase/templates/showcase/snippets/showcase_item.html:46
 msgid "View {showcase_title}"
 msgstr ""
 
-#: ckanext/showcase/templates/showcase/snippets/showcase_item.html:46
-msgid "Remove dataset from this showcase"
+#: ckanext/showcase/templates/showcase/snippets/showcase_item.html:53
+msgid "Remove dataset from this reuse"
 msgstr ""
 
 #: ckanext/showcase/templates/showcase/snippets/showcase_search_result_text.html:7
-msgid "{number} showcase found for '{query}'"
-msgid_plural "{number} showcases found for '{query}'"
+msgid "{number} reuse found for '{query}'"
+msgid_plural "{number} reuses found for '{query}'"
 msgstr[0] ""
 msgstr[1] ""
 
 #: ckanext/showcase/templates/showcase/snippets/showcase_search_result_text.html:8
-msgid "No showcases found for '{query}'"
+msgid "No reuses found for '{query}'"
 msgstr ""
 
 #: ckanext/showcase/templates/showcase/snippets/showcase_search_result_text.html:9
-msgid "{number} showcase found"
-msgid_plural "{number} showcases found"
+msgid "{number} reuse found"
+msgid_plural "{number} reuses found"
 msgstr[0] ""
 msgstr[1] ""
 
 #: ckanext/showcase/templates/showcase/snippets/showcase_search_result_text.html:10
-msgid "No showcases found"
+msgid "No reuses found"
 msgstr ""
 

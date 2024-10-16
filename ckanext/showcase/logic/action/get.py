@@ -6,12 +6,10 @@ from ckanext.showcase import utils
 from sqlalchemy import or_
 from ckanext.showcase.data.constants import *
 import ckan.authz as authz
-import datetime
 from ckanext.showcase.logic.schema import (showcase_package_list_schema,
                                            package_showcase_list_schema,
                                            showcase_search_schema)
 from ckanext.showcase.model import ShowcasePackageAssociation, ShowcaseApprovalStatus
-from sqlalchemy import Column, ForeignKey, types, or_, func
 import ckan.lib.dictization.model_dictize as md
 
 
@@ -34,11 +32,11 @@ def showcase_show(context, data_dict):
 
     pkg_dict['approval_status'] = approval_status
 
-    model = context["model"]
-    user = context.get('user')
-    user_obj = model.User.get(user)
+    if 'creator_user_id' in pkg_dict:
+        model = context["model"]
+        user_obj = model.User.get(pkg_dict.get('creator_user_id'))
+        pkg_dict['creator'] = md.user_dictize(user_obj, context)
 
-    pkg_dict['creator'] = md.user_dictize(user_obj, context)
     return pkg_dict
 
 
@@ -47,10 +45,6 @@ def showcase_list(context, data_dict):
     '''Return a list of all showcases in the site.'''
 
     tk.check_access('ckanext_showcase_list', context, data_dict)
-
-    # model = context["model"]
-    # user = context.get('user')
-    # user_obj = model.User.get(user)
 
     offset = data_dict.pop('page', 1) - 1 
     limit = data_dict.pop('limit', 20)
@@ -81,14 +75,14 @@ def showcase_filtered(context, data_dict):
     tk.check_access('ckanext_showcase_list', context, data_dict)
     model = context["model"]
     user = context.get('user')
-    user_obj = model.User.get(user)
+    user_instance = model.User.get(user)
 
     offset = data_dict.pop('page', 1) - 1 
     limit = data_dict.pop('limit', 20)
 
 
     if not authz.is_authorized_boolean('is_portal_admin', context):
-        data_dict['creator_user_id'] = user_obj.id
+        data_dict['creator_user_id'] = user_instance.id
     
     q = ShowcaseApprovalStatus.filter_showcases(**data_dict)
 
@@ -206,11 +200,11 @@ def showcase_statics(context, data_dict):
 
     model = context["model"]
     user = context.get('user')
-    user_obj = model.User.get(user)
+    user_instance = model.User.get(user)
     
     if authz.is_authorized_boolean('is_portal_admin', context):
         return ShowcaseApprovalStatus.generate_statistics()
     else:
         return ShowcaseApprovalStatus.generate_statistics(
-            creator_user_id=user_obj.id
+            creator_user_id=user_instance.id
         )

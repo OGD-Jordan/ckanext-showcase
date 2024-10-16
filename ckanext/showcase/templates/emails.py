@@ -18,7 +18,7 @@ class EmailTemplates():
         return [
             _("Have a nice day."),
             "---",
-            _(f"Message sent by { cls.site_title() } ({ cls.site_url() })")
+            _("Message sent by %s (%s)" % (cls.site_title(), cls.site_url()))
         ]
 
     @classmethod
@@ -26,7 +26,7 @@ class EmailTemplates():
         user_name = body_vars['user_name']
 
         text = "\n\n".join(
-            [_(f"Dear {user_name},")] + lines + cls.footer_lines()
+            [_("Dear %s," % user_name)] + lines + cls.footer_lines()
             )
         return text
 
@@ -39,8 +39,8 @@ class EmailTemplates():
 
 
         lines = [
-            _(f"{opening_word} resuse case was submitted to Portal Supervisor for review."),
-            _(f"You can check the current status of your resuse case at {cls.site_url() + action_url[0]}"),
+            _("%s resuse case was submitted to Portal Supervisor for review." % opening_word),
+            _("You can check the current status of your resuse case at %s" % cls.site_url() + action_url[0]),
         ]
 
         return cls.compose_email_body(lines, body_vars)
@@ -52,8 +52,8 @@ class EmailTemplates():
         action_url = h.url_for('showcase_blueprint.read', id = showcase['id']),
 
         lines = [
-            _(f"Status of reuse case \'{showcase['display_title']}\' was updated to {showcase['status']}."),
-            _(f"You can check the current status of resuse at {cls.site_url() + action_url[0]}"),
+            _("Status of reuse case \'%s\' was updated to %s." % (showcase['display_title'], showcase['status'])),
+            _("You can check the current status of resuse at %s" % cls.site_url() + action_url[0]),
         ]
 
         return cls.compose_email_body(lines, body_vars)
@@ -64,14 +64,14 @@ class SubjectTemplates():
     def get_showcase_create(cls, body_vars):
         showcase = body_vars['showcase']
 
-        return  _(f"Reuse case \'{showcase['display_title']}\' was submitted for review.")
+        return  _("Reuse case \'%s\' was submitted for review." % showcase['display_title'])
 
 
     @classmethod
     def get_status_update(cls, body_vars):
         showcase = body_vars['showcase']
 
-        return _(f"Reuse case \'{showcase['display_title']}\' status was updated."),
+        return _("Reuse case \'%s\' status was updated." % showcase['display_title']),
 
 
 
@@ -89,7 +89,7 @@ class NotificationTemplates():
 
 
         lines = [
-            _(f"{opening_word} resuse case was submitted to the Portal Supervisor for review."),
+            _("%s resuse case was submitted to the Portal Supervisor for review." % opening_word),
         ]
 
         return cls.compose_email_body(lines, body_vars)
@@ -99,7 +99,7 @@ class NotificationTemplates():
         showcase = body_vars['showcase']
 
         lines = [
-            _(f"Status of reuse case \'{showcase['display_title']}\' was updated to {showcase['status']}."),
+            _("Status of reuse case \'%s\' was updated to {showcase['status']}." % showcase['display_title']),
         ]
 
         return cls.compose_email_body(lines, body_vars)

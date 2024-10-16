@@ -32,15 +32,15 @@ def get_auth_functions():
 
 
 def _is_user_the_creator(context, data_dict, key='id'):
-    if authz.auth_is_anon_user(context): return False
+    if authz.auth_not_logged_in(context): return False
 
     user = context.get('user')
     model = context['model']
-    user_obj = model.User.get(user)
+    user_instance = model.User.get(user)
 
     q = model.Session.query(model.Package) \
         .filter(model.Package.type == utils.DATASET_TYPE_NAME)\
-        .filter(model.Package.creator_user_id == user_obj.id)\
+        .filter(model.Package.creator_user_id == user_instance.id)\
         .filter(or_(
             model.Package.id == data_dict.get(key,''),
             model.Package.name == data_dict.get(key,''),
@@ -50,7 +50,7 @@ def _is_user_the_creator(context, data_dict, key='id'):
 
 
 def create(context, data_dict):
-    return {'success': (not authz.auth_is_anon_user(context))}
+    return {'success': (not authz.auth_not_logged_in(context))}
 
 
 def delete(context, data_dict):
@@ -72,19 +72,15 @@ def update(context, data_dict):
 
 @tk.auth_allow_anonymous_access
 def show(context, data_dict):
-    '''All users can access a showcase show'''
     showcase_id = data_dict.get('id','')
 
-    showcase = model.Session.query(model.Package) \
-        .filter(model.Package.id == showcase_id)\
-        .filter(model.Package.type == utils.DATASET_TYPE_NAME)\
-        .first()
-
+    showcase = model.Package.get(showcase_id)
+    showcase = showcase if showcase and showcase.type == utils.DATASET_TYPE_NAME else None
 
     if not showcase:
         return {'success': False, 'msg': _('Reuse does not exist')}
 
-
+    showcase_id = showcase.id
     status_obj = ShowcaseApprovalStatus.get(showcase_id=showcase_id).as_dict() or ShowcaseApprovalStatus.update_status(showcase_id,'')
 
     if status_obj['status'] == ApprovalStatus.APPROVED.value \
@@ -136,7 +132,7 @@ def package_showcase_list(context, data_dict):
 
 
 def showcase_upload(context, data_dict):
-    return {'success': (not authz.auth_is_anon_user(context))}
+    return {'success': (not authz.auth_not_logged_in(context))}
 
 
 def status_show(context, data_dict):

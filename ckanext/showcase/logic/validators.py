@@ -47,14 +47,14 @@ def convert_package_name_or_id_to_id_for_type_showcase(package_name_or_id,
 def is_valid_status(applied_status, context):
     status_map = {status.value: status.name for status in ApprovalStatus}
     if applied_status not in status_map:
-        raise Invalid(_(f"Invalid status: {applied_status}. Must be one of: {list(status_map.keys())}"))
+        raise Invalid(_("Invalid status: %s. Must be one of: %s" % (applied_status, list(status_map.keys()))))
     
     return ApprovalStatus[status_map[applied_status]]
 
 def is_valid_filter_status(applied_status, context):
     status_map = {status.value: status.name for status in ApprovalStatus}
     if applied_status not in status_map:
-        raise Invalid(_(f"Invalid status: {applied_status}. Must be one of: {list(status_map.keys())}"))
+        raise Invalid(_("Invalid status: %s. Must be one of: %s" % (applied_status, list(status_map.keys()))))
     
     return applied_status
 
@@ -86,7 +86,7 @@ def validate_reuse_types(applied_types, context):
         if c_type in status_map:
             selected_types.append(c_type)
         else:
-            raise Invalid(_(f"Invalid type: {c_type}. Must be one of: {list(status_map.keys())}"))
+            raise Invalid(_("Invalid type: %s. Must be one of: %s" % (c_type, list(status_map.keys()))))
     
     return selected_types
 

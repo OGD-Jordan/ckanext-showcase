@@ -19,6 +19,7 @@ from ckanext.showcase.logic import auth, action
 import ckanext.showcase.logic.schema as showcase_schema
 import ckanext.showcase.logic.helpers as showcase_helpers
 from ckan.common import request
+from ckan.lib.plugins import DefaultTranslation
 
 _ = tk._
 
@@ -27,7 +28,7 @@ log = logging.getLogger(__name__)
 DATASET_TYPE_NAME = utils.DATASET_TYPE_NAME
 
 
-class ShowcasePlugin(plugins.SingletonPlugin, lib_plugins.DefaultDatasetForm):
+class ShowcasePlugin(plugins.SingletonPlugin, lib_plugins.DefaultDatasetForm, DefaultTranslation):
     plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.IDatasetForm)
     plugins.implements(plugins.IFacets, inherit=True)
@@ -137,7 +138,7 @@ class ShowcasePlugin(plugins.SingletonPlugin, lib_plugins.DefaultDatasetForm):
         # Add dataset count
         pkg_dict['num_datasets'] = len(
             tk.get_action('ckanext_showcase_package_list')(
-                context, {'showcase_id': pkg_dict['id']}))
+                {**context, 'ignore_auth':True}, {'showcase_id': pkg_dict['id']}))
 
         # ADD EXTRAS TEMP SOLUTION
         for extra in pkg_dict.get('extras', {}):

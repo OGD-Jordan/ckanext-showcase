@@ -90,7 +90,7 @@ class ShowcasePackageAssociation(ShowcaseBaseModel, BaseModel):
             Session.query(cls.showcase_id) \
             .filter_by(package_id=package_id) \
             .join(ShowcaseApprovalStatus, cls.showcase_id == ShowcaseApprovalStatus.showcase_id)
-            .filter(ShowcaseApprovalStatus.status == ApprovalStatus.PENDING)
+            .filter(ShowcaseApprovalStatus.status == ApprovalStatus.APPROVED)
             .all()
         )
         return showcase_package_association_list

@@ -1,6 +1,8 @@
 import ckan.lib.helpers as h
 from ckan.plugins import toolkit as tk
 from ckanext.showcase.data.constants import REUSE_CASE_TYPE_OPTIONS, SHOWCASE_STATUS_OPTIONS, ApprovalStatus
+_ = tk._
+from ckan.common import _, config
 
 
 
@@ -13,6 +15,7 @@ def get_helpers():
         'showcase_status_filter_options': showcase_status_filter_options,
         'ckanext_showcase_metatdata': ckanext_showcase_metatdata,
         'ckanext_showcase_types': ckanext_showcase_types,
+        'ckanext_showcase_total': ckanext_showcase_total,
     }
 
 
@@ -66,8 +69,6 @@ def showcase_status_filter_options():
         {'text': tk._("Select Status"), 'value': ''}
         ] + showcase_status_options()
 
-_ = tk._
-from ckan.common import _, config
 
 def ckanext_showcase_metatdata(showcase, showcase_datasets, user_info):
     return [
@@ -170,3 +171,9 @@ def ckanext_showcase_types():
         {'text': value, 'value':key}
         for key, value in REUSE_CASE_TYPE_OPTIONS.items()
     ]
+
+def ckanext_showcase_total():
+    return tk.get_action('ckanext_showcase_statics')(
+        {'ignore_auth':True},
+        {}
+    ).get('total',None)
