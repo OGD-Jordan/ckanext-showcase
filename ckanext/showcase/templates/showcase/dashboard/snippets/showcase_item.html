@@ -12,7 +12,7 @@
   <td> {{ showcase.creator.fullname }}</td>
   <td>{{ showcase.approval_status.display_status }}</td>
   <td>
-
+    {% if h.check_access('ckanext_showcase_status_update') %}
     <div class="d-flex flex-row showcase-actions" style="gap:2px;">
       {% if showcase.approval_status.status != 'd'  %} 
       <span 
@@ -38,8 +38,7 @@
       </span>
       {% endif %}
     </div>
-  
-  
+    {% endif %}
   </td>
 
   <td>
