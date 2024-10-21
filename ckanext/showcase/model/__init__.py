@@ -39,10 +39,7 @@ class ShowcaseBaseModel(DomainObject):
 
     @classmethod
     def exists(cls, **kwargs):
-        if cls.filter(**kwargs).first():
-            return True
-        else:
-            return False
+        return bool(cls.filter(**kwargs).count())
 
     @classmethod
     def get(cls, **kwargs):

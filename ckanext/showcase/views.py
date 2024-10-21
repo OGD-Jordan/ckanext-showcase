@@ -325,7 +325,7 @@ def dashboard_read(id):
         )
 
 
-showcase.add_url_rule('/dashboard/showcase', view_func=dashboard_list, endpoint="dashboard_index")
+showcase.add_url_rule('/dashboard/showcase/', view_func=dashboard_list, endpoint="dashboard_index")
 showcase.add_url_rule('/dashboard/showcase/update/<id>', view_func=StatusUpdate.as_view('edit'),
                       methods=['GET', 'POST'],
                       endpoint="dashboard_update")
