@@ -156,12 +156,12 @@
 {% endif %}
 
 
-<a 
-    class="btn btn-secondary pull-right mb-2" 
-    href="{{ h.url_for(showcase_list_route) }}"
+<button 
+    class="btn btn-secondary pull-right mb-2"
+    onclick="window.history.back()" 
 >
     {{ _('Back') }}
-</a>
+</button>
 
 {% endblock %}
 
