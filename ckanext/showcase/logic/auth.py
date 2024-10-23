@@ -50,7 +50,7 @@ def _is_user_the_creator(context, data_dict, key='id'):
 
 
 def create(context, data_dict):
-    return {'success': (not authz.auth_not_logged_in(context))}
+    return authz.is_authorized('is_end_user', context)
 
 
 def delete(context, data_dict):

@@ -9,7 +9,17 @@
 <tr>
   <th scope="row"><strong>{{h.render_datetime(showcase.metadata_created, date_format='%d/%m/%Y')}}</strong></th>
   <td>{{ showcase.display_title }}</td>
-  <td> {{ showcase.creator.fullname }}</td>
+
+  <td>
+    {% if h.check_access('end_user_dashboard_view_auth', {'id': showcase.creator['name']}) %}
+      <a href="{{ h.url_for('ogddashboard.end_user', id=showcase.creator['name']) }}">
+        {{ showcase.creator.fullname or showcase.creator.name }}
+      </a>
+    {% else %}
+      {{ showcase.creator.fullname or showcase.creator.name }}
+    {% endif %}
+  </td>
+
   <td>{{ showcase.approval_status.display_status }}</td>
   <td>
     {% if h.check_access('ckanext_showcase_status_update') %}
@@ -38,6 +48,8 @@
       </span>
       {% endif %}
     </div>
+    {% else %}
+      <p>{{ _('No Actions Available') }}</p>
     {% endif %}
   </td>
 
