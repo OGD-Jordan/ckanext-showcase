@@ -187,7 +187,7 @@ def package_showcase_list(context, data_dict):
 def status_show(context, data_dict):
     tk.check_access('ckanext_showcase_status_show', context, data_dict)
 
-    showcase_id = data_dict.get('showcase_id', None)
+    showcase_id = data_dict.get('id', None)
     feedback_instance = ShowcaseApprovalStatus.get_status_for_showcase(showcase_id=showcase_id).as_dict()
 
     return feedback_instance

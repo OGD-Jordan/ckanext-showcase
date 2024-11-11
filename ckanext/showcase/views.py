@@ -18,8 +18,21 @@ def index():
 
 
 class CreateView(dataset.CreateView):
+    def _prepare(self):  # noqa
+        context = cast(Context, {
+            u'model': model,
+            u'session': model.Session,
+            u'user': current_user.name,
+            u'auth_user_obj': current_user,
+            u'save': self._is_save()
+        })
+        try:
+            tk.check_access('ckanext_showcase_create', context)
+        except tk.NotAuthorized:
+            return tk.abort(401, _('Unauthorized to create a reuse case'))
+        return context
+    
     def get(self, data=None, errors=None, error_summary=None):
-        utils.check_new_view_auth()
         return super(CreateView, self).get(utils.DATASET_TYPE_NAME, data,
                                            errors, error_summary)
 
@@ -243,7 +256,7 @@ class StatusUpdate(MethodView):
         
         showcase = _get_action(u'ckanext_showcase_show')(context, {u'id': id})
         showcase_datasets = _get_action(u'ckanext_showcase_package_list')(context, {u'showcase_id': id})
-        showcase_status = _get_action(u'ckanext_showcase_status_show')(context, {u'showcase_id': id})
+        showcase_status = _get_action(u'ckanext_showcase_status_show')(context, {u'id': id})
 
         data = {**showcase_status, **(data or {})}
 

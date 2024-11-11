@@ -38,15 +38,9 @@ def _is_user_the_creator(context, data_dict, key='id'):
     model = context['model']
     user_instance = model.User.get(user)
 
-    q = model.Session.query(model.Package) \
-        .filter(model.Package.type == utils.DATASET_TYPE_NAME)\
-        .filter(model.Package.creator_user_id == user_instance.id)\
-        .filter(or_(
-            model.Package.id == data_dict.get(key,''),
-            model.Package.name == data_dict.get(key,''),
-            ))
-    
-    return bool(q.count())
+    package = model.Package.get(data_dict.get(key,''))
+    result = bool(package and package.type == utils.DATASET_TYPE_NAME and package.creator_user_id == user_instance.id)
+    return result
 
 
 def create(context, data_dict):
@@ -66,7 +60,7 @@ def update(context, data_dict):
     else:
         return {
             'success': False, 
-            'msg': _('User not authorized to delete a submitted Reuse')
+            'msg': _('User not authorized to update this Reuse')
             }
 
 
@@ -136,6 +130,7 @@ def showcase_upload(context, data_dict):
 
 
 def status_show(context, data_dict):
+    print("Hello099", data_dict)
     showcase_id = data_dict.get('id','')
     showcase = tk.get_action('ckanext_showcase_show')(
         context, 
@@ -151,8 +146,10 @@ def status_show(context, data_dict):
     if status_obj['status'] == ApprovalStatus.APPROVED.value \
         or _is_user_the_creator(context, data_dict) \
         or authz.is_authorized_boolean('is_portal_admin', context):
+        print("DEBUG1")
         return {'success': True}
     else:
+        print("DEBUG2")
         return {'success': False, 'msg': _('User not authorized to view the status')}
 
 

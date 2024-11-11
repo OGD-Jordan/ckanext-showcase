@@ -603,7 +603,7 @@ def check_status_update_view_auth(id):
     }
 
     try:
-        tk.check_access('ckanext_showcase_status_show', context)
+        tk.check_access('ckanext_showcase_status_show', context, {'id': id})
     except tk.NotAuthorized:
         return tk.abort(
             401,

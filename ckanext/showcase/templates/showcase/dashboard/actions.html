@@ -139,8 +139,8 @@
 
 
 <!-- Status Update -->
-<h3 class="mb-4">{{_('Reuse Case Actions')}}</h3>
 {% if h.check_access('ckanext_showcase_status_update', {'id': data.id}) %}
+<h3 class="mb-4">{{_('Reuse Case Actions')}}</h3>
 {% asset 'showcase/showcase-conditional-fields' %}
 <form action="" method="post" class="" data-module="showcase-conditional-fields">
   {{ form.select('status', id='field-status', label=_('Reuse Case Status'), options=h.showcase_status_options(), selected=data.status, classes=["control-full"], is_required=true) }}

@@ -193,9 +193,10 @@ class ShowcasePlugin(plugins.SingletonPlugin, lib_plugins.DefaultDatasetForm, De
         filter = 'dataset_type:{0}'.format(DATASET_TYPE_NAME)
         if filter not in fq:
             search_params.update({'fq': fq + " -" + filter})
+        
+        approved_ids = utils.get_approved_showcase_ids()
 
-        if "+" + filter in fq:
-            approved_ids = utils.get_approved_showcase_ids()
+        if "+" + filter in fq and approved_ids:
             q = 'id:(' + ' OR '.join(['{0}'.format(x) for x in approved_ids]) + ')'
 
             applied_query = search_params.get('q')

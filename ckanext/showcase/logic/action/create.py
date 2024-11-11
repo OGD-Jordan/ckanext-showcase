@@ -34,15 +34,14 @@ def showcase_create(context, data_dict):
     upload.upload(uploader.get_max_image_size())
 
 
-    site_user = tk.get_action("get_site_user")({"ignore_auth": True}, {})
-    updated_context = {'ignore_auth': True, 'user':site_user['name']}
+    updated_context = {'ignore_auth': True}
     pkg = tk.get_action('package_create')(
-        context.copy().update(updated_context), 
+        {**context, **updated_context},
         data_dict
     )
 
     tk.get_action('ckanext_showcase_status_update')(
-        context.copy().update(updated_context),
+        {**context, **updated_context},
         {"showcase_id": pkg.get("id",pkg.get("name", '')) }
     )
 

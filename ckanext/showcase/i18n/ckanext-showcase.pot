@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ckanext-showcase 1.6.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-10-13 12:09+0300\n"
+"POT-Creation-Date: 2024-10-29 14:49+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,11 +22,11 @@ msgstr ""
 msgid "User not authorized to edit {showcase_id}"
 msgstr ""
 
-#: ckanext/showcase/utils.py:62
+#: ckanext/showcase/utils.py:62 ckanext/showcase/views.py:32
 msgid "Unauthorized to create a reuse case"
 msgstr ""
 
-#: ckanext/showcase/utils.py:79 ckanext/showcase/views.py:315
+#: ckanext/showcase/utils.py:79 ckanext/showcase/views.py:329
 msgid "Reuse Case not found"
 msgstr ""
 
@@ -116,7 +116,7 @@ msgstr ""
 msgid "User not authorized to update the Reuse Cases status"
 msgstr ""
 
-#: ckanext/showcase/views.py:317
+#: ckanext/showcase/views.py:331
 msgid "User not authorized to view this Reuse Case"
 msgstr ""
 
@@ -188,82 +188,82 @@ msgstr ""
 msgid "Dataset"
 msgstr ""
 
-#: ckanext/showcase/logic/helpers.py:66
+#: ckanext/showcase/logic/helpers.py:69
 msgid "Select Status"
 msgstr ""
 
-#: ckanext/showcase/logic/helpers.py:75
+#: ckanext/showcase/logic/helpers.py:76
 #: ckanext/showcase/templates/showcase/dashboard/actions.html:46
 msgid "Title En"
 msgstr ""
 
-#: ckanext/showcase/logic/helpers.py:80
+#: ckanext/showcase/logic/helpers.py:81
 #: ckanext/showcase/templates/showcase/dashboard/actions.html:47
 msgid "Title Ar"
 msgstr ""
 
-#: ckanext/showcase/logic/helpers.py:85
+#: ckanext/showcase/logic/helpers.py:86
 msgid "Slug"
 msgstr ""
 
-#: ckanext/showcase/logic/helpers.py:90
+#: ckanext/showcase/logic/helpers.py:91
 msgid "Description En"
 msgstr ""
 
-#: ckanext/showcase/logic/helpers.py:95
+#: ckanext/showcase/logic/helpers.py:96
 msgid "Description Ar"
 msgstr ""
 
-#: ckanext/showcase/logic/helpers.py:100
+#: ckanext/showcase/logic/helpers.py:101
 msgid "Date Created"
 msgstr ""
 
-#: ckanext/showcase/logic/helpers.py:105
+#: ckanext/showcase/logic/helpers.py:106
 msgid "Reuse Case Type"
 msgstr ""
 
-#: ckanext/showcase/logic/helpers.py:110
+#: ckanext/showcase/logic/helpers.py:111
 #: ckanext/showcase/templates/showcase/dashboard/snippets/list.html:12
 msgid "The User"
 msgstr ""
 
-#: ckanext/showcase/logic/helpers.py:115
+#: ckanext/showcase/logic/helpers.py:116
 #: ckanext/showcase/templates/showcase/dashboard/snippets/list.html:13
 #: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_search_form.html:92
 msgid "Status"
 msgstr ""
 
-#: ckanext/showcase/logic/helpers.py:120
+#: ckanext/showcase/logic/helpers.py:121
 msgid "Admin Feedback"
 msgstr ""
 
-#: ckanext/showcase/logic/helpers.py:125
+#: ckanext/showcase/logic/helpers.py:126
 #: ckanext/showcase/templates/showcase/dashboard/search.html:37
 msgid "Last Status Update"
 msgstr ""
 
-#: ckanext/showcase/logic/helpers.py:130
+#: ckanext/showcase/logic/helpers.py:131
 msgid "Submitted Author Name"
 msgstr ""
 
-#: ckanext/showcase/logic/helpers.py:135
+#: ckanext/showcase/logic/helpers.py:136
 msgid "Submitted Author Email"
 msgstr ""
 
-#: ckanext/showcase/logic/helpers.py:140
+#: ckanext/showcase/logic/helpers.py:141
 msgid "Image Url"
 msgstr ""
 
-#: ckanext/showcase/logic/helpers.py:146
+#: ckanext/showcase/logic/helpers.py:147
 msgid "External Link"
 msgstr ""
 
-#: ckanext/showcase/logic/helpers.py:152
+#: ckanext/showcase/logic/helpers.py:153
 #: ckanext/showcase/templates/showcase/dashboard/actions.html:70
 msgid "Associated Datasets"
 msgstr ""
 
-#: ckanext/showcase/logic/helpers.py:160
+#: ckanext/showcase/logic/helpers.py:161
 msgid "Reuse Case Public Display"
 msgstr ""
 
@@ -809,23 +809,27 @@ msgstr ""
 msgid "View All"
 msgstr ""
 
-#: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_item.html:19
+#: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_item.html:29
 msgid "Approve Reuse Case"
 msgstr ""
 
-#: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_item.html:21
+#: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_item.html:31
 msgid "Are you sure you want to approve this reuse case?"
 msgstr ""
 
-#: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_item.html:31
+#: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_item.html:41
 msgid "Reject Reuse Case"
 msgstr ""
 
-#: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_item.html:34
+#: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_item.html:44
 msgid "Are you sure you want to reject this reuse case?"
 msgstr ""
 
-#: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_item.html:47
+#: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_item.html:52
+msgid "No Actions Available"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_item.html:58
 msgid "More Details"
 msgstr ""
 
