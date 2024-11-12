@@ -9,6 +9,7 @@ import ckan.plugins as plugins
 import ckan.plugins.toolkit as tk
 import ckan.lib.plugins as lib_plugins
 import ckan.lib.helpers as h
+from flask import has_request_context
 
 
 from ckanext.showcase import cli
@@ -20,6 +21,7 @@ import ckanext.showcase.logic.schema as showcase_schema
 import ckanext.showcase.logic.helpers as showcase_helpers
 from ckan.common import request
 from ckan.lib.plugins import DefaultTranslation
+from ckanext.showcase.model import ShowcasePackageAssociation
 
 _ = tk._
 
@@ -137,8 +139,9 @@ class ShowcasePlugin(plugins.SingletonPlugin, lib_plugins.DefaultDatasetForm, De
 
         # Add dataset count
         pkg_dict['num_datasets'] = len(
-            tk.get_action('ckanext_showcase_package_list')(
-                {**context, 'ignore_auth':True}, {'showcase_id': pkg_dict['id']}))
+            ShowcasePackageAssociation.get_package_ids_for_showcase(
+                pkg_dict['id'])
+                )
 
         # ADD EXTRAS TEMP SOLUTION
         for extra in pkg_dict.get('extras', {}):
@@ -156,7 +159,7 @@ class ShowcasePlugin(plugins.SingletonPlugin, lib_plugins.DefaultDatasetForm, De
 
 
 
-        current_lang = request.environ.get('CKAN_LANG', 'en')
+        current_lang = h.lang() if has_request_context() else 'en'
         if current_lang == 'ar':
             display_title = pkg_dict.get('title_ar', '') or pkg_dict.get('title', '') or pkg_dict.get('name', '')
             display_notes = pkg_dict.get('notes_ar', '') or pkg_dict.get('notes', '')
