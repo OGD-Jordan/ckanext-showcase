@@ -315,3 +315,25 @@ class ShowcaseApprovalStatus(ShowcaseBaseModel, BaseModel):
                     .filter(model.Package.creator_user_id == creator_user_id)
         
         return query
+
+
+Base = declarative_base()
+import sqlalchemy as sa
+from ckan.common import config
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy import inspect
+
+
+def init_tables():
+    engine = sa.create_engine(config.get('sqlalchemy.url'))
+    Session = sessionmaker(bind=engine)()
+    BaseModel.metadata.create_all(engine)
+    
+    inspector = inspect(engine)
+    if not inspector.has_table('showcase_approval'):
+        BaseModel.metadata.tables['showcase_approval'].create(engine)
+        log.debug('Download table created')
+    else:
+        log.debug('Download table already exists')
+
+

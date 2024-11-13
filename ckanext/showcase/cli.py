@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import click
+from ckanext.showcase.model import init_tables
 
 from ckanext.showcase import utils
 
@@ -24,3 +25,7 @@ def markdown_to_html():
 
 def get_commands():
     return [showcase]
+
+@showcase.command()
+def init_db_tables():
+    init_tables()
