@@ -332,8 +332,8 @@ def init_tables():
     inspector = inspect(engine)
     if not inspector.has_table('showcase_approval'):
         BaseModel.metadata.tables['showcase_approval'].create(engine)
-        log.debug('Download table created')
+        log.debug('showcase_approval table created')
     else:
-        log.debug('Download table already exists')
+        log.debug('showcase_approval table already exists')
 
 

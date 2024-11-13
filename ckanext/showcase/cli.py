@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 import click
-from ckanext.showcase.model import init_tables
 
 from ckanext.showcase import utils
 
@@ -28,4 +27,4 @@ def get_commands():
 
 @showcase.command()
 def init_db_tables():
-    init_tables()
+    utils.init_tables()

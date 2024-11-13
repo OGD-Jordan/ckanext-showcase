@@ -3,6 +3,7 @@
 from __future__ import print_function
 import json
 import logging
+from ckanext.showcase.model import init_tables
 
 from collections import OrderedDict
 from urllib.parse import urlencode
@@ -617,3 +618,7 @@ def get_approved_showcase_ids():
         showcase.id
         for showcase in q.all()
     ]
+
+
+def init_tables():
+    init_tables()
