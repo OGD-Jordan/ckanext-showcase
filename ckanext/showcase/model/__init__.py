@@ -317,7 +317,6 @@ class ShowcaseApprovalStatus(ShowcaseBaseModel, BaseModel):
         return query
 
 
-Base = declarative_base()
 import sqlalchemy as sa
 from ckan.common import config
 from sqlalchemy.orm import sessionmaker
