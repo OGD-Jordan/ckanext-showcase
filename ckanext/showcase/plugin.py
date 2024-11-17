@@ -42,15 +42,18 @@ class ShowcasePlugin(plugins.SingletonPlugin, lib_plugins.DefaultDatasetForm, De
     plugins.implements(plugins.IBlueprint)
     plugins.implements(plugins.IClick)
 
+
     # IBlueprint
 
     def get_blueprint(self):
         return views.get_blueprints()
 
+
     # IClick
 
     def get_commands(self):
         return cli.get_commands()
+
 
     # IConfigurer
 
@@ -58,6 +61,7 @@ class ShowcasePlugin(plugins.SingletonPlugin, lib_plugins.DefaultDatasetForm, De
         tk.add_template_directory(config, 'templates')
         tk.add_public_directory(config, 'public')
         tk.add_resource('assets', 'showcase')
+
 
     # IDatasetForm
 
@@ -91,6 +95,7 @@ class ShowcasePlugin(plugins.SingletonPlugin, lib_plugins.DefaultDatasetForm, De
     def show_package_schema(self):
         return showcase_schema.showcase_show_schema()
 
+
     # ITemplateHelpers
 
     def get_helpers(self):
@@ -107,10 +112,12 @@ class ShowcasePlugin(plugins.SingletonPlugin, lib_plugins.DefaultDatasetForm, De
             # {'tags': _('Tags')}
             )
 
+
     # IAuthFunctions
 
     def get_auth_functions(self):
         return auth.get_auth_functions()
+
 
     # IActions
 
@@ -175,16 +182,19 @@ class ShowcasePlugin(plugins.SingletonPlugin, lib_plugins.DefaultDatasetForm, De
 
         return pkg_dict
 
+
     # CKAN >= 2.10
     def after_dataset_show(self, context, pkg_dict):
         '''Modify package_show pkg_dict.'''
         pkg_dict = self._add_to_pkg_dict(context, pkg_dict)
+
 
     def before_dataset_view(self, pkg_dict):
         '''Modify pkg_dict that is sent to templates.'''
         context = {'user': tk.g.user or tk.g.author}
 
         return self._add_to_pkg_dict(context, pkg_dict)
+
 
     def before_dataset_search(self, search_params):
         '''
@@ -209,14 +219,27 @@ class ShowcasePlugin(plugins.SingletonPlugin, lib_plugins.DefaultDatasetForm, De
 
         return search_params
 
+
+
+    def after_dataset_search(self, search_results, data_dict):
+        for pkg in search_results.get("results", []):
+            if pkg.get('type') == 'dataset':
+                pkg['num_approved_reuses'] = len(ShowcasePackageAssociation\
+                    .get_showcase_ids_for_package(pkg.get('id')))
+
+        return search_results
+
+
     # CKAN < 2.10 (Remove when dropping support for 2.9)
     def after_show(self, context, pkg_dict):
         '''Modify package_show pkg_dict.'''
         pkg_dict = self.after_dataset_show(context, pkg_dict)
 
+
     def before_view(self, pkg_dict):
         '''Modify pkg_dict that is sent to templates.'''
         return self.before_dataset_view(pkg_dict)
+
 
     def before_search(self, search_params):
         '''
@@ -225,6 +248,7 @@ class ShowcasePlugin(plugins.SingletonPlugin, lib_plugins.DefaultDatasetForm, De
         `showcase`.
         '''
         return self.before_dataset_search(search_params)
+
 
     # ITranslation
     def i18n_directory(self):
@@ -239,6 +263,7 @@ class ShowcasePlugin(plugins.SingletonPlugin, lib_plugins.DefaultDatasetForm, De
         module = sys.modules[extension_module_name]
         return os.path.join(os.path.dirname(module.__file__), 'i18n')
 
+
     def i18n_locales(self):
         '''Change the list of locales that this plugin handles
 
@@ -251,6 +276,7 @@ class ShowcasePlugin(plugins.SingletonPlugin, lib_plugins.DefaultDatasetForm, De
                 d in os.listdir(directory)
                 if os.path.isdir(os.path.join(directory, d))]
 
+
     def i18n_domain(self):
         '''Change the gettext domain handled by this plugin
 
@@ -258,3 +284,4 @@ class ShowcasePlugin(plugins.SingletonPlugin, lib_plugins.DefaultDatasetForm, De
         ckanext-{extension name}, hence your pot, po and mo files should be
         named ckanext-{extension name}.mo'''
         return 'ckanext-{name}'.format(name=self.name)
+
