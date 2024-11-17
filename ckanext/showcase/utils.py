@@ -612,7 +612,16 @@ def check_status_update_view_auth(id):
         )
     
 
+from sqlalchemy import inspect
+import sqlalchemy as sa
+from ckan.common import config
+
+engine = sa.create_engine(config.get('sqlalchemy.url'))
 def get_approved_showcase_ids():
+    inspector = inspect(engine)
+    if not inspector.has_table('showcase_approval'):
+        return []
+    
     q = ShowcaseApprovalStatus.filter_showcases(status=ApprovalStatus.APPROVED.value)
     return [
         showcase.id
