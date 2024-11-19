@@ -3,6 +3,8 @@ from ckan.plugins import toolkit as tk
 from ckanext.showcase.data.constants import REUSE_CASE_TYPE_OPTIONS, SHOWCASE_STATUS_OPTIONS, ApprovalStatus
 _ = tk._
 from ckan.common import _, config
+import logging
+log = logging.getLogger(__name__)
 
 
 
@@ -104,7 +106,11 @@ def ckanext_showcase_metatdata(showcase, showcase_datasets, user_info):
         },
         {
             'label': _("Reuse Case Type"),
-            'value': [REUSE_CASE_TYPE_OPTIONS[reuse_type] for reuse_type in showcase.get('reuse_type',[])],
+            'value': [
+                REUSE_CASE_TYPE_OPTIONS[reuse_type] 
+                for reuse_type in showcase.get('reuse_type',[]) 
+                if reuse_type in REUSE_CASE_TYPE_OPTIONS
+                ],
             'type': 'list',
         },
         {

@@ -209,9 +209,12 @@ class ShowcasePlugin(plugins.SingletonPlugin, lib_plugins.DefaultDatasetForm, De
         
         approved_ids = utils.get_approved_showcase_ids()
 
-        if "+" + filter in fq and approved_ids:
-            q = 'id:(' + ' OR '.join(['{0}'.format(x) for x in approved_ids]) + ')'
-
+        if "+" + filter in fq:
+            if approved_ids:
+                q = 'id:(' + ' OR '.join(['{0}'.format(x) for x in approved_ids]) + ')'
+            else:
+                q = 'id:(none)'
+                
             applied_query = search_params.get('q')
             if applied_query:   q+=(' AND ' + applied_query)
 

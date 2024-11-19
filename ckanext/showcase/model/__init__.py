@@ -265,6 +265,7 @@ class ShowcaseApprovalStatus(ShowcaseBaseModel, BaseModel):
         
         return query
 
+
     @classmethod
     def filter_by_search_query(cls, query, search_query):
         search_terms = search_query.split()
