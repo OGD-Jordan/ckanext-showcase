@@ -50,10 +50,6 @@
   {{ form.markdown('notes_ar', id='field-notes_ar', label=_('Description Arabic'), value=showcase.notes_ar, error=errors.notes_ar, attrs={"disabled": "disabled"}) }}
 
 
-  {{ form.input('author', label=_('Submitted By'), id='field-author', value=showcase.author, error=errors.author, classes=['control-full'], attrs={"disabled": "disabled"}) }}
-  {{ form.input('author_email', label=_('Submitter Email'), id='field-author-email', value=showcase.author_email, error=errors.author_email, classes=['control-full'], attrs={"disabled": "disabled"}) }}
-
-
   <div class="row">
     <div class="col-9">
       {{ form.input('url', label=_('External link'), id='field-url', value=showcase.url, error=errors.url, classes=['control-full'], attrs={"disabled": "disabled"}) }}
