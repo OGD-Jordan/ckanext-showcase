@@ -15,7 +15,7 @@
 {% block subtitle %}{{ _('Reuse Cases') }}{% endblock %}
 
 {% block breadcrumb_content %}
-    <li>{{ _('User Dashboard') }}</li>
+    <li>{% link_for _('User Dashboard'), named_route='ogddashboard.router' %}</li>
     <li>{% link_for _('Reuse Cases'), named_route=showcase_list_route %}</li>
 {% endblock %}
 
