@@ -7,6 +7,7 @@ from flask import Blueprint
 import ckan.lib.helpers as h
 import ckan.plugins.toolkit as tk
 import ckan.views.dataset as dataset
+import ckan.lib.captcha as captcha
 
 import ckanext.showcase.utils as utils
 
@@ -37,6 +38,7 @@ class CreateView(dataset.CreateView):
                                            errors, error_summary)
 
     def post(self):
+        context = self._prepare()
 
         data_dict = dataset.clean_dict(
             dataset.dict_fns.unflatten(
@@ -46,8 +48,15 @@ class CreateView(dataset.CreateView):
                 dataset.dict_fns.unflatten(
                     dataset.tuplize_dict(dataset.parse_params(
                         tk.request.files)))))
-        context = self._prepare()
         data_dict['type'] = utils.DATASET_TYPE_NAME
+
+        try:
+            captcha.check_recaptcha(request)
+        except captcha.CaptchaError:
+            error_msg = _(u'Bad Captcha. Please try again.')
+            h.flash_error(error_msg)
+            return self.get(data_dict)
+
 
         try:
             pkg_dict = tk.get_action('ckanext_showcase_create')(context,

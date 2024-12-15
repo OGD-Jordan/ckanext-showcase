@@ -5,7 +5,7 @@
 {% set showcase_delete_route = 'showcase_blueprint.delete' %}
 
 <form id="dataset-edit" class="dataset-form form-horizontal" method="post" action="{{ action }}" data-module="basic-form" enctype="multipart/form-data">
-  {{ h.csrf_input() if 'csrf_input' in h }}
+  {{ h.csrf_input() }}
   <input type="hidden" name="_ckan_phase" value="dataset_new_1" />
   {# pkg_name used in 3 stage edit #}
   <input type="hidden" name="pkg_name" value="{{ data.id }}" />
@@ -97,6 +97,13 @@
     {% block package_metadata_author %}
     {% endblock %}
   {% endblock %}
+
+  {% block captcha %}
+    {% if g.recaptcha_publickey %}
+      {% snippet "user/snippets/recaptcha.html", public_key=g.recaptcha_publickey %}
+    {% endif %}
+  {% endblock %}
+
 
   {% block form_actions %}
       <div class="form-actions">
