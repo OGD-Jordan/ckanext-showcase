@@ -56,6 +56,10 @@ class CreateView(dataset.CreateView):
             error_msg = _(u'Bad Captcha. Please try again.')
             h.flash_error(error_msg)
             return self.get(data_dict)
+        except:
+            error_msg = _(u'Some Issue with Captcha Connection.')
+            h.flash_error(error_msg)
+            return self.get(data_dict)
 
 
         try:
