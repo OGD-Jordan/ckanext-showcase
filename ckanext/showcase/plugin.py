@@ -129,6 +129,11 @@ class ShowcasePlugin(plugins.SingletonPlugin, lib_plugins.DefaultDatasetForm, De
     def _add_to_pkg_dict(self, context, pkg_dict):
         '''Add key/values to pkg_dict and return it.'''
 
+        if pkg_dict['type'] == 'dataset':
+            pkg_dict['num_approved_reuses'] = len(ShowcasePackageAssociation\
+                    .get_showcase_ids_for_package(pkg_dict.get('id')))
+
+
         if pkg_dict['type'] != DATASET_TYPE_NAME:
             return pkg_dict
 
@@ -224,13 +229,13 @@ class ShowcasePlugin(plugins.SingletonPlugin, lib_plugins.DefaultDatasetForm, De
 
 
 
-    def after_dataset_search(self, search_results, data_dict):
-        for pkg in search_results.get("results", []):
-            if pkg.get('type') == 'dataset':
-                pkg['num_approved_reuses'] = len(ShowcasePackageAssociation\
-                    .get_showcase_ids_for_package(pkg.get('id')))
+    # def after_dataset_search(self, search_results, data_dict):
+    #     for pkg in search_results.get("results", []):
+    #         if pkg.get('type') == 'dataset':
+    #             pkg['num_approved_reuses'] = len(ShowcasePackageAssociation\
+    #                 .get_showcase_ids_for_package(pkg.get('id')))
 
-        return search_results
+    #     return search_results
 
 
     # CKAN < 2.10 (Remove when dropping support for 2.9)
