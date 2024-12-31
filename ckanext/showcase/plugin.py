@@ -193,6 +193,17 @@ class ShowcasePlugin(plugins.SingletonPlugin, lib_plugins.DefaultDatasetForm, De
         '''Modify package_show pkg_dict.'''
         pkg_dict = self._add_to_pkg_dict(context, pkg_dict)
 
+        if pkg_dict and pkg_dict['type'] == 'dataset' and pkg_dict.get('id'):
+            extras = pkg_dict.get('extras',[])
+            extras.append({
+                'id': 'showcase-num_approved_reuses',
+                'package_id': pkg_dict['id'],
+                'key': 'num_approved_reuses',
+                'value': pkg_dict['num_approved_reuses'],
+                'state': 'active',
+            })
+            pkg_dict['extras'] = extras
+
 
     def before_dataset_view(self, pkg_dict):
         '''Modify pkg_dict that is sent to templates.'''
