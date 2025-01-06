@@ -193,7 +193,7 @@ class ShowcasePlugin(plugins.SingletonPlugin, lib_plugins.DefaultDatasetForm, De
         '''Modify package_show pkg_dict.'''
         pkg_dict = self._add_to_pkg_dict(context, pkg_dict)
 
-        if pkg_dict and pkg_dict['type'] == 'dataset' and pkg_dict.get('id'):
+        if pkg_dict and pkg_dict['type'] == 'dataset' and pkg_dict.get('id') and context.get('use_cache', True)== False and context.get('ignore_auth', False) and context.get('validate', True) == False:
             extras = pkg_dict.get('extras',[])
             extras.append({
                 'id': 'showcase-num_approved_reuses',
