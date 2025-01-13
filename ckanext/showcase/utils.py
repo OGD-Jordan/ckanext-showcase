@@ -629,5 +629,5 @@ def get_approved_showcase_ids():
     ]
 
 
-def init_tables():
+def init_db_tables():
     init_tables()

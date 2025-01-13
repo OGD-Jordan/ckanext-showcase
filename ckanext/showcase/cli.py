@@ -27,4 +27,4 @@ def get_commands():
 
 @showcase.command()
 def init_db_tables():
-    utils.init_tables()
+    utils.init_db_tables()
