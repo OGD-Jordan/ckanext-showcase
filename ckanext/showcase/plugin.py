@@ -195,13 +195,15 @@ class ShowcasePlugin(plugins.SingletonPlugin, lib_plugins.DefaultDatasetForm, De
 
         if pkg_dict and pkg_dict['type'] == 'dataset' and pkg_dict.get('id') and context.get('use_cache', True)== False and context.get('ignore_auth', False) and context.get('validate', True) == False:
             extras = pkg_dict.get('extras',[])
-            extras.append({
-                'id': 'showcase-num_approved_reuses',
-                'package_id': pkg_dict['id'],
-                'key': 'num_approved_reuses',
-                'value': pkg_dict['num_approved_reuses'],
-                'state': 'active',
-            })
+            extra_keys = [extra.get('key') for extra in extras]
+            if 'num_approved_reuses' not in extra_keys:
+                extras.append({
+                    'id': 'showcase-num_approved_reuses',
+                    'package_id': pkg_dict['id'],
+                    'key': 'num_approved_reuses',
+                    'value': pkg_dict['num_approved_reuses'],
+                    'state': 'active',
+                })
             pkg_dict['extras'] = extras
 
 
