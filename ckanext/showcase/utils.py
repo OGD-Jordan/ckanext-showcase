@@ -258,7 +258,7 @@ def _add_dataset_search(showcase_id, showcase_name):
         search_extras = {}
         fq = ''
         for (param, value) in tk.request.args.items():
-            if param not in ['q', 'page', 'sort'] \
+            if param not in ['q', 'page', 'sort', 'organization_id'] \
                     and len(value) and not param.startswith('_'):
                 if not param.startswith('ext_'):
                     tk.g.fields.append((param, value))
@@ -338,6 +338,10 @@ def _add_dataset_search(showcase_id, showcase_name):
 
         tk.g.facet_titles = facets
 
+        organization_id = tk.g.organization_id = tk.request.args.get('organization_id', '')
+        if organization_id:
+            fq += f' AND (+owner_org:{organization_id})'
+        
         data_dict = {
             'q': q,
             'fq': fq.strip(),
@@ -347,8 +351,10 @@ def _add_dataset_search(showcase_id, showcase_name):
             'sort': sort_by,
             'extras': search_extras
         }
-
+        
+        print("DEBUG: Final FQ", fq)  # Print final fq before search
         query = tk.get_action('package_search')(context, data_dict)
+        print("QUERY_COUNT", query['count'])
         tk.g.sort_by_selected = query['sort']
 
         tk.g.page = h.Page(collection=query['results'],

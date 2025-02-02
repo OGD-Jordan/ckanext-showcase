@@ -24,7 +24,7 @@
 {% endblock %}
 
 {% block content_action %}
-  {% if h.check_access('ckanext_showcase_status_show', {'id': showcase.id}) %}
+  {% if h.check_access('ckanext_showcase_status_update', {'id': showcase.id}) %}
     {% link_for _('Take Action'), named_route=showcase_update_route, id=showcase.id, class_='btn btn-default', icon='wrench' %}
   {% endif %}
 {% endblock %}

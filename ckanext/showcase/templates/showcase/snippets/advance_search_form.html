@@ -1,0 +1,23 @@
+{% extends "snippets/search_form.html" %}
+
+{% block search_title %}
+{% if not no_title %}
+  <h2>{% snippet 'snippets/search_result_text.html', query=query, count=count, type=type %}</h2>
+{% endif %}
+{% endblock %}
+
+{% block search_sortby %}
+
+{% snippet 
+  'showcase/snippets/advanced_filtering.html', 
+    entity_selected=entity_selected, 
+    entity_options=entity_options, 
+    sorting=sorting, 
+    sorting_selected=sorting_selected  
+  %}
+
+{% endblock %}
+
+
+{% block search_facets %}
+{% endblock %}

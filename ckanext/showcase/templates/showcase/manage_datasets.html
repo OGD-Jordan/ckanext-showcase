@@ -27,7 +27,20 @@
         (_('Last Modified'), 'metadata_modified desc'),
         (_('Popular'), 'views_recent desc') if g.tracking_enabled else (false, false) ]
       %}
-      {% snippet 'snippets/search_form.html', type='dataset', query=c.q, sorting=sorting, sorting_selected=c.sort_by_selected, count=c.page.item_count, facets=facets, show_empty=request.args, error=c.query_error, fields=c.fields %}
+      {% 
+        snippet 'showcase/snippets/advance_search_form.html', 
+        type='dataset', 
+        query=c.q, 
+        sorting=sorting, 
+        sorting_selected=c.sort_by_selected, 
+        count=c.page.item_count, 
+        facets=facets, 
+        show_empty=request.args, 
+        error=c.query_error, 
+        fields=c.fields,
+        entity_options=h.issues_organization_options(),
+        entity_selected=c.organization_id 
+        %}
     </div>
 
     <div class="row row2">
