@@ -1,0 +1,966 @@
+# Translations template for ckanext-showcase.
+# Copyright (C) 2024 ORGANIZATION
+# This file is distributed under the same license as the ckanext-showcase
+# project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ckanext-showcase 1.6.0\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2024-10-29 14:49+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ckanext/showcase/utils.py:41 ckanext/showcase/utils.py:108
+msgid "User not authorized to edit {showcase_id}"
+msgstr "المستخدم غير مصرح له بتعديل"
+
+#: ckanext/showcase/utils.py:62 ckanext/showcase/views.py:32
+msgid "Unauthorized to create a reuse case"
+msgstr "غير مصرح له بإنشاء بارسال إعادة الاستخدام"
+
+#: ckanext/showcase/utils.py:79 ckanext/showcase/views.py:329
+msgid "Reuse Case not found"
+msgstr "لم يتم العثور على حالة إعادة الاستخدام"
+
+#: ckanext/showcase/utils.py:81
+msgid "Unauthorized to read reuse case"
+msgstr "غير مصرح له بقراءة حالة إعادة الاستخدام"
+
+#: ckanext/showcase/utils.py:115 ckanext/showcase/utils.py:427
+#: ckanext/showcase/utils.py:477 ckanext/showcase/utils.py:493
+msgid "Showcase not found"
+msgstr ".لم يتم العثور على "
+
+#: ckanext/showcase/utils.py:117
+msgid "Unauthorized to read showcase"
+msgstr " غير مصرح له بقراءة"
+
+#: ckanext/showcase/utils.py:142 ckanext/showcase/utils.py:496
+msgid "The dataset has been removed from the showcase."
+msgid_plural "The datasets have been removed from the showcase."
+msgstr[0] ".تمت إزالة مجموعة البيانات "
+msgstr[1] ".تمت إزالة مجموعة البيانات"
+
+#: ckanext/showcase/utils.py:174 ckanext/showcase/utils.py:480
+msgid "The dataset has been added to the showcase."
+msgid_plural "The datasets have been added to the showcase."
+msgstr[0] ".تمت إضافة مجموعة البيانات"
+msgstr[1] ".تمت إضافة مجموعة البيانات"
+
+#: ckanext/showcase/utils.py:313
+msgid "Organizations"
+msgstr "الجهات الحكومية "
+
+#: ckanext/showcase/utils.py:314
+msgid "Groups"
+msgstr "القطاعات"
+
+#: ckanext/showcase/utils.py:315
+msgid "Tags"
+msgstr "الوسوم"
+
+#: ckanext/showcase/utils.py:316
+msgid "Formats"
+msgstr "التنسيق"
+
+#: ckanext/showcase/utils.py:317
+msgid "Licenses"
+msgstr "الرخص"
+
+#: ckanext/showcase/utils.py:377
+msgid "Parameter '{parameter_name}' is not an integer"
+msgstr " عدد غير صحيح'{parameter_name}'مطلوب تعبئة الحقل"
+
+#: ckanext/showcase/utils.py:413 ckanext/showcase/utils.py:425
+msgid "Unauthorized to delete showcase"
+msgstr "غير مصرح له بحذف"
+
+#: ckanext/showcase/utils.py:421
+msgid "Showcase has been deleted."
+msgstr "تم حذف"
+
+#: ckanext/showcase/utils.py:446 ckanext/showcase/utils.py:457
+msgid "Dataset not found"
+msgstr "لم يتم العثور على مجموعة البيانات"
+
+#: ckanext/showcase/utils.py:448
+msgid "Not authorized to see this page"
+msgstr "غير مصرح له برؤية هذه الصفحة"
+
+#: ckanext/showcase/utils.py:459
+msgid "Unauthorized to read package"
+msgstr ""
+
+#: ckanext/showcase/utils.py:541
+msgid "Only Posting is availiable"
+msgstr "النشر فقط متاح"
+
+#: ckanext/showcase/utils.py:558
+#, python-format
+msgid "Unauthorized to upload file %s"
+msgstr "%s غير مصرح له بتحميل الملف"
+
+#: ckanext/showcase/utils.py:577
+msgid "User not authorized to view the Reuse Cases Dashboard"
+msgstr "المستخدم غير مصرح له بعرض لوحة أداء حالات إعادة الاستخدام"
+
+#: ckanext/showcase/utils.py:610
+msgid "User not authorized to update the Reuse Cases status"
+msgstr "لمستخدم غير مصرح له بتحديث الحالة لحالة إعادة الاستخدام"
+
+#: ckanext/showcase/views.py:331
+msgid "User not authorized to view this Reuse Case"
+msgstr "المستخدم غير مصرح له بمشاهدة حالة إعادة الاستخدام هذه"
+
+#: ckanext/showcase/data/constants.py:12
+#: ckanext/showcase/templates/showcase/dashboard/snippets/stats-indicators.html:15
+msgid "Pending"
+msgstr "قيد الانتظار"
+
+#: ckanext/showcase/data/constants.py:13
+#: ckanext/showcase/templates/showcase/dashboard/snippets/stats-indicators.html:39
+msgid "Needs Revision"
+msgstr "يحتاج إلى مراجعة"
+
+#: ckanext/showcase/data/constants.py:14
+#: ckanext/showcase/templates/showcase/dashboard/snippets/stats-indicators.html:26
+msgid "Rejected"
+msgstr "مرفوض"
+
+#: ckanext/showcase/data/constants.py:15
+#: ckanext/showcase/templates/showcase/dashboard/snippets/stats-indicators.html:52
+msgid "Approved"
+msgstr "موافقة"
+
+#: ckanext/showcase/data/constants.py:28
+msgid "Mobile Application"
+msgstr "تطبيق الهاتف المحمول"
+
+#: ckanext/showcase/data/constants.py:29
+msgid "Web Application"
+msgstr "تطبيق ويب"
+
+#: ckanext/showcase/data/constants.py:30
+msgid "Writing a newspaper article, blog article, or research paper"
+msgstr "كتابة مقال صحفي أو مقال مدونة أو ورقة بحثية"
+
+#: ckanext/showcase/data/constants.py:31
+msgid "Conducting scientific research or analysis"
+msgstr "إجراء البحث العلمي أو التحليل"
+
+#: ckanext/showcase/data/constants.py:32
+msgid "Development API"
+msgstr "تطوير واجهة برمجة التطبيقات"
+
+#: ckanext/showcase/logic/auth.py:59 ckanext/showcase/logic/auth.py:69
+msgid "User not authorized to delete a submitted Reuse"
+msgstr "المستخدم غير مصرح له بحذف طلب إعادة الاستخدام المقدم"
+
+#: ckanext/showcase/logic/auth.py:81 ckanext/showcase/logic/auth.py:146
+msgid "Reuse does not exist"
+msgstr "حالة إعادة الاستخدام غير متوفرة"
+
+#: ckanext/showcase/logic/auth.py:91
+msgid "User not authorized to view this Reuse"
+msgstr "المستخدم غير مصرح له بعرض طلب إعادة الاستخدام هذا"
+
+#: ckanext/showcase/logic/auth.py:156
+msgid "User not authorized to view the status"
+msgstr "المستخدم غير مصرح له بعرض حالة طلب إعادة الاستخدام هذا"
+
+#: ckanext/showcase/logic/auth.py:163
+msgid "User not authorized to update Reuse status"
+msgstr "المستخدم غير مصرح له بتحديث حالة طلب إعادة الاستخدام"
+
+#: ckanext/showcase/logic/converters.py:24 ckanext/showcase/logic/validators.py:29
+msgid "Not found"
+msgstr "لم يتم العثور عليه"
+
+#: ckanext/showcase/logic/converters.py:24 ckanext/showcase/logic/validators.py:29
+msgid "Dataset"
+msgstr "مجموعة البيانات"
+
+#: ckanext/showcase/logic/helpers.py:69
+msgid "Select Status"
+msgstr "حدد الحالة"
+
+#: ckanext/showcase/logic/helpers.py:76
+#: ckanext/showcase/templates/showcase/dashboard/actions.html:46
+msgid "Title En"
+msgstr "العنوان باللغة الإنجليزية"
+
+#: ckanext/showcase/logic/helpers.py:81
+#: ckanext/showcase/templates/showcase/dashboard/actions.html:47
+msgid "Title Ar"
+msgstr "العنوان باللغة العربية"
+
+#: ckanext/showcase/logic/helpers.py:86
+msgid "Slug"
+msgstr "Slug"
+
+#: ckanext/showcase/logic/helpers.py:91
+msgid "Description En"
+msgstr "الوصف باللغة الإنجليزية"
+
+#: ckanext/showcase/logic/helpers.py:96
+msgid "Description Ar"
+msgstr "الوصف باللغة العربية"
+
+#: ckanext/showcase/logic/helpers.py:101
+msgid "Date Created"
+msgstr "تاريخ الإنشاء"
+
+#: ckanext/showcase/logic/helpers.py:106
+msgid "Reuse Case Type"
+msgstr "نوع إعادة الاستخدام"
+
+#: ckanext/showcase/logic/helpers.py:111
+#: ckanext/showcase/templates/showcase/dashboard/snippets/list.html:12
+msgid "The User"
+msgstr "المستخدم"
+
+#: ckanext/showcase/logic/helpers.py:116
+#: ckanext/showcase/templates/showcase/dashboard/snippets/list.html:13
+#: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_search_form.html:92
+msgid "Status"
+msgstr "حالة"
+
+#: ckanext/showcase/logic/helpers.py:121
+msgid "Admin Feedback"
+msgstr "تعليقات المشرف"
+
+#: ckanext/showcase/logic/helpers.py:126
+#: ckanext/showcase/templates/showcase/dashboard/search.html:37
+msgid "Last Status Update"
+msgstr "آخر تحديث للحالة"
+
+#: ckanext/showcase/logic/helpers.py:131
+msgid "Submitted Author Name"
+msgstr "اسم منشئ طلب مشاركة حالة إعادة الاستخدام المرسل"
+
+#: ckanext/showcase/logic/helpers.py:136
+msgid "Submitted Author Email"
+msgstr "البريد الالكتروني المرسل لمنشئ طلب مشاركة حالة إعادة الاستخدام"
+
+#: ckanext/showcase/logic/helpers.py:141
+msgid "Image Url"
+msgstr " للصورة URLعنوان"
+
+#: ckanext/showcase/logic/helpers.py:147
+msgid "External Link"
+msgstr "رابط خارجي"
+
+#: ckanext/showcase/logic/helpers.py:153
+#: ckanext/showcase/templates/showcase/dashboard/actions.html:70
+msgid "Associated Datasets"
+msgstr "مجموعات البيانات التي تم استحدامها لحالة إعادة الاستخدام"
+
+#: ckanext/showcase/logic/helpers.py:161
+msgid "Reuse Case Public Display"
+msgstr "كيف ستظهر حالة إعادة استخدام للعموم من خلال البوابة"
+
+#: ckanext/showcase/logic/validators.py:50 ckanext/showcase/logic/validators.py:57
+#, python-format
+msgid "Invalid status: %s. Must be one of: %s"
+msgstr "%s:يجب أن يكون واحدًا من   %s:الحالة غير صالحة "
+
+#: ckanext/showcase/logic/validators.py:70
+msgid "Feedback must be provided with the selected status"
+msgstr "يجب تقديم رد مع الحالة المحددة"
+
+#: ckanext/showcase/logic/validators.py:81
+msgid "Invalid input: Reuse types must be a list"
+msgstr "إدخال غير مصرح به: يجب أن تكون أنواع إعادة الاستخدام عبارة عن قائمة"
+
+#: ckanext/showcase/logic/validators.py:89
+#, python-format
+msgid "Invalid type: %s. Must be one of: %s"
+msgstr "النوع غير مصرح به: %s. يجب أن يكون واحدًا من: %s"
+
+#: ckanext/showcase/templates/emails.py:19
+msgid "Have a nice day."
+msgstr "طاب يومك"
+
+#: ckanext/showcase/templates/emails.py:21
+#, python-format
+msgid "Message sent by %s (%s)"
+msgstr "%s (%s)تم إرسال الرسالة بواسطة "
+
+#: ckanext/showcase/templates/emails.py:29
+#, python-format
+msgid "Dear %s,"
+msgstr ""
+
+#: ckanext/showcase/templates/emails.py:42
+#, python-format
+msgid "%s resuse case was submitted to Portal Supervisor for review."
+msgstr " إلى مشرف البوابة الإلكترونية للمراجعة%s تم إرسال حالة إعادة الاستخدام  "
+
+#: ckanext/showcase/templates/emails.py:43
+#, python-format
+msgid "You can check the current status of your resuse case at %s"
+msgstr "%sيمكنك التحقق من الحالة الحالية لحالة إعادة الاستخدام الخاصة بك على"
+
+#: ckanext/showcase/templates/emails.py:55
+#, python-format
+msgid "Status of reuse case '%s' was updated to %s."
+msgstr "'%s' إلى %s تم تحديث حالة إعادة الاستخدام"
+
+#: ckanext/showcase/templates/emails.py:56
+#, python-format
+msgid "You can check the current status of resuse at %s"
+msgstr "%s يمكنك التحقق من الحالة الحالية لإعادة الاستخدام على"
+
+#: ckanext/showcase/templates/emails.py:67
+#, python-format
+msgid "Reuse case '%s' was submitted for review.display_title"
+msgstr " .display_title للمراجعة '%s' تم إرسال حالة إعادة الاستخدام"
+
+#: ckanext/showcase/templates/emails.py:74
+#, python-format
+msgid "Reuse case '%s' status was updated.display_title"
+msgstr "تم تحديث حالة طلب إعادة الاستخدام '%s'"
+
+#: ckanext/showcase/templates/emails.py:92
+#, python-format
+msgid "%s resuse case was submitted to the Portal Supervisor for review."
+msgstr " الى مشرف البوابة الإلكترونية للمراجعة %sتم إرسال حالة إعادة الاستخدام "
+
+#: ckanext/showcase/templates/emails.py:102
+#, python-format
+msgid "Status of reuse case '%s' was updated to {showcase['status']}.display_title"
+msgstr "  {showcase['status']}.display_titleإلى'%s'تم تحديث حالة إعادة الاستخدام"
+
+#: ckanext/showcase/templates/header.html:7
+#: ckanext/showcase/templates/package/dataset_showcase_list.html:3
+#: ckanext/showcase/templates/package/read_base.html:6
+#: ckanext/showcase/templates/showcase/edit_base.html:12
+#: ckanext/showcase/templates/showcase/edit_base.html:24
+#: ckanext/showcase/templates/showcase/edit_base.html:28
+#: ckanext/showcase/templates/showcase/read.html:13
+#: ckanext/showcase/templates/showcase/read.html:43
+#: ckanext/showcase/templates/showcase/search.html:8
+#: ckanext/showcase/templates/showcase/search.html:11
+msgid "Reuses"
+msgstr "إعادة استخدام"
+
+#: ckanext/showcase/templates/admin/confirm_remove_showcase_admin.html:4
+#: ckanext/showcase/templates/admin/confirm_remove_showcase_admin.html:18
+msgid "Confirm Remove"
+msgstr "تأكيد إزالة"
+
+#: ckanext/showcase/templates/admin/confirm_remove_showcase_admin.html:12
+msgid "Are you sure you want to remove this user as a Reuse Admin - {name}?"
+msgstr ""
+
+#: ckanext/showcase/templates/admin/confirm_remove_showcase_admin.html:17
+#: ckanext/showcase/templates/showcase/confirm_delete.html:20
+#: ckanext/showcase/templates/showcase/dashboard/snippets/confirmation-modal.html:14
+msgid "Cancel"
+msgstr "الغاء"
+
+#: ckanext/showcase/templates/admin/manage_showcase_admins.html:11
+msgid "Manage Reuse Admins"
+msgstr ""
+
+#: ckanext/showcase/templates/admin/manage_showcase_admins.html:19
+msgid "Add an Existing User"
+msgstr ""
+
+#: ckanext/showcase/templates/admin/manage_showcase_admins.html:22
+msgid "To make an existing user a Reuse Admin, search for their username below."
+msgstr ""
+
+#: ckanext/showcase/templates/admin/manage_showcase_admins.html:26
+msgid "Username"
+msgstr "اسم المستخدم"
+
+#: ckanext/showcase/templates/admin/manage_showcase_admins.html:35
+msgid "Add User"
+msgstr "إضافة مستخدم"
+
+#: ckanext/showcase/templates/admin/manage_showcase_admins.html:41
+msgid "Reuse Admins"
+msgstr ""
+
+#: ckanext/showcase/templates/admin/manage_showcase_admins.html:46
+msgid "User"
+msgstr "مستخدم"
+
+#: ckanext/showcase/templates/admin/manage_showcase_admins.html:54
+msgid "Are you sure you want to remove this user from the Reuse Admin list?"
+msgstr ""
+
+#: ckanext/showcase/templates/admin/manage_showcase_admins.html:56
+#: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_search_form.html:35
+#: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_search_form.html:50
+#: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_search_form.html:64
+#: ckanext/showcase/templates/showcase/snippets/showcase_item.html:53
+msgid "Remove"
+msgstr "إزالة"
+
+#: ckanext/showcase/templates/admin/manage_showcase_admins.html:64
+msgid "There are currently no Reuse Admins."
+msgstr ""
+
+#: ckanext/showcase/templates/admin/manage_showcase_admins.html:72
+msgid ""
+"<p><strong>Reuse Admin:</strong> Can create and remove reuses. Can add and "
+"remove datasets from reuses.</p>"
+msgstr ""
+
+#: ckanext/showcase/templates/home/snippets/stats.html:10
+msgid "{site_title} statistics"
+msgstr "{site_title} إحصائيات "
+
+#: ckanext/showcase/templates/home/snippets/stats.html:15
+msgid "dataset"
+msgid_plural "datasets"
+msgstr[0] "مجموعة بيانات"
+msgstr[1] "مجموعات البيانات"
+
+#: ckanext/showcase/templates/home/snippets/stats.html:21
+msgid "organization"
+msgid_plural "organizations"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ckanext/showcase/templates/home/snippets/stats.html:27
+msgid "group"
+msgid_plural "groups"
+msgstr[0] "قطاع"
+msgstr[1] "قطاعات"
+
+#: ckanext/showcase/templates/home/snippets/stats.html:33
+msgid "showcase"
+msgid_plural "showcases"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ckanext/showcase/templates/package/dataset_showcase_list.html:14
+msgid "Associate this reuse with this dataset"
+msgstr "مجموعة البيانات التي تم استخدامها في حالة إعادة الاستخدام"
+
+#: ckanext/showcase/templates/package/dataset_showcase_list.html:14
+msgid "Add to reuse"
+msgstr "شاركنا قصة النجاح ( شاركنا حالة إعادة الاستخدام)"
+
+#: ckanext/showcase/templates/package/dataset_showcase_list.html:18
+msgid "Reuses featuring {dataset_name}"
+msgstr "مجموعات بيانات تم استخدامها في تطوير حالة إعادة استخدام"
+
+#: ckanext/showcase/templates/package/dataset_showcase_list.html:23
+msgid "There are no reuses that feature this dataset"
+msgstr "مجموعات بيانات لم يتم استخدامها في تطوير أي حالة إعادة استخدام"
+
+#: ckanext/showcase/templates/showcase/add_datasets.html:3
+msgid "Reuses - Add datasets"
+msgstr "حالة إعادة الاستخدام - إضافة مجموعات البيانات"
+
+#: ckanext/showcase/templates/showcase/add_datasets.html:21
+#: ckanext/showcase/templates/showcase/manage_datasets.html:24
+#: ckanext/showcase/templates/showcase/search.html:31
+msgid "Relevance"
+msgstr "المترابطة"
+
+#: ckanext/showcase/templates/showcase/add_datasets.html:22
+#: ckanext/showcase/templates/showcase/dashboard/search.html:34
+#: ckanext/showcase/templates/showcase/manage_datasets.html:25
+#: ckanext/showcase/templates/showcase/search.html:32
+msgid "Name Ascending"
+msgstr "ترتيب تصاعدي وفقا للاسم"
+
+#: ckanext/showcase/templates/showcase/add_datasets.html:23
+#: ckanext/showcase/templates/showcase/dashboard/search.html:35
+#: ckanext/showcase/templates/showcase/manage_datasets.html:26
+#: ckanext/showcase/templates/showcase/search.html:33
+msgid "Name Descending"
+msgstr "ترتيب تنازلي وفقا للاسم"
+
+#: ckanext/showcase/templates/showcase/add_datasets.html:24
+#: ckanext/showcase/templates/showcase/manage_datasets.html:27
+#: ckanext/showcase/templates/showcase/search.html:34
+msgid "Last Modified"
+msgstr "آخر تعديل"
+
+#: ckanext/showcase/templates/showcase/add_datasets.html:25
+#: ckanext/showcase/templates/showcase/manage_datasets.html:28
+#: ckanext/showcase/templates/showcase/search.html:35
+msgid "Popular"
+msgstr "شائع"
+
+#: ckanext/showcase/templates/showcase/add_datasets.html:31
+#: ckanext/showcase/templates/showcase/manage_datasets.html:36
+msgid "Datasets available to add to this reuse"
+msgstr "مجموعات البيانات المتاحة للإضافة إلى عملية إعادة الاستخدام هذه"
+
+#: ckanext/showcase/templates/showcase/add_datasets.html:49
+#: ckanext/showcase/templates/showcase/manage_datasets.html:52
+msgid "Add to Reuse"
+msgstr "أضف إلى حالة إعادة الاستخدام"
+
+#: ckanext/showcase/templates/showcase/add_datasets.html:79
+#: ckanext/showcase/templates/showcase/manage_datasets.html:89
+msgid "No datasets could be found"
+msgstr "لا يمكن العثور على مجموعات البيانات"
+
+#: ckanext/showcase/templates/showcase/confirm_delete.html:6
+#: ckanext/showcase/templates/showcase/confirm_delete.html:21
+msgid "Confirm Delete"
+msgstr "تأكيد الحذف"
+
+#: ckanext/showcase/templates/showcase/confirm_delete.html:16
+msgid "Are you sure you want to delete reuse - {showcase_name}?"
+msgstr "؟{showcase_name}هل أنت متأكد أنك تريد حذف إعادة الاستخدام"
+
+#: ckanext/showcase/templates/showcase/edit_base.html:26
+msgid "Edit"
+msgstr "تحري"
+
+#: ckanext/showcase/templates/showcase/edit_base.html:29
+#: ckanext/showcase/templates/showcase/new.html:3
+#: ckanext/showcase/templates/showcase/new_package_form.html:113
+msgid "Submit Reuse"
+msgstr "إرسال طلب حالة إعادة الاستخدام"
+
+#: ckanext/showcase/templates/showcase/edit_base.html:42
+msgid "View reuse"
+msgstr "عرض طلب حالة إعادة الاستخدام"
+
+#: ckanext/showcase/templates/showcase/edit_base.html:48
+msgid "Edit reuse"
+msgstr "تحري طلب حالة إعادة الاستخدام"
+
+#: ckanext/showcase/templates/showcase/edit_base.html:49
+msgid "Manage datasets"
+msgstr "إدارة مجموعات البيانات"
+
+#: ckanext/showcase/templates/showcase/manage_datasets.html:3
+msgid "Reuses - Manage datasets"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/manage_datasets.html:97
+msgid "Datasets in this reuse"
+msgstr "مجموعات البيانات المستخدمة في حالة إعادة الاستخدام هذه"
+
+#: ckanext/showcase/templates/showcase/manage_datasets.html:111
+msgid "Remove from Reuse"
+msgstr "إزالة من حالة إعادة الاستخدام"
+
+#: ckanext/showcase/templates/showcase/manage_datasets.html:142
+msgid "This reuse has no datasets associated to it"
+msgstr "لا تحتوي عملية إعادة الاستخدام هذه على مجموعات بيانات مرتبطة بها"
+
+#: ckanext/showcase/templates/showcase/new.html:8
+msgid "Submit a Reuse"
+msgstr "إرسال طلب حالة إعادة الاستخدام"
+
+#: ckanext/showcase/templates/showcase/new_package_form.html:17
+msgid "Title English"
+msgstr "العنوان باللغة الإنجليزية"
+
+#: ckanext/showcase/templates/showcase/new_package_form.html:17
+msgid "eg. A descriptive title in English"
+msgstr "عنوان وصفي باللغة الإنجليزية"
+
+#: ckanext/showcase/templates/showcase/new_package_form.html:18
+msgid "Title Arabic"
+msgstr "العنوان باللغة العربية"
+
+#: ckanext/showcase/templates/showcase/new_package_form.html:18
+msgid "eg. A descriptive title in Arabic"
+msgstr "عنوان وصفي باللغة العربية"
+
+#: ckanext/showcase/templates/showcase/new_package_form.html:27
+msgid "URL"
+msgstr "URL عنوان"
+
+#: ckanext/showcase/templates/showcase/new_package_form.html:27
+msgid "eg. my-showcase"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/dashboard/actions.html:49
+#: ckanext/showcase/templates/showcase/new_package_form.html:41
+#: ckanext/showcase/templates/showcase/new_package_form.html:52
+msgid "Description English"
+msgstr "الوصف باللغة الإنجليزية"
+
+#: ckanext/showcase/templates/showcase/new_package_form.html:41
+#: ckanext/showcase/templates/showcase/new_package_form.html:50
+#: ckanext/showcase/templates/showcase/new_package_form.html:52
+#: ckanext/showcase/templates/showcase/new_package_form.html:53
+msgid "eg. Some useful notes about the data"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/dashboard/actions.html:50
+#: ckanext/showcase/templates/showcase/new_package_form.html:50
+#: ckanext/showcase/templates/showcase/new_package_form.html:53
+msgid "Description Arabic"
+msgstr "الوصف باللغة العربية"
+
+#: ckanext/showcase/templates/showcase/dashboard/actions.html:59
+#: ckanext/showcase/templates/showcase/new_package_form.html:66
+msgid "External link"
+msgstr "رابط خارجي"
+
+#: ckanext/showcase/templates/showcase/new_package_form.html:66
+msgid "http://www.example.com"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/dashboard/actions.html:108
+#: ckanext/showcase/templates/showcase/new_package_form.html:72
+msgid "Reuse Type"
+msgstr "نوع حالة إعادة الاستخدام"
+
+#: ckanext/showcase/templates/showcase/dashboard/actions.html:113
+#: ckanext/showcase/templates/showcase/new_package_form.html:77
+msgid "Missing value"
+msgstr "قيمة مفقودة"
+
+#: ckanext/showcase/templates/showcase/dashboard/actions.html:114
+#: ckanext/showcase/templates/showcase/new_package_form.html:78
+msgid "Please select the Reuse Type"
+msgstr "الرجاء تحديد نوع حالة إعادة الاستخدام"
+
+#: ckanext/showcase/templates/showcase/dashboard/actions.html:53
+#: ckanext/showcase/templates/showcase/new_package_form.html:98
+msgid "Submitted By"
+msgstr "مقدم بواسطة"
+
+#: ckanext/showcase/templates/showcase/new_package_form.html:98
+msgid "Joe Bloggs"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/dashboard/actions.html:54
+#: ckanext/showcase/templates/showcase/new_package_form.html:100
+msgid "Submitter Email"
+msgstr "البريد الإلكتروني للمرسل"
+
+#: ckanext/showcase/templates/showcase/new_package_form.html:100
+msgid "joe@example.com"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/new_package_form.html:108
+msgid "Are you sure you want to delete this reuse?"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/new_package_form.html:109
+msgid "Delete"
+msgstr "حذف"
+
+#: ckanext/showcase/templates/showcase/new_package_form.html:113
+msgid "Update Reuse"
+msgstr "تحديث طلب حالة إعادة الاستخدام"
+
+#: ckanext/showcase/templates/showcase/read.html:49
+msgid "Reuse Details"
+msgstr "تفاصيل حالة إعادة الاستخدام"
+
+#: ckanext/showcase/templates/showcase/read.html:58
+msgid "Manage"
+msgstr "إدارة"
+
+#: ckanext/showcase/templates/showcase/dashboard/detail.html:46
+#: ckanext/showcase/templates/showcase/read.html:74
+msgid "Draft"
+msgstr "مسودة"
+
+#: ckanext/showcase/templates/showcase/read.html:96
+#: ckanext/showcase/templates/showcase/snippets/showcase_info.html:27
+msgid "Launch website"
+msgstr "إطلاق الموقع"
+
+#: ckanext/showcase/templates/showcase/search.html:17
+msgid "Add Reuse"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/search.html:37
+msgid "Search reuses..."
+msgstr "البحث عن حالات إعادة الاستخدام..."
+
+#: ckanext/showcase/templates/showcase/dashboard/actions.html:15
+#: ckanext/showcase/templates/showcase/dashboard/detail.html:16
+msgid "Reuse Case Management"
+msgstr "إدارة حالات إعادة الاستخدام"
+
+#: ckanext/showcase/templates/showcase/dashboard/actions.html:18
+#: ckanext/showcase/templates/showcase/dashboard/detail.html:19
+#: ckanext/showcase/templates/showcase/dashboard/search.html:15
+#: ckanext/showcase/templates/showcase/dashboard/search.html:19
+#: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_search_form.html:12
+msgid "Reuse Cases"
+msgstr "حالات إعادة الاستخدام"
+
+#: ckanext/showcase/templates/showcase/dashboard/actions.html:30
+msgid "View"
+msgstr "عرض"
+
+#: ckanext/showcase/templates/showcase/dashboard/actions.html:34
+#: ckanext/showcase/templates/showcase/dashboard/actions.html:142
+msgid "Reuse Case Actions"
+msgstr "إجراءات حالة إعادة الاستخدام"
+
+#: ckanext/showcase/templates/showcase/dashboard/actions.html:40
+msgid "Manage Reuse Case"
+msgstr "إدارة حالة إعادة الاستخدام"
+
+#: ckanext/showcase/templates/showcase/dashboard/actions.html:63
+msgid "Visit External Link"
+msgstr "انتقل الى الرابط الخارجي"
+
+#: ckanext/showcase/templates/showcase/dashboard/actions.html:82
+msgid "Go to Dataset"
+msgstr "انتقل إلى مجموعة البيانات"
+
+#: ckanext/showcase/templates/showcase/dashboard/actions.html:93
+msgid "Reuse Case Image"
+msgstr "صورة حالة إعادة الاستخدام"
+
+#: ckanext/showcase/templates/showcase/dashboard/actions.html:130
+#: ckanext/showcase/templates/showcase/dashboard/actions.html:146
+msgid "Reuse Case Status"
+msgstr "الحالة لطلب حالة إعادة الاستخدام"
+
+#: ckanext/showcase/templates/showcase/dashboard/actions.html:133
+#: ckanext/showcase/templates/showcase/dashboard/actions.html:147
+msgid "Admin feedback"
+msgstr "تعليقات المشرف"
+
+#: ckanext/showcase/templates/showcase/dashboard/actions.html:153
+msgid "Update Status"
+msgstr "تحديث الحالة"
+
+#: ckanext/showcase/templates/showcase/dashboard/actions.html:163
+msgid "Back"
+msgstr "رجوع"
+
+#: ckanext/showcase/templates/showcase/dashboard/detail.html:28
+msgid "Take Action"
+msgstr "اتخذ إجراءً"
+
+#: ckanext/showcase/templates/showcase/dashboard/detail.html:33
+msgid "Reuse Case Details"
+msgstr "إعادة استخدام تفاصيل الحالة"
+
+#: ckanext/showcase/templates/showcase/dashboard/detail.html:72
+msgid "Showcase Metadata"
+msgstr ""
+
+#: ckanext/showcase/templates/showcase/dashboard/search.html:18
+msgid "User Dashboard"
+msgstr "لوحة اداء المستخدم"
+
+#: ckanext/showcase/templates/showcase/dashboard/search.html:25
+msgid "Submit Reuse Case"
+msgstr "إرسال حالة إعادة الاستخدام"
+
+#: ckanext/showcase/templates/showcase/dashboard/search.html:36
+msgid "Last Created"
+msgstr "آخر إنشاء"
+
+#: ckanext/showcase/templates/showcase/dashboard/search.html:42
+msgid "Search reuse cases..."
+msgstr "...البحث عن حالات إعادة الاستخدام"
+
+#: ckanext/showcase/templates/showcase/dashboard/snippets/confirmation-modal.html:5
+msgid "Confirmation"
+msgstr "الموافقة "
+
+#: ckanext/showcase/templates/showcase/dashboard/snippets/confirmation-modal.html:15
+msgid "Confirm"
+msgstr "تأكيد"
+
+#: ckanext/showcase/templates/showcase/dashboard/snippets/helper.html:4
+msgid "What are Data Requests?"
+msgstr "ما هي طلبات البيانات؟"
+
+#: ckanext/showcase/templates/showcase/dashboard/snippets/helper.html:8
+msgid ""
+"The \"Data Request\" feature allows users to request datasets that are not "
+"yet available in the portal. Whether you're looking for specific data to "
+"support your research, project, or decision-making process, you can submit a "
+"request directly to the data providers. This feature enables collaboration "
+"between the public and data publishers, helping to expand the portal’s "
+"dataset offerings. Simply submit your request and track its progress as data "
+"providers work to make the requested information available."
+msgstr "تتيح ميزة 'طلب البيانات' للمستخدمين طلب مجموعات البيانات التي ليست متاحة بعد في البوابة. سواء كنت تبحث عن بيانات محددة لدعم بحثك أو مشروعك أو عملية اتخاذ القرارات، يمكنك تقديم طلب مباشرة إلى مزودي البيانات. تمكن هذه الميزة التعاون بين الجمهور وناشري البيانات، مما يساعد على توسيع عروض مجموعات البيانات في البوابة. ما عليك سوى تقديم طلبك وتتبع تقدمه بينما يعمل مزودو البيانات على جعل المعلومات المطلوبة متاحة."
+
+#: ckanext/showcase/templates/showcase/dashboard/snippets/list.html:10
+msgid "Date"
+msgstr "تاريخ"
+
+#: ckanext/showcase/templates/showcase/dashboard/snippets/list.html:11
+msgid "Use Case Title"
+msgstr "عنوان حالة إعادة الاستخدام"
+
+#: ckanext/showcase/templates/showcase/dashboard/snippets/list.html:14
+msgid "Actions"
+msgstr "الإجراءات"
+
+#: ckanext/showcase/templates/showcase/dashboard/snippets/list.html:37
+msgid "View All"
+msgstr "عرض الكل"
+
+#: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_item.html:29
+msgid "Approve Reuse Case"
+msgstr "الموافقة على حالة إعادة الاستخدام"
+
+#: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_item.html:31
+msgid "Are you sure you want to approve this reuse case?"
+msgstr "هل أنت متأكد أنك تريد الموافقة على حالة إعادة الاستخدام هذه؟"
+
+#: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_item.html:41
+msgid "Reject Reuse Case"
+msgstr "رفض حالة إعادة الاستخدام"
+
+#: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_item.html:44
+msgid "Are you sure you want to reject this reuse case?"
+msgstr "هل أنت متأكد أنك تريد رفض حالة إعادة الاستخدام هذه؟"
+
+#: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_item.html:52
+msgid "No Actions Available"
+msgstr "لا توجد إجراءات متاحة"
+
+#: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_item.html:58
+msgid "More Details"
+msgstr "مزيد من التفاصيل"
+
+#: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_search_form.html:24
+msgid "Filter By"
+msgstr "حدد معاييرالبحث "
+
+#: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_search_form.html:31
+msgid "Clear Status"
+msgstr "مسح معياربحث الحالة"
+
+#: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_search_form.html:46
+msgid "Clear Start Date"
+msgstr "مسح معياربحث تاريخ البدء"
+
+#: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_search_form.html:61
+msgid "Clear End Date"
+msgstr "مسح معياربحث تاريخ الانتهاء"
+
+#: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_search_form.html:78
+msgid "Clear Filters"
+msgstr "مسح معاييرالبحث "
+
+#: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_search_form.html:113
+msgid "From Date"
+msgstr "من التاريخ"
+
+#: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_search_form.html:127
+msgid "To Date"
+msgstr "الى التاريخ"
+
+#: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_search_form.html:143
+msgid "Order By"
+msgstr "ترتيب حسب"
+
+#: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_search_result_text.html:2
+msgid "{number} reuse case found for '{query}'"
+msgid_plural "{number} reuse cases found for '{query}'"
+msgstr[0] "'{query}'حالة إعادة استخدام ل{number} تم العثور على "
+msgstr[1] "'{query}'من حالات إعادة الاستخدام ل{number} تم العثور على"
+
+#: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_search_result_text.html:3
+msgid "No reuse cases found for '{query}'"
+msgstr "'{query}'لم يتم العثور على حالات إعادة استخدام ل"
+
+#: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_search_result_text.html:4
+msgid "{number} reuse case found"
+msgid_plural "{number} reuse cases found"
+msgstr[0] "{number} تم العثور على حالة إعادة استخدام"
+msgstr[1] "من حالات إعادة الاستخدام{number} تم العثور على "
+
+#: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_search_result_text.html:5
+msgid "No reuse cases found"
+msgstr "لم يتم العثور على حالات إعادة الاستخدام"
+
+#: ckanext/showcase/templates/showcase/dashboard/snippets/stats-indicators.html:5
+msgid "Total"
+msgstr "المجموع"
+
+#: ckanext/showcase/templates/showcase/dashboard/snippets/user_info.html:4
+msgid "The User Information"
+msgstr "معلومات المستخدم"
+
+#: ckanext/showcase/templates/showcase/dashboard/snippets/user_info.html:12
+msgid "Submitted on"
+msgstr "تم تقديمه بتاريخ"
+
+#: ckanext/showcase/templates/showcase/snippets/helper.html:6
+msgid "What are Reuses?"
+msgstr "ما هي حالة إعادة الاستخدام"
+
+#: ckanext/showcase/templates/showcase/snippets/helper.html:10
+msgid ""
+"Datasets have been used to build apps, websites and visualizations. They've "
+"been featured in articles, and written about in news reports and blog posts. "
+"Reuses collect together the best examples of datasets in use, to provide "
+"further insight, ideas, and inspiration."
+msgstr "تم استخدام مجموعات البيانات لإنشاء تطبيقات ومواقع ويب وتصميمات مرئية"
+" كما تم تسليط الضوء عليها في المقالات وذكرها في التقارير الإخبارية ومنشورات المدونات "
+"تجمع عمليات إعادة الاستخدام أفضل الأمثلة على استخدام مجموعات البيانات، لتوفير مزيد من الرؤى والأفكار والإلهام"
+
+#: ckanext/showcase/templates/showcase/snippets/showcase_info.html:21
+msgid "Submitted by"
+msgstr "مقدم من"
+
+#: ckanext/showcase/templates/showcase/snippets/showcase_info.html:37
+msgid "Datasets in Reuse"
+msgstr "مجموعات البيانات التي تم استخدامها في حالة إعادة الاستخدام"
+
+#: ckanext/showcase/templates/showcase/snippets/showcase_info.html:47
+msgid "There are no Datasets in this Reuse"
+msgstr "لا توجد مجموعات بيانات في عملية إعادة الاستخدام هذه"
+
+#: ckanext/showcase/templates/showcase/snippets/showcase_item.html:34
+msgid "This reuse has no description"
+msgstr "إعادة الاستخدام هذه ليس لها وصف"
+
+#: ckanext/showcase/templates/showcase/snippets/showcase_item.html:39
+msgid "{num} Dataset"
+msgid_plural "{num} Datasets"
+msgstr[0] "{عدد} مجموعة البيانات"
+msgstr[1] "{عدد} مجموعات البيانات"
+
+#: ckanext/showcase/templates/showcase/snippets/showcase_item.html:41
+msgid "0 Datasets"
+msgstr "0 مجموعات البيانات"
+
+#: ckanext/showcase/templates/showcase/snippets/showcase_item.html:45
+#: ckanext/showcase/templates/showcase/snippets/showcase_item.html:46
+msgid "View {showcase_title}"
+msgstr "{showcase_title} عرض"
+
+#: ckanext/showcase/templates/showcase/snippets/showcase_item.html:53
+msgid "Remove dataset from this reuse"
+msgstr "قم بإزالة مجموعة البيانات من حالة إعادة الاستخدام هذه"
+
+#: ckanext/showcase/templates/showcase/snippets/showcase_search_result_text.html:7
+msgid "{number} reuse found for '{query}'"
+msgid_plural "{number} reuses found for '{query}'"
+msgstr[0] "'{query}' إعادة استخدام ل{number} تم العثور على"
+msgstr[1] "'{query}'من عمليات إعادة الاستخدام ل{number} تم العثور على"
+
+#: ckanext/showcase/templates/showcase/snippets/showcase_search_result_text.html:8
+msgid "No reuses found for '{query}'"
+msgstr "'{query}'لم يتم العثور على عمليات إعادة استخدام ل"
+
+#: ckanext/showcase/templates/showcase/snippets/showcase_search_result_text.html:9
+msgid "{number} reuse found"
+msgid_plural "{number} reuses found"
+msgstr[0] " إعادة الاستخدام {number} تم العثور على "
+msgstr[1] "من عمليات إعادة الاستخدام {number} تم العثور على "
+
+#: ckanext/showcase/templates/showcase/snippets/showcase_search_result_text.html:10
+msgid "No reuses found"
+msgstr "لم يتم العثور على أي إعادة استخدام"
