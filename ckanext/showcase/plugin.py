@@ -31,6 +31,7 @@ DATASET_TYPE_NAME = utils.DATASET_TYPE_NAME
 
 
 class ShowcasePlugin(plugins.SingletonPlugin, lib_plugins.DefaultDatasetForm, DefaultTranslation):
+    plugins.implements(plugins.ITranslation, inherit=True)
     plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.IDatasetForm)
     plugins.implements(plugins.IFacets, inherit=True)
@@ -38,7 +39,6 @@ class ShowcasePlugin(plugins.SingletonPlugin, lib_plugins.DefaultDatasetForm, De
     plugins.implements(plugins.IActions)
     plugins.implements(plugins.IPackageController, inherit=True)
     plugins.implements(plugins.ITemplateHelpers)
-    plugins.implements(plugins.ITranslation)
     plugins.implements(plugins.IBlueprint)
     plugins.implements(plugins.IClick)
 
