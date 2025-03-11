@@ -1,8 +1,8 @@
 import ckan.lib.helpers as h
 from ckan.plugins import toolkit as tk
-from ckanext.showcase.data.constants import REUSE_CASE_TYPE_OPTIONS, SHOWCASE_STATUS_OPTIONS, ApprovalStatus
+from ckanext.showcase.data.constants import REUSE_CASE_TYPE_OPTIONS, SHOWCASE_STATUS_OPTIONS
 _ = tk._
-from ckan.common import _, config
+from ckan.common import _
 import logging
 log = logging.getLogger(__name__)
 
@@ -60,7 +60,7 @@ def showcase_get_wysiwyg_editor():
 
 def showcase_status_options():
     return [
-        {'text': value, 'value':key}
+        {'text': _(value), 'value':key}
     for key, value in SHOWCASE_STATUS_OPTIONS.items()
     ]
 
@@ -174,7 +174,7 @@ def ckanext_showcase_metatdata(showcase, showcase_datasets, user_info):
 
 def ckanext_showcase_types():
     return [
-        {'text': value, 'value':key}
+        {'text': _(value), 'value':key}
         for key, value in REUSE_CASE_TYPE_OPTIONS.items()
     ]
 
