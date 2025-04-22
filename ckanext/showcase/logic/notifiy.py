@@ -134,9 +134,9 @@ def _notify_user(user, body_vars, template_name, action_url):
 def _send_email(user, subject, body):
     if user.email:
         try:
-            log.info(f'ISSUE_EMAIL_LOG1 {user.email}')
+            log.info(f'SHOWCASE_EMAIL_LOG1 {user.email}')
             mail_user(user, subject, body)
-            log.info(f'ISSUE_EMAIL_LOG2 {user.email}')
+            log.info(f'SHOWCASE_EMAIL_LOG2 {user.email}')
         except: 
             log.critical('Email sending failed.')
 

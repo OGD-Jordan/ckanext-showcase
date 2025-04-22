@@ -458,7 +458,7 @@ def dataset_showcase_list(id):
         tk.g.pkg_dict = tk.get_action('package_show')(context, data_dict)
         tk.g.showcase_list = tk.get_action('ckanext_package_showcase_list')(
             context, {
-                'package_id': tk.g.pkg_dict['id']
+                'package_id': id
             })
     except tk.ObjectNotFound:
         return tk.abort(404, _('Dataset not found'))
