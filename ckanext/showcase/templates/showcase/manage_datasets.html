@@ -38,7 +38,7 @@
         show_empty=request.args, 
         error=c.query_error, 
         fields=c.fields,
-        entity_options=h.issues_organization_options(),
+        entity_options=h.showcase_organization_options(),
         entity_selected=c.organization_id 
         %}
     </div>
@@ -72,8 +72,8 @@
                     {% for package in c.page.items %}
                       {% set truncate = truncate or 180 %}
                       {% set truncate_title = truncate_title or 80 %}
-                      {% set title = package.title or package.name %}
-                      {% set notes = h.markdown_extract(package.notes, extract_length=truncate) %}
+                      {% set title = package.display_name or package.title or package.name %}
+                      {% set notes = h.markdown_extract(package.display_description, extract_length=truncate) %}
                       <tr>
                         <td>
                           <input type="checkbox" name="dataset_{{ package.id }}">

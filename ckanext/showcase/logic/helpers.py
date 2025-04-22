@@ -18,6 +18,7 @@ def get_helpers():
         'ckanext_showcase_metatdata': ckanext_showcase_metatdata,
         'ckanext_showcase_types': ckanext_showcase_types,
         'ckanext_showcase_total': ckanext_showcase_total,
+        "showcase_organization_options": showcase_organization_options,
     }
 
 
@@ -183,3 +184,13 @@ def ckanext_showcase_total():
         {'ignore_auth':True},
         {}
     ).get('total',None)
+
+
+import ckan.model as model
+def showcase_organization_options():
+    context = {'user': tk.c.user, 'model': model}
+    orgs = tk.get_action('organization_list_as_options')(context, {})
+    return [{'text':_("Select Government Entity"),'value': ''}] + [
+        {'text':org['display_name'],'value':org['id']} 
+        for org in orgs
+        ]

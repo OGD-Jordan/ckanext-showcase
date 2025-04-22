@@ -2,6 +2,7 @@
 
 from ckanext.showcase.data.constants import ApprovalStatus
 from flask import Blueprint
+from markupsafe import Markup
 
 
 import ckan.lib.helpers as h
@@ -30,7 +31,16 @@ class CreateView(dataset.CreateView):
         try:
             tk.check_access('ckanext_showcase_create', context)
         except tk.NotAuthorized:
-            return tk.abort(401, _('Unauthorized to create a reuse case'))
+            return base.abort(403,  Markup(
+            _(u'Unauthorized to share a Reuse Case.'
+                '<br><br>' \
+                'To share a Reuse Case, you must be registered on the portal.'
+                '<br><br>'
+                '<a href="%s">' \
+                'Click here to login'
+                '</a>' % h.url_for('user.login') )
+              )
+            )
         return context
     
     def get(self, data=None, errors=None, error_summary=None):
