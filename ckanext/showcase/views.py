@@ -32,13 +32,8 @@ class CreateView(dataset.CreateView):
             tk.check_access('ckanext_showcase_create', context)
         except tk.NotAuthorized:
             return base.abort(403,  Markup(
-            _(u'Unauthorized to share a Reuse Case.'
-                '<br><br>' \
-                'To share a Reuse Case, you must be registered on the portal.'
-                '<br><br>'
-                '<a href="%s">' \
-                'Click here to login'
-                '</a>' % h.url_for('user.login') )
+                _(u'In order to share a reuse case, you must be registered on the portal.<br><br><a href="%(url)s">Click here to login</a>')
+                % {'url': h.url_for('user.login')}
               )
             )
         return context

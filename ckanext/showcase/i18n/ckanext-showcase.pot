@@ -979,8 +979,5 @@ msgstr ""
 
 #: ckanext/showcase/views.py:117
 #, python-format
-msgid ""
-"Unauthorized to share a Reuse Case. <br><br>To share a Reuse Case, "
-"you must be registered on the portal.<br><br><a href=\"%s\">Click here to "
-"login</a>"
+msgid "In order to share a reuse case, you must be registered on the portal.<br><br><a href=\"%(url)s\">Click here to login</a>"
 msgstr ""
