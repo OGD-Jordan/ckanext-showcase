@@ -867,7 +867,7 @@ msgstr "حدد معاييرالبحث"
 
 #: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_search_form.html:31
 msgid "Clear Status"
-msgstr "مسح معياربحث الحالة"
+msgstr "مسح معيار بحث الحالة"
 
 #: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_search_form.html:46
 msgid "Clear Start Date"
