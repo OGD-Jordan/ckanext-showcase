@@ -50,27 +50,27 @@ def upgrade():
             ),
         )
     
-    if "showcase_approval" not in tables:
-        op.create_table(
-            "showcase_approval",
-            sa.Column(
-                "showcase_id",
-                sa.UnicodeText,
-                sa.ForeignKey("package.id", ondelete="CASCADE", onupdate="CASCADE"),
-                primary_key=True,
-                nullable=False,
-            ),
-            sa.Column("feedback", sa.UnicodeText, nullable=True),
-            sa.Column(
-                "status",
-                sa.Enum(
-                    ApprovalStatus, 
-                    name="status_enum"
-                    ), 
-                nullable=False, 
-                default=ApprovalStatus.PENDING
-        )
-        )
+    # if "showcase_approval" not in tables:
+    #     op.create_table(
+    #         "showcase_approval",
+    #         sa.Column(
+    #             "showcase_id",
+    #             sa.UnicodeText,
+    #             sa.ForeignKey("package.id", ondelete="CASCADE", onupdate="CASCADE"),
+    #             primary_key=True,
+    #             nullable=False,
+    #         ),
+    #         sa.Column("feedback", sa.UnicodeText, nullable=True),
+    #         sa.Column(
+    #             "status",
+    #             sa.Enum(
+    #                 ApprovalStatus, 
+    #                 name="status_enum"
+    #                 ), 
+    #             nullable=False, 
+    #             default=ApprovalStatus.PENDING
+    #     )
+    #     )
 
 
 def downgrade():
