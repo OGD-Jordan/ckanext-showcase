@@ -3,6 +3,7 @@
 import click
 
 from ckanext.showcase import utils
+from ckanext.showcase.model import teardown
 
 # Click commands for CKAN 2.9 and above
 
@@ -28,3 +29,8 @@ def get_commands():
 @showcase.command()
 def init_db_tables():
     utils.init_db_tables()
+
+
+@showcase.command()
+def delete_db():
+    teardown()

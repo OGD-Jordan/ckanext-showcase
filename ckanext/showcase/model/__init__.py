@@ -337,3 +337,15 @@ def init_tables():
         log.debug('showcase_approval table already exists')
 
 
+def teardown():
+    engine = sa.create_engine(config.get('sqlalchemy.url'))
+    inspector = inspect(engine)
+    if inspector.has_table('ckanext_licenses'):
+        table = BaseModel.metadata.tables.get('ckanext_licenses')
+        if table is not None:
+            table.drop(engine)
+            log.debug('Licenses table dropped')
+        else:
+            log.error('Licenses table not found in metadata')
+    else:
+        log.debug('Licenses table does not exist')
