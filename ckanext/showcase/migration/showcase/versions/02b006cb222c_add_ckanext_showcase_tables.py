@@ -50,7 +50,6 @@ def upgrade():
             ),
         )
     
-    op.drop_table('showcase_approval')
     if "showcase_approval" not in tables:
         op.create_table(
             "showcase_approval",
