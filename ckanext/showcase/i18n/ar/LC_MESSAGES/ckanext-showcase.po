@@ -1022,3 +1022,9 @@ msgstr "لم يتم العثور على أي إعادة استخدام"
 #, python-format
 msgid "In order to share a reuse case, you must be registered on the portal.<br><br><a href=\"%(url)s\">Click here to login</a>"
 msgstr "حتى تتمكن من مشاركة حالة إعادة الاستخدام، يجب أن تكون مسجلاً في البوابة.<br><br><a href=\"%(url)s\">انقر هنا لتسجيل الدخول</a>"
+
+msgid "Organization id"
+msgstr "معرف الجهة الحكومية"
+
+msgid "Request type"
+msgstr "نوع الطلب"
