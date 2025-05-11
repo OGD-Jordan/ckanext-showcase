@@ -32,7 +32,7 @@ def showcase_update(context, data_dict):
 
     tk.get_action('ckanext_showcase_status_update')(
         context.copy().update(updated_context),
-        {"showcase_id": pkg.get("id",pkg.get("name", '')) }
+        {"id": pkg.get("id",pkg.get("name", '')) }
     )
 
     return pkg
@@ -43,7 +43,7 @@ def showcase_update(context, data_dict):
 def status_update(context, data_dict):
     tk.check_access('ckanext_showcase_status_update',context, data_dict)
     
-    showcase_id = data_dict.get('showcase_id')
+    showcase_id = data_dict.get('id')
     status = data_dict.get('status', ApprovalStatus.PENDING)
     feedback = data_dict.get('feedback','') if status == ApprovalStatus.NEEDS_REVISION else ''
 
@@ -53,6 +53,6 @@ def status_update(context, data_dict):
         status
     )
 
-    return update_status
+    return {**update_status, 'id': update_status.get('showcase_id', None)}
 
 

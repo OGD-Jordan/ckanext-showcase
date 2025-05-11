@@ -64,7 +64,7 @@ ckan.module("showcase-actions", function ($) {
           "POST",
           "ckanext_showcase_status_update",
           {
-            showcase_id: id,
+            id: id,
             status: status,
           },
           function () {

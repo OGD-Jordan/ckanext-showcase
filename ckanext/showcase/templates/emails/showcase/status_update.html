@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ showcase['title'] }} - Status Update</title>
+</head>
+<body>
+    <!-- English Version -->
+    <section dir="ltr">
+        <h1>Status Update for '{{ showcase['title'] }}'</h1>
+        <p>Dear {{ user_name }},</p>
+
+        <p>The status of reuse case '{{ showcase['display_title'] }}' was updated to {{ showcase['status'] }}.</p>
+
+        <p>You can check the current status of reuse at <a href="{{ site_url }}{{ action_url[0] }}">View Reuse</a></p>
+
+        <p>Have a nice day,</p>
+        <p>---</p>
+        <p>Message sent by <br>{{ site_title }} ({{ site_url }})</p>
+    </section>
+
+    <!-- Arabic Version -->
+    <section dir="rtl">
+        <h1>تحديث الحالة لـ '{{ showcase['title_ar'] }}'</h1>
+        <p>عزيزي/عزيزتي {{ user_name }},</p>
+
+        <p>تم تحديث حالة الحالة القابلة لإعادة الاستخدام '{{ showcase['display_title'] }}' إلى {{ showcase['status'] }}.</p>
+
+        <p>يمكنك التحقق من الحالة الحالية لإعادة الاستخدام عبر الرابط التالي: <a href="{{ site_url }}{{ action_url[0] }}">عرض العرض</a></p>
+
+        <p>نتمنى لك يوماً سعيداً،</p>
+        <p>---</p>
+        <p>الرسالة تم إرسالها بواسطة <br>{{ site_title }} ({{ site_url }})</p>
+    </section>
+</body>
+</html>

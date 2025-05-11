@@ -66,9 +66,10 @@ def showcase_create(showcase_id):
         _notify_user(user, body_vars, 'get_showcase_create', action_url)
 
 
+
 def status_update(showcase_id):
     showcase = tk.get_action('ckanext_showcase_show')(_get_notification_context(), {'id': showcase_id})
-    showcase_status = tk.get_action('ckanext_showcase_status_show')(_get_notification_context(), {'showcase_id': showcase_id})
+    showcase_status = tk.get_action('ckanext_showcase_status_show')(_get_notification_context(), {'id': showcase_id})
     
     showcase = {**showcase, **showcase_status}
     body_vars = {'showcase': showcase}
@@ -79,7 +80,7 @@ def status_update(showcase_id):
     body_vars['user_name'] = requster.fullname or requster.name
     body_vars['opening_word'] = 'Your'
 
-    _notify_user(user, body_vars, 'get_status_update', action_url)
+    _notify_user(requster, body_vars, 'get_status_update', action_url)
 
 
     # admins
@@ -123,19 +124,21 @@ def _notify_user(user, body_vars, template_name, action_url):
 
     tk.get_action('generate_notification')(_get_notification_context(), {
             'user_id': user.id,
-            'subject': subject,
-            'body': notification,
+            'subject': subject.get('en'),
+            'subject_ar': subject.get('ar'),
+            'body': notification['en'],
+            'body_ar': notification['ar'],
             'action_url': action_url,
         })    
     
-    queue_email_job(user, subject, body)    
+    queue_email_job(user, subject.get('en'), body)    
 
 
 def _send_email(user, subject, body):
     if user.email:
         try:
             log.info(f'SHOWCASE_EMAIL_LOG1 {user.email}')
-            mail_user(user, subject, body)
+            mail_user(user, subject, body, headers={"Content-Type": "text/html"})
             log.info(f'SHOWCASE_EMAIL_LOG2 {user.email}')
         except: 
             log.critical('Email sending failed.')

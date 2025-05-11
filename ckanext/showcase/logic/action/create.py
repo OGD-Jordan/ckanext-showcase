@@ -42,7 +42,7 @@ def showcase_create(context, data_dict):
 
     tk.get_action('ckanext_showcase_status_update')(
         {**context, **updated_context},
-        {"showcase_id": pkg.get("id",pkg.get("name", '')) }
+        {"id": pkg.get("id",pkg.get("name", '')) }
     )
 
     return pkg

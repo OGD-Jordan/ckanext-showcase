@@ -1,6 +1,6 @@
 from ckan.common import _, config
 import ckan.lib.helpers as h
-
+import ckan.plugins.toolkit as tk
 
 class EmailTemplates():
     @classmethod
@@ -12,51 +12,27 @@ class EmailTemplates():
     def site_url(cls):
         return config.get('ckan.site_url')
 
-
     @classmethod
-    def footer_lines(cls):
-        return [
-            _("Have a nice day."),
-            "---",
-            _("Message sent by %s (%s)" % (cls.site_title(), cls.site_url()))
-        ]
-
-    @classmethod
-    def compose_email_body(cls, lines, body_vars):
-        user_name = body_vars['user_name']
-
-        text = "\n\n".join(
-            [_("Dear %s," % user_name)] + lines + cls.footer_lines()
-            )
-        return text
+    def render_template(cls, template_name, body_vars):
+        return tk.render(f'emails/showcase/{template_name}.html', body_vars)
 
     
-    @classmethod
+    @classmethod 
     def get_showcase_create(cls, body_vars):
         showcase = body_vars['showcase']
-        opening_word = body_vars['opening_word']
-        action_url = h.url_for('showcase_blueprint.read', id = showcase['id']),
-
-
-        lines = [
-            _("%s resuse case was submitted to Portal Supervisor for review." % opening_word),
-            _("You can check the current status of your resuse case at %s" % cls.site_url() + action_url[0]),
-        ]
-
-        return cls.compose_email_body(lines, body_vars)
+        body_vars['action_url'] = h.url_for('showcase_blueprint.read', id = showcase['id']),
+        body_vars['site_title']= cls.site_title()
+        body_vars['site_url']= cls.site_url()
+        return cls.render_template('showcase_create', body_vars)
 
 
     @classmethod
     def get_status_update(cls, body_vars):
+        body_vars['site_title']= cls.site_title()
+        body_vars['site_url']= cls.site_url()
         showcase = body_vars['showcase']
-        action_url = h.url_for('showcase_blueprint.read', id = showcase['id']),
-
-        lines = [
-            _("Status of reuse case \'%s\' was updated to %s." % (showcase['display_title'], showcase['status'])),
-            _("You can check the current status of resuse at %s" % cls.site_url() + action_url[0]),
-        ]
-
-        return cls.compose_email_body(lines, body_vars)
+        body_vars['action_url'] = h.url_for('showcase_blueprint.read', id = showcase['id']),
+        return cls.render_template('status_update', body_vars)
 
 
 class SubjectTemplates():
@@ -64,43 +40,56 @@ class SubjectTemplates():
     def get_showcase_create(cls, body_vars):
         showcase = body_vars['showcase']
 
-        return  _("Reuse case \'%s\' was submitted for review." % showcase['display_title'])
-
+        return {
+            'en': _("Reuse case '%s' was submitted for review." % showcase['title']),
+            'ar': "تم تقديم حالة إعادة الاستخدام '%s' للمراجعة." % showcase['title_ar']
+        }
 
     @classmethod
     def get_status_update(cls, body_vars):
         showcase = body_vars['showcase']
 
-        return _("Reuse case \'%s\' status was updated." % showcase['display_title']),
-
+        return {
+            'en': _("Reuse case '%s' status was updated." % showcase['title']),
+            'ar': "تم تحديث حالة حالة إعادة الاستخدام '%s'." % showcase['title_ar']
+        }
 
 
 class NotificationTemplates():
     @classmethod
-    def compose_email_body(cls, lines, body_vars):
-        text = "\n\n".join(lines)
-        return text
+    def compose_email_body(cls, lines_en, lines_ar):
+        return {
+            'en': "\n\n".join(lines_en),
+            'ar': "\n\n".join(lines_ar),
+        }
 
-    
     @classmethod
     def get_showcase_create(cls, body_vars):
         showcase = body_vars['showcase']
         opening_word = body_vars['opening_word']
 
-
-        lines = [
-            _("%s resuse case was submitted to the Portal Supervisor for review." % opening_word),
+        lines_en = [
+            _("%s reuse case was submitted to the Portal Supervisor for review." % opening_word),
+        ]
+        lines_ar = [
+            "تم تقديم حالة إعادة الاستخدام إلى مشرف البوابة للمراجعة.",
         ]
 
-        return cls.compose_email_body(lines, body_vars)
+        return cls.compose_email_body(lines_en, lines_ar)
 
     @classmethod
     def get_status_update(cls, body_vars):
         showcase = body_vars['showcase']
+        status = showcase['status']
 
-        lines = [
-            _("Status of reuse case \'%s\' was updated to {showcase['status']}." % showcase['display_title']),
+        title = showcase['title']
+        lines_en = [
+            _("Status of reuse case '%s' was updated to '%s'." % (title, status)),
+        ]
+        
+        title = showcase['title_ar']
+        lines_ar = [
+            "تم تحديث حالة حالة إعادة الاستخدام '%s' إلى '%s'." % (title, status),
         ]
 
-        return cls.compose_email_body(lines, body_vars)
-
+        return cls.compose_email_body(lines_en, lines_ar)

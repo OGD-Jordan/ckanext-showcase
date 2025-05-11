@@ -312,7 +312,7 @@ class StatusUpdate(MethodView):
                     _tuplize_dict(_parse_params(
                         tk.request.files)))))
 
-        data_dict['showcase_id'] = id
+        data_dict['id'] = id
 
         try:
             updated_showcase = tk.get_action('ckanext_showcase_status_update')(context, data_dict)

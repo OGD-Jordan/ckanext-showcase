@@ -171,7 +171,7 @@ def package_showcase_list_schema():
 
 def showcase_status_update_schema():
     schema = {
-        'showcase_id': [
+        'id': [
             not_empty, 
             unicode_safe,
             convert_package_name_or_id_to_id_for_type_showcase

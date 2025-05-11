@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ showcase['title'] }}  - Reuse Creation</title>
+</head>
+<body>
+    <!-- English Version -->
+    <section dir="ltr">
+        <h1>Reuse Creation for '{{ showcase['title'] }}'</h1>
+        <p>Dear {{ user_name }},</p>
+
+        <p>{{ opening_word }} reuse case was submitted to the Portal Supervisor for review.</p>
+
+        <p>The current status of your reuse case is: {{ showcase['status'] }}</p>
+
+        <p>You can check the current status of your reuse case at <a href="{{ site_url }}{{ action_url[0] }}">View Reuse</a></p>
+
+        <p>Have a nice day,</p>
+        <p>---</p>
+        <p>Message sent by {{ site_title }} ({{ site_url }})</p>
+    </section>
+
+    <!-- Arabic Version -->
+    <section dir="rtl">
+        <h1>إنشاء حالة قابلة لإعادة الاستخدام لـ '{{ showcase['title_ar'] }}'</h1>
+        <p>عزيزي/عزيزتي {{ user_name }},</p>
+
+        <p>تم إرسال حالة إعادة الاستخدام إلى مشرف البوابة للمراجعة.</p>
+
+        <p>الحالة الحالية لحالة إعادة الاستخدام الخاصة بك هي: {{ showcase['status'] }}</p>
+
+        <p>يمكنك التحقق من الحالة الحالية لحالة إعادة الاستخدام عبر الرابط التالي: <a href="{{ site_url }}{{ action_url[0] }}">عرض العرض</a></p>
+
+        <p>نتمنى لك يوماً سعيداً،</p>
+        <p>---</p>
+        <p>الرسالة تم إرسالها بواسطة {{ site_title }} ({{ site_url }})</p>
+    </section>
+</body>
+</html>
