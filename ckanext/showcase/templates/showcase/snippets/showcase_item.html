@@ -25,11 +25,11 @@ show_remove    - If True, show the remove button to remove showcase/dataset asso
       <img src="{{ package.image_display_url or h.url_for_static('/base/images/placeholder-group.png') }}" alt="{{ package.name }}" class="media-image img-fluid">
     {% endblock %}
     {% block title %}
-      <h3 class="media-heading">{{ h.link_to(display_title|truncate(truncate_title), h.url_for(showcase_read_route, id=package.name)) }}</h3>
+      <h3 class="media-heading truncated-text">{{ h.link_to(display_title|truncate(truncate_title), h.url_for(showcase_read_route, id=package.name)) }}</h3>
     {% endblock %}
     {% block notes %}
       {% if display_notes %}
-        <div class="media-notes">{{ display_notes|urlize }}</div>
+        <div class="truncated-text">{{ display_notes|urlize }}</div>
       {% else %}
         <p class="empty">{{ _("This reuse has no description") }}</p>
       {% endif %}
