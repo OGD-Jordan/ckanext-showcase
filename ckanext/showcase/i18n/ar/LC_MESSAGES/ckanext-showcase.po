@@ -895,29 +895,31 @@ msgstr "الى التاريخ"
 msgid "Order By"
 msgstr "ترتيب حسب"
 
-#: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_search_result_text.html:2
-msgid "{number} reuse case found for '{query}'"
-msgid_plural "{number} reuse cases found for '{query}'"
-msgstr[0] "{number} تم العثور على حالة إعادة استخدام ل '{query}'"
-msgstr[1] "{number} تم العثور على حالات إعادة الاستخدام ل '{query}'"
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
-
 #: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_search_result_text.html:3
 msgid "No reuse cases found for '{query}'"
 msgstr "لم يتم العثور على حالات إعادة استخدام ل '{query}'"
 
+#: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_search_result_text.html:2
+msgid "{number} reuse case found for '{query}'"
+msgid_plural "{number} reuse cases found for '{query}'"
+msgstr[0] "لم يتم العثور على أي حالة إعادة استخدام لـ '{query}'"
+msgstr[1] "تم العثور على حالة إعادة استخدام واحدة لـ '{query}'"
+msgstr[2] "تم العثور على حالتي إعادة استخدام لـ '{query}'"
+msgstr[3] "تم العثور على {number} حالات إعادة استخدام لـ '{query}'"
+msgstr[4] "تم العثور على {number} حالة إعادة استخدام لـ '{query}'"
+msgstr[5] "تم العثور على {number} حالة إعادة استخدام لـ '{query}'"
+
+
 #: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_search_result_text.html:4
 msgid "{number} reuse case found"
 msgid_plural "{number} reuse cases found"
-msgstr[0] "{number} تم العثور على حالة إعادة استخدام"
-msgstr[1] "{number} تم العثور على حالات إعادة الاستخدام"
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
+msgstr[0] "لم يتم العثور على أي حالة إعادة استخدام"
+msgstr[1] "تم العثور على حالة إعادة استخدام واحدة"
+msgstr[2] "تم العثور على حالتي إعادة استخدام"
+msgstr[3] "تم العثور على {number} حالات إعادة استخدام"
+msgstr[4] "تم العثور على {number} حالة إعادة استخدام"
+msgstr[5] "تم العثور على {number} حالة إعادة استخدام"
+
 
 #: ckanext/showcase/templates/showcase/dashboard/snippets/showcase_search_result_text.html:5
 msgid "No reuse cases found"
