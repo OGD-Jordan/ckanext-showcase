@@ -145,7 +145,6 @@ def _send_email(user, subject, body):
                 body=body,
                 headers={"Content-Type": "text/html"}
             )
-            mail_user(user, subject, body, headers={"Content-Type": "text/html"})
             log.info(f'SHOWCASE_EMAIL_LOG2 {user.email}')
         except: 
             log.critical('Email sending failed.')
