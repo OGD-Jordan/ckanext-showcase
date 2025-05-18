@@ -46,9 +46,37 @@
   {{ form.input('title', id='field-title', label=_('Title En'), value=showcase.title, classes=["control-full"], attrs={"disabled": "disabled"}) }}
   {{ form.input('title_ar', id='field-title_ar', label=_('Title Ar'), value=showcase.title_ar, classes=["control-full"], attrs={"disabled": "disabled"}) }}
 
-  {{ form.markdown('notes', id='field-notes', label=_('Description English'), value=showcase.notes, error=errors.notes, attrs={"disabled": "disabled"}) }}
-  {{ form.markdown('notes_ar', id='field-notes_ar', label=_('Description Arabic'), value=showcase.notes_ar, error=errors.notes_ar, attrs={"disabled": "disabled"}) }}
+  {% set x = h.render_markdown(showcase.notes) %}
 
+
+  {% set editor = h.showcase_get_wysiwyg_editor() %}
+  {% if editor == 'ckeditor' %}
+    {% asset 'showcase/ckeditor' %}
+    {%
+      set ckeditor_attrs_en = {
+        'data-module': 'showcase-ckeditor',
+        'data-disabled': true,
+        'data-editor': 'editor_en',
+        'data-lang': h.lang(),
+        'data-module-site_url': h.dump_json(h.url_for('/', locale='default', qualified=true))
+      }
+    %}
+    {{ form.textarea('notes', id='editor_en', label=_('Description English'), placeholder=_('eg. Some useful notes about the data'), value=showcase.notes, error=errors.notes, attrs=ckeditor_attrs_en, is_required=true)}}
+    
+    {%
+      set ckeditor_attrs_ar = {
+        'data-module': 'showcase-ckeditor',
+        'data-disabled': true,
+        'data-editor': 'editor_ar',
+        'data-lang': h.lang(),
+        'data-module-site_url': h.dump_json(h.url_for('/', locale='default', qualified=true))
+      }
+    %}
+    {{ form.textarea('notes_ar', id='editor_ar', label=_('Description Arabic'), placeholder=_('eg. Some useful notes about the data'), value=showcase.notes_ar, error=errors.notes_ar, attrs=ckeditor_attrs_ar, is_required=true)}}
+  {% else %}
+    {{ form.markdown('notes', id='field-notes', label=_('Description English'), value=x, error=errors.notes, attrs={"disabled": "disabled"}) }}
+    {{ form.markdown('notes_ar', id='field-notes_ar', label=_('Description Arabic'), value=showcase.notes_ar, error=errors.notes_ar, attrs={"disabled": "disabled"}) }}
+  {% endif %}
 
   <div class="row">
     <div class="col-9">

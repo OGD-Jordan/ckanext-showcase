@@ -128,7 +128,7 @@ msgstr "المستخدم غير مصرح له بتحديث الحالة لحال
 
 #: ckanext/showcase/views.py:56
 msgid "Bad Captcha. Please try again."
-msgstr ".رمز التحقق خاطئ. يرجى المحاولة مرة أخرى"
+msgstr "رمز التحقق خاطئ. يرجى المحاولة مرة أخرى"
 
 #: ckanext/showcase/views.py:60
 msgid "Some Issue with Captcha Connection."

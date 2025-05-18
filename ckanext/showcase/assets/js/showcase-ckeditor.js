@@ -17,6 +17,7 @@ ckan.module('showcase-ckeditor', function ($) {
     _onReady: function(){
         var editorId = this.el.data('editor');
         var lang = this.el.data('lang');
+        var enable = this.el.data('disabled');
         var config = {};
         config.toolbar = [
                 'heading',
@@ -56,6 +57,13 @@ ckan.module('showcase-ckeditor', function ($) {
               document.querySelector('#'+ editorId),
               config
               )
+          .then(editor=>{
+            if (enable){
+              editor.enableReadOnlyMode('showcase-ckeditor');
+              const editableElement = editor.ui.view.editable.element;
+              editableElement.style.backgroundColor = '#E5E5E5';
+            }
+          })
           .catch( error => {
               console.error( error.stack );
           } );
