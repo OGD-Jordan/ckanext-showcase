@@ -1,4 +1,4 @@
-from ckan.lib.mailer import mail_user
+from ckan.lib.mailer import mail_user, mail_recipient
 import ckan.plugins.toolkit as tk
 import ckan.lib.helpers as h
 from ckan.common import config
@@ -138,6 +138,13 @@ def _send_email(user, subject, body):
     if user.email:
         try:
             log.info(f'SHOWCASE_EMAIL_LOG1 {user.email}')
+            mail_recipient(
+                recipient_name=user.fullname or user.name,
+                recipient_email=user.email,
+                subject=subject,
+                body=body,
+                headers={"Content-Type": "text/html"}
+            )
             mail_user(user, subject, body, headers={"Content-Type": "text/html"})
             log.info(f'SHOWCASE_EMAIL_LOG2 {user.email}')
         except: 

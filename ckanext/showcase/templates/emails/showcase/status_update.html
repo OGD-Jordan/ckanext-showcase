@@ -9,7 +9,7 @@
         <h1>Status Update for '{{ showcase['title'] }}'</h1>
         <p>Dear {{ user_name }},</p>
 
-        <p>The status of reuse case '{{ showcase['display_title'] }}' was updated to {{ showcase['status'] }}.</p>
+        <p>The status of reuse case '{{ showcase['display_title'] }}' was updated to {{ showcase['display_status'] }}.</p>
 
         <p>You can check the current status of reuse at <a href="{{ site_url }}{{ action_url[0] }}">View Reuse</a></p>
 
@@ -18,12 +18,19 @@
         <p>Message sent by <br>{{ site_title }} ({{ site_url }})</p>
     </section>
 
+    {% set SHOWCASE_STATUS_OPTIONS = {
+        'a' : "قيد الانتظار",
+        'b': 'يحتاج إلى مراجعة',
+        'c': "مرفوض",
+        'd': "موافقة",
+    } %} 
+
     <!-- Arabic Version -->
     <section dir="rtl">
         <h1>تحديث الحالة لـ '{{ showcase['title_ar'] }}'</h1>
         <p>عزيزي/عزيزتي {{ user_name }},</p>
 
-        <p>تم تحديث حالة الحالة القابلة لإعادة الاستخدام '{{ showcase['display_title'] }}' إلى {{ showcase['status'] }}.</p>
+        <p>تم تحديث حالة الحالة القابلة لإعادة الاستخدام '{{ showcase['display_title'] }}' إلى {{ SHOWCASE_STATUS_OPTIONS[showcase['status']] }}.</p>
 
         <p>يمكنك التحقق من الحالة الحالية لإعادة الاستخدام عبر الرابط التالي: <a href="{{ site_url }}{{ action_url[0] }}">عرض العرض</a></p>
 

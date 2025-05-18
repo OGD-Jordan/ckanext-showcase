@@ -9,7 +9,7 @@ from ckanext.showcase.logic import notifiy
 from ckanext.showcase.logic.action.action_decorator import notify_after_action
 import ckanext.showcase.logic.converters as showcase_converters
 import ckanext.showcase.logic.schema as showcase_schema
-from ckanext.showcase.model import ShowcasePackageAssociation
+from ckanext.showcase.model import ShowcaseApprovalStatus, ShowcasePackageAssociation
 
 convert_package_name_or_id_to_title_or_name = \
     showcase_converters.convert_package_name_or_id_to_title_or_name
@@ -40,12 +40,12 @@ def showcase_create(context, data_dict):
         data_dict
     )
 
-    tk.get_action('ckanext_showcase_status_update')(
-        {**context, **updated_context},
-        {"id": pkg.get("id",pkg.get("name", '')) }
+    updated_status = ShowcaseApprovalStatus.update_status(
+        pkg.get("id"),
+        ''
     )
 
-    return pkg
+    return tk.get_action('ckanext_showcase_show')({**context, **updated_context}, {'id': pkg.get("id")})
 
 
 def showcase_package_association_create(context, data_dict):

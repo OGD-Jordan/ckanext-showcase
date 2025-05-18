@@ -11,7 +11,7 @@
 
         <p>{{ opening_word }} reuse case was submitted to the Portal Supervisor for review.</p>
 
-        <p>The current status of your reuse case is: {{ showcase['status'] }}</p>
+        <p>The current status of your reuse case is: {{ showcase['approval_status']['display_status'] }}</p>
 
         <p>You can check the current status of your reuse case at <a href="{{ site_url }}{{ action_url[0] }}">View Reuse</a></p>
 
@@ -20,6 +20,12 @@
         <p>Message sent by {{ site_title }} ({{ site_url }})</p>
     </section>
 
+    {% set SHOWCASE_STATUS_OPTIONS = {
+        'a' : "قيد الانتظار",
+        'b': 'يحتاج إلى مراجعة',
+        'c': "مرفوض",
+        'd': "موافقة",
+    } %}    
     <!-- Arabic Version -->
     <section dir="rtl">
         <h1>إنشاء حالة قابلة لإعادة الاستخدام لـ '{{ showcase['title_ar'] }}'</h1>
@@ -27,7 +33,7 @@
 
         <p>تم إرسال حالة إعادة الاستخدام إلى مشرف البوابة للمراجعة.</p>
 
-        <p>الحالة الحالية لحالة إعادة الاستخدام الخاصة بك هي: {{ showcase['status'] }}</p>
+        <p>الحالة الحالية لحالة إعادة الاستخدام الخاصة بك هي: {{ SHOWCASE_STATUS_OPTIONS[showcase['approval_status']['status']] }}</p>
 
         <p>يمكنك التحقق من الحالة الحالية لحالة إعادة الاستخدام عبر الرابط التالي: <a href="{{ site_url }}{{ action_url[0] }}">عرض العرض</a></p>
 
