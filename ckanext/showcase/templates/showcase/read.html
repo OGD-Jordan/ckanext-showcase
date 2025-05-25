@@ -114,6 +114,10 @@
         {% snippet 'showcase/snippets/showcase_info.html', pkg=pkg, showcase_pkgs=c.showcase_pkgs %}
     {% endblock %}
 
+    {% block showcase_type %}
+        {% snippet "showcase/snippets/reuse_type.html",  types=pkg.reuse_type %}
+    {% endblock %}
+
     {% block package_social %}
         {% snippet "snippets/social.html" %}
     {% endblock %}

@@ -1,0 +1,31 @@
+{% extends "snippets/social.html" %}
+
+{% block social_title %}
+<h2 class="module-heading">
+    <i class="fa fa-share-square"></i> 
+    {{ _('Reuse Types') }}
+</h2>
+{% endblock %}
+
+
+{% block social_nav %}
+<ul class="nav nav-simple">
+    {% set type_dict = h.ckanext_showcase_types_dict() %}
+    {% set icons_dict = {
+        'a': 'fa-mobile',
+        'b': 'fa-tv',
+        'c': 'fa-newspaper',
+        'd': 'fa-microscope',
+        'e': 'fa-code',
+    } %}
+
+    {%  for type in types %}
+    <li class="nav-item">
+        <a>
+            <i class="fa-solid {{ icons_dict[type] }}"></i> 
+            {{ _(type_dict[type]) }}
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

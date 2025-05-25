@@ -995,26 +995,26 @@ msgstr "قم بإزالة مجموعة البيانات من حالة إعادة
 #: ckanext/showcase/templates/showcase/snippets/showcase_search_result_text.html:7
 msgid "{number} reuse found for '{query}'"
 msgid_plural "{number} reuses found for '{query}'"
-msgstr[0] "{number} تم العثور على إعادة الاستخدام ل '{query}'"
-msgstr[1] "{number}  تم العثور على عمليات إعادة الاستخدام ل '{query}'"
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
-
-#: ckanext/showcase/templates/showcase/snippets/showcase_search_result_text.html:8
-msgid "No reuses found for '{query}'"
-msgstr "لم يتم العثور على عمليات إعادة استخدام ل '{query}'"
+msgstr[0] "لم يتم العثور على أي عملية إعادة استخدام لـ '{query}'"
+msgstr[1] "تم العثور على إعادة استخدام واحدة لـ '{query}'"
+msgstr[2] "تم العثور على عمليتي إعادة استخدام لـ '{query}'"
+msgstr[3] "تم العثور على {number} عمليات إعادة استخدام لـ '{query}'"
+msgstr[4] "تم العثور على {number} عملية إعادة استخدام لـ '{query}'"
+msgstr[5] "تم العثور على {number} عملية إعادة استخدام لـ '{query}'"
 
 #: ckanext/showcase/templates/showcase/snippets/showcase_search_result_text.html:9
 msgid "{number} reuse found"
 msgid_plural "{number} reuses found"
-msgstr[0] "{number} تم العثور على إعادة الاستخدام"
-msgstr[1] "{number} تم العثور على عمليات إعادة الاستخدام"
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
+msgstr[0] "لم يتم العثور على أي عملية إعادة استخدام"
+msgstr[1] "تم العثور على إعادة استخدام واحدة"
+msgstr[2] "تم العثور على عمليتي إعادة استخدام"
+msgstr[3] "تم العثور على {number} عمليات إعادة استخدام"
+msgstr[4] "تم العثور على {number} عملية إعادة استخدام"
+msgstr[5] "تم العثور على {number} عملية إعادة استخدام"
+
+#: ckanext/showcase/templates/showcase/snippets/showcase_search_result_text.html:8
+msgid "No reuses found for '{query}'"
+msgstr "لم يتم العثور على عمليات إعادة استخدام ل '{query}'"
 
 #: ckanext/showcase/templates/showcase/snippets/showcase_search_result_text.html:10
 msgid "No reuses found"
@@ -1030,3 +1030,6 @@ msgstr "معرف الجهة الحكومية"
 
 msgid "Request type"
 msgstr "نوع الطلب"
+
+msgid "Reuse Types"
+msgstr "أنواع حالات إعادة الاستخدام"

@@ -19,6 +19,7 @@ def get_helpers():
         'ckanext_showcase_types': ckanext_showcase_types,
         'ckanext_showcase_total': ckanext_showcase_total,
         "showcase_organization_options": showcase_organization_options,
+        'ckanext_showcase_types_dict': ckanext_showcase_types_dict,
     }
 
 
@@ -178,6 +179,10 @@ def ckanext_showcase_types():
         {'text': _(value), 'value':key}
         for key, value in REUSE_CASE_TYPE_OPTIONS.items()
     ]
+
+def ckanext_showcase_types_dict():
+    return REUSE_CASE_TYPE_OPTIONS
+    
 
 def ckanext_showcase_total():
     return tk.get_action('ckanext_showcase_statics')(
