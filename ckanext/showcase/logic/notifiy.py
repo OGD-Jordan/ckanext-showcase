@@ -95,6 +95,7 @@ def status_update(showcase_id):
 
 
 def _notify_user(user, body_vars, template_name, action_url):
+    if not user.state == 'active':  return
 
     subject_method = getattr(SubjectTemplates, template_name, None)
     
