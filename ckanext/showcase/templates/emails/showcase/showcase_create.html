@@ -5,7 +5,7 @@
 </head>
 <body>
     <!-- English Version -->
-    <section dir="ltr">
+    <div dir="ltr">
         <h1>Reuse Creation for '{{ showcase['title'] }}'</h1>
         <p>Dear {{ user_name }},</p>
 
@@ -18,7 +18,7 @@
         <p>Have a nice day,</p>
         <p>---</p>
         <p>Message sent by {{ site_title }} ({{ site_url }})</p>
-    </section>
+    </div>
 
     {% set SHOWCASE_STATUS_OPTIONS = {
         'a' : "قيد الانتظار",
@@ -27,7 +27,7 @@
         'd': "موافقة",
     } %}    
     <!-- Arabic Version -->
-    <section dir="rtl">
+    <div dir="rtl">
         <h1>إنشاء حالة قابلة لإعادة الاستخدام لـ '{{ showcase['title_ar'] }}'</h1>
         <p>عزيزي/عزيزتي {{ user_name }},</p>
 
@@ -40,5 +40,5 @@
         <p>نتمنى لك يوماً سعيداً،</p>
         <p>---</p>
         <p>الرسالة تم إرسالها بواسطة {{ site_title }} ({{ site_url }})</p>
-    </section>
+    </div>
 </body>
