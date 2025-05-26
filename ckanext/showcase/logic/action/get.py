@@ -173,7 +173,7 @@ def package_showcase_list(context, data_dict):
         id_list = []
         for showcase_id in showcase_id_list:
             id_list.append(showcase_id[0])
-        fq = 'dataset_type:showcase'
+        fq = '+dataset_type:showcase'
         q = 'id:(' + ' OR '.join(['{0}'.format(x) for x in id_list]) + ')'
         _showcase_list = tk.get_action('package_search')(
             context,
