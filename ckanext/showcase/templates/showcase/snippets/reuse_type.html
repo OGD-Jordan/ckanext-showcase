@@ -20,12 +20,14 @@
     } %}
 
     {%  for type in types %}
-    <li class="nav-item">
-        <a>
-            <i class="fa-solid {{ icons_dict[type] }}"></i> 
-            {{ _(type_dict[type]) }}
-        </a>
-    </li>
+        {% if type_dict[type] %}
+        <li class="nav-item">
+            <a>
+                <i class="fa-solid {{ icons_dict[type] }}"></i> 
+                {{ _(type_dict[type]) }}
+            </a>
+        </li>
+        {% endif %}
     {% endfor %}
 </ul>
 {% endblock %}
