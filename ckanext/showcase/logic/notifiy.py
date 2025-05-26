@@ -143,7 +143,7 @@ def _send_email(user, subject, body):
                 recipient_name=user.fullname or user.name,
                 recipient_email=user.email,
                 subject=subject,
-                body=body,
+                body_html=body,
                 headers={"Content-Type": "text/html"}
             )
             log.info(f'SHOWCASE_EMAIL_LOG2 {user.email}')
