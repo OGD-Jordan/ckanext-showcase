@@ -482,7 +482,7 @@ msgid "Reuses featuring {dataset_name}"
 msgstr ""
 
 #: ckanext/showcase/templates/package/dataset_showcase_list.html:23
-msgid "There are no reuses that feature this dataset"
+msgid "No results found"
 msgstr ""
 
 #: ckanext/showcase/templates/showcase/add_datasets.html:3

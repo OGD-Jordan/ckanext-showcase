@@ -502,8 +502,8 @@ msgid "Reuses featuring {dataset_name}"
 msgstr "مجموعات بيانات تم استخدامها في تطوير حالة إعادة استخدام"
 
 #: ckanext/showcase/templates/package/dataset_showcase_list.html:23
-msgid "There are no reuses that feature this dataset"
-msgstr "مجموعات بيانات لم يتم استخدامها في تطوير أي حالة إعادة استخدام"
+msgid "No results found"
+msgstr "لا يوجد نتائج"
 
 #: ckanext/showcase/templates/showcase/add_datasets.html:3
 msgid "Reuses - Add datasets"
