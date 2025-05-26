@@ -143,6 +143,7 @@ def _send_email(user, subject, body):
                 recipient_name=user.fullname or user.name,
                 recipient_email=user.email,
                 subject=subject,
+                body='test',
                 body_html=body,
                 headers={"Content-Type": "text/html"}
             )
