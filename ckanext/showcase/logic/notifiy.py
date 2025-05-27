@@ -143,8 +143,9 @@ def _send_email(user, subject, body):
                 recipient_name=user.fullname or user.name,
                 recipient_email=user.email,
                 subject=subject,
-                body='test',
-                body_html=body,
+                # body='test',
+                body=body,
+                # body_html=body,
                 headers={"Content-Type": "text/html"}
             )
             log.info(f'SHOWCASE_EMAIL_LOG2 {user.email}')
@@ -154,4 +155,5 @@ def _send_email(user, subject, body):
 
 def queue_email_job(user, subject, body):
     """Queue the email job to be processed in the background."""
-    enqueue_job(_send_email, args=[user, subject, body], title='Send Email',rq_kwargs={'timeout': 300})
+    # enqueue_job(_send_email, args=[user, subject, body], title='Send Email',rq_kwargs={'timeout': 300})
+    _send_email(user, subject, body)
