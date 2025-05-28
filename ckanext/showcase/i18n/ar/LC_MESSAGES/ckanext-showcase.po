@@ -1033,3 +1033,6 @@ msgstr "نوع الطلب"
 
 msgid "Reuse Types"
 msgstr "أنواع حالات إعادة الاستخدام"
+
+msgid "Share the Reuse Case"
+msgstr "شارك قصة النجاح ."
