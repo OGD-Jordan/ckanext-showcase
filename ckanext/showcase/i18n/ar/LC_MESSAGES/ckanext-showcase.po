@@ -1036,3 +1036,9 @@ msgstr "أنواع حالات إعادة الاستخدام"
 
 msgid "Share the Reuse Case"
 msgstr "شارك قصة النجاح"
+
+msgid "Notes ar"
+msgstr "الوصف باللغة العربية"
+
+msgid "Reuse type"
+msgstr "نوع حالة إعادة الاستخدام"
