@@ -114,9 +114,8 @@
         {% endif %}
       {% endblock %}
       {% block save_button %}
-        <button class="btn btn-primary" type="submit" name="save" value=''>{% block save_button_text %}{% if form_style != 'edit' %}{{ _('Submit Reuse') }}{% else %}{{ _('Update Reuse') }}{% endif %}{% endblock %}</button>
+        <button class="btn btn-primary" type="submit" name="save" value=''>{% block save_button_text %}{{ _('Next') }}{% endblock %}</button>
       {% endblock %}
-      {{ form.required_message() }}
     </div>
   {% endblock %}
 </form>

@@ -5,6 +5,7 @@
 {% block wrapper_class %} ckanext-showcase-edit-wrapper{% endblock %}
 
 {% block ckanext_showcase_edit_span %}span12{% endblock %}
+{% set showcase_delete_route = 'showcase_blueprint.delete' %}
 
 {% block ckanext_showcase_edit_module_content_class %}{% endblock %}
 
@@ -159,4 +160,20 @@
       </section>
     </div>
   </div>
+
+  <section class="dataset-form form-horizontal">
+    <div class="form-actions mb-4">
+      {% block save_button %}
+        <button class="btn btn-secondary" 
+          onclick="window.location.href='{{ h.url_for('showcase_blueprint.edit', id=c.pkg_dict.id) }}'" >
+          {{ _('Previous') }}
+      </button>
+      <button class="btn btn-primary" 
+          onclick="window.location.href='{{ h.url_for('showcase_blueprint.read', id=c.pkg_dict.id) }}'" >
+          {% block save_button_text %}{{ _('Submit') }}{% endblock %}
+      </button>
+      {% endblock %}
+    </div>
+  </section>
+
 {% endblock %}

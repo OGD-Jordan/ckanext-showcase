@@ -183,7 +183,7 @@
 
 <button 
     class="btn btn-secondary pull-right mb-2"
-    onclick="window.history.back()" 
+    onclick="window.location.href='{{ h.url_for('showcase_blueprint.dashboard_index') }}'" 
 >
     {{ _('Back') }}
 </button>

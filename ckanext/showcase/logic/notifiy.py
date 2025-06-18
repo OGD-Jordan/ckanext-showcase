@@ -62,6 +62,7 @@ def showcase_create(showcase_id):
 
     for admin in portal_admins:
         user = model.User.get(admin)
+        if not user:    continue
         body_vars['user_name'] = user.fullname or user.name
         _notify_user(user, body_vars, 'get_showcase_create', action_url)
 
@@ -89,6 +90,7 @@ def status_update(showcase_id):
 
     for admin in portal_admins:
         user = model.User.get(admin)
+        if not user:    continue
         body_vars['user_name'] = user.fullname or user.name
         _notify_user(user, body_vars, 'get_status_update', action_url)
 

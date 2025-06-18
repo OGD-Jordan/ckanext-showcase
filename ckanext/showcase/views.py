@@ -130,7 +130,8 @@ class EditView(dataset.EditView):
         tk.c.pkg_dict = pkg
 
         # redirect to showcase details page
-        url = h.url_for('showcase_blueprint.read', id=pkg['name'])
+        url = h.url_for('showcase_blueprint.manage_datasets',
+                id=pkg['name'])
         return h.redirect_to(url)
 
 
