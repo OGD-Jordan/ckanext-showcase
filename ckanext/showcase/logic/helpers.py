@@ -195,7 +195,7 @@ import ckan.model as model
 def showcase_organization_options():
     context = {'user': tk.c.user, 'model': model}
     orgs = tk.get_action('organization_list_as_options')(context, {})
-    return [{'text':_("Select Government Entity"),'value': '', 'class': 'select2-disabled'}] + [
+    return [
         {'text':org['display_name'],'value':org['id']} 
         for org in orgs
         ]
