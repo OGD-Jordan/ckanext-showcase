@@ -74,8 +74,8 @@
     %}
     {{ form.textarea('notes_ar', id='editor_ar', label=_('Description Arabic'), placeholder=_('eg. Some useful notes about the data'), value=showcase.notes_ar, error=errors.notes_ar, attrs=ckeditor_attrs_ar, is_required=true)}}
   {% else %}
-    {{ form.markdown('notes', id='field-notes', label=_('Description English'), value=x, error=errors.notes, attrs={"disabled": "disabled"}) }}
-    {{ form.markdown('notes_ar', id='field-notes_ar', label=_('Description Arabic'), value=showcase.notes_ar, error=errors.notes_ar, attrs={"disabled": "disabled"}) }}
+    {{ form.textarea('notes', id='field-notes', label=_('Description English'), value=x, error=errors.notes, attrs={"disabled": "disabled"}) }}
+    {{ form.textarea('notes_ar', id='field-notes_ar', label=_('Description Arabic'), value=showcase.notes_ar, error=errors.notes_ar, attrs={"disabled": "disabled"}) }}
   {% endif %}
 
   <div class="row">
