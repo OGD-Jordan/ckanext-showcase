@@ -78,6 +78,7 @@
     {{ form.textarea('notes_ar', id='field-notes_ar', label=_('Description Arabic'), value=showcase.notes_ar, error=errors.notes_ar, attrs={"disabled": "disabled"}) }}
   {% endif %}
 
+  {% if showcase.url %}
   <div class="row">
     <div class="col-9">
       {{ form.input('url', label=_('External link'), id='field-url', value=showcase.url, error=errors.url, classes=['control-full'], attrs={"disabled": "disabled"}) }}
@@ -88,6 +89,7 @@
       </a>
     </div>
   </div>
+  {% endif %}
 
   {% if showcase_datasets %}
   <div class="row">
