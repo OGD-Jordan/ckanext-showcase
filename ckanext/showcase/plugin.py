@@ -192,18 +192,22 @@ class ShowcasePlugin(plugins.SingletonPlugin, lib_plugins.DefaultDatasetForm, De
     def after_dataset_show(self, context, pkg_dict):
         '''Modify package_show pkg_dict.'''
         pkg_dict = self._add_to_pkg_dict(context, pkg_dict)
-
-        if pkg_dict and pkg_dict['type'] == 'dataset' and pkg_dict.get('id') and context.get('use_cache', True)== False and context.get('ignore_auth', False) and context.get('validate', True) == False:
+        if pkg_dict \
+                    and pkg_dict['type'] == 'dataset' \
+                    and pkg_dict.get('id') \
+                    and context.get('use_cache', True)== False \
+                    and context.get('ignore_auth', False) \
+                    and context.get('validate', True) == False:
+            
             extras = pkg_dict.get('extras',[])
-            extra_keys = [extra.get('key') for extra in extras]
-            if 'num_approved_reuses' not in extra_keys:
-                extras.append({
-                    'id': 'showcase-num_approved_reuses',
-                    'package_id': pkg_dict['id'],
-                    'key': 'num_approved_reuses',
-                    'value': pkg_dict['num_approved_reuses'],
-                    'state': 'active',
-                })
+            extras = [extra for extra in extras if extra.get('key') != 'num_approved_reuses']
+            extras.append({
+                'id': 'showcase-num_approved_reuses',
+                'package_id': pkg_dict['id'],
+                'key': 'num_approved_reuses',
+                'value': pkg_dict['num_approved_reuses'],
+                'state': 'active',
+            })
             pkg_dict['extras'] = extras
 
 
