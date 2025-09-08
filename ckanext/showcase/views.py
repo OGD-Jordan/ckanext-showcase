@@ -235,7 +235,7 @@ def dashboard_list():
         collection=showcases['items'],
         page=data_dict.get('page', 1),
         url=pager_url,
-        item_count=showcases.get('count'),
+        item_count=showcases.get('total'),
         items_per_page=limit,
         )
     pagination.items=showcases['items']
