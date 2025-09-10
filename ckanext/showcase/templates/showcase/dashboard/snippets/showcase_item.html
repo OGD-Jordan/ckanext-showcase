@@ -22,7 +22,7 @@
 
   <td>{{ _(showcase.approval_status.display_status) }}</td>
   <td>
-    {% if h.check_access('ckanext_showcase_status_update', {'id' : showcase.id}) %}
+    {% if showcase_status_update_authorization  %}
     <div class="d-flex flex-row showcase-actions" style="gap:2px;">
       {% if showcase.approval_status.status != 'd'  %} 
       <span 

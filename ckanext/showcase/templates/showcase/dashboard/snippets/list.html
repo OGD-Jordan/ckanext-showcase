@@ -17,6 +17,7 @@
       </thead>
       <tbody>
       {% block showcase_list_inner %}
+        {% set showcase_status_update_authorization = h.check_access('ckanext_showcase_status_update') %}
         {% for showcase in showcases %}
           {% 
             snippet 
@@ -25,7 +26,8 @@
             item_class=item_class, 
             truncate=truncate, 
             truncate_title=truncate_title, 
-            show_remove=show_remove
+            show_remove=show_remove,
+            showcase_status_update_authorization=showcase_status_update_authorization
           %}
         {% endfor %}
       {% endblock %}
