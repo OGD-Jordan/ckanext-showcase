@@ -35,9 +35,10 @@
 
 
 {% block primary_content_inner %}
+    {% set c_status = _(showcase.approval_status.display_status)   %}
     <span class="dataset-private label label-inverse pull-right">
         <i class="fa fa-lock icon-lock"></i>
-        {{ showcase.approval_status.display_status }}
+        {{ _(c_status) }}
     </span>
     <h1>
     {% block page_heading %}
