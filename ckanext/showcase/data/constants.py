@@ -15,6 +15,12 @@ SHOWCASE_STATUS_OPTIONS = {
     'd': _(u"Approved"),
 }
 
+SHOWCASE_STATUS_TRANSLATIONS = {
+    'a': "قيد الانتظار",
+    'b': "تحتاج إلى مراجعة",
+    'c': "مرفوض",
+    'd': "موافقة",
+}
 
 class ReuseCaseType(Enum):
     MOBILE_APPLICATION = 'a'

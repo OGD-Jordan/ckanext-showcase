@@ -184,6 +184,7 @@ class ShowcaseApprovalStatus(ShowcaseBaseModel, BaseModel):
                 result_dict[name] = value.value
                 if name == 'status':
                     result_dict['display_status'] = SHOWCASE_STATUS_OPTIONS[value.value]
+                    result_dict['arabic_status'] = SHOWCASE_STATUS_TRANSLATIONS[value.value]
 
             elif isinstance(value, datetime.datetime):
                 result_dict[name] = value.isoformat()

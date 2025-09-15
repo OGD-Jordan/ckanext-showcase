@@ -80,16 +80,15 @@ class NotificationTemplates():
     @classmethod
     def get_status_update(cls, body_vars):
         showcase = body_vars['showcase']
-        status = showcase['status']
 
         title = showcase['title']
         lines_en = [
-            _("Status of reuse case '%s' was updated to '%s'." % (title, status)),
+            _("Status of reuse case '%s' was updated to '%s'." % (title, showcase['approval_status']['display_status'])),
         ]
         
         title = showcase['title_ar']
         lines_ar = [
-            "تم تحديث حالة حالة إعادة الاستخدام '%s' إلى '%s'." % (title, status),
+            "تم تحديث حالة حالة إعادة الاستخدام '%s' إلى '%s'." % (title, showcase['approval_status']['arabic_status']),
         ]
 
         return cls.compose_email_body(lines_en, lines_ar)
