@@ -349,7 +349,8 @@ def _add_dataset_search(showcase_id, showcase_name):
             'rows': limit,
             'start': (page - 1) * limit,
             'sort': sort_by,
-            'extras': search_extras
+            'extras': search_extras,
+            'include_pending': False
         }
         
         print("DEBUG: Final FQ", fq)  # Print final fq before search
