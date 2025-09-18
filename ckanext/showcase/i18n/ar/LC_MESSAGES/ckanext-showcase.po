@@ -50,20 +50,20 @@ msgid "The dataset has been removed from the showcase."
 msgid_plural "The datasets have been removed from the showcase."
 msgstr[0] ".تمت إزالة مجموعة البيانات"
 msgstr[1] ".تمت إزالة مجموعة البيانات"
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
+msgstr[2] ".تمت إزالة مجموعة البيانات"
+msgstr[3] ".تمت إزالة مجموعة البيانات"
+msgstr[4] ".تمت إزالة مجموعة البيانات"
+msgstr[5] ".تمت إزالة مجموعة البيانات"
 
 #: ckanext/showcase/utils.py:175 ckanext/showcase/utils.py:487
 msgid "The dataset has been added to the showcase."
 msgid_plural "The datasets have been added to the showcase."
 msgstr[0] ".تمت إضافة مجموعة البيانات"
 msgstr[1] ".تمت إضافة مجموعة البيانات"
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
+msgstr[2] ".تمت إضافة مجموعة البيانات"
+msgstr[3] ".تمت إضافة مجموعة البيانات"
+msgstr[4] ".تمت إضافة مجموعة البيانات"
+msgstr[5] ".تمت إضافة مجموعة البيانات"
 
 #: ckanext/showcase/utils.py:314
 msgid "Organizations"
@@ -273,10 +273,6 @@ msgstr "اسم منشئ طلب مشاركة حالة إعادة الاستخدا
 #: ckanext/showcase/logic/helpers.py:142
 msgid "Submitted Author Email"
 msgstr "البريد الالكتروني المرسل لمنشئ طلب مشاركة حالة إعادة الاستخدام"
-
-#: ckanext/showcase/logic/helpers.py:147
-msgid "Image Url"
-msgstr "للصورة URLعنوان"
 
 #: ckanext/showcase/logic/helpers.py:153
 msgid "External Link"
