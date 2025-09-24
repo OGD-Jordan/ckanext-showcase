@@ -26,7 +26,7 @@ def showcase_create(context, data_dict):
     # force type to 'showcase'
 
     data_dict['type'] = 'showcase'
-    image_data = h.single_image_upload(context, data_dict, upload_folder='showcase')
+    image_data = tk.h.single_image_upload(context, data_dict, upload_folder='showcase')
     data_dict.update(image_data)
 
 
