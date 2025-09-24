@@ -16,22 +16,19 @@ log = logging.getLogger(__name__)
 def showcase_update(context, data_dict):
     tk.check_access('ckanext_showcase_update',context, data_dict)
 
-    upload = uploader.get_uploader('showcase', data_dict['image_url'])
-
-    upload.update_data_dict(data_dict, 'image_url',
-                            'image_upload', 'clear_upload')
-
-    upload.upload(uploader.get_max_image_size())
+    data_dict['old_filename'] = data_dict.get('image_url','')
+    image_data =  tk.h.single_image_upload(context, data_dict, upload_folder='showcase')
+    data_dict.update(image_data)
 
     site_user = tk.get_action("get_site_user")({"ignore_auth": True}, {})
     updated_context = {'ignore_auth': True, 'user':site_user['name']}
     pkg = tk.get_action('package_update')(
-        context.copy().update(updated_context), 
+        {**context.copy(), **updated_context}, 
         data_dict
         )
 
     tk.get_action('ckanext_showcase_status_update')(
-        context.copy().update(updated_context),
+        {**context.copy(), **updated_context}, 
         {"id": pkg.get("id",pkg.get("name", '')) }
     )
 
@@ -39,7 +36,6 @@ def showcase_update(context, data_dict):
 
 
 @validate_decorator(showcase_schema.showcase_status_update_schema)
-@notify_after_action(notifiy.status_update)
 def status_update(context, data_dict):
     tk.check_access('ckanext_showcase_status_update',context, data_dict)
     
@@ -52,6 +48,9 @@ def status_update(context, data_dict):
         feedback,
         status
     )
+    
+    if context.get('user', None) != 'default':
+        notifiy.status_update(update_status.get('showcase_id', None))
 
     return {**update_status, 'id': update_status.get('showcase_id', None)}
 

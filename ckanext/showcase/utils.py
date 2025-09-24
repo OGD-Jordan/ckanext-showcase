@@ -16,6 +16,7 @@ import ckan.lib.helpers as h
 import ckan.plugins.toolkit as tk
 from ckanext.showcase.data.constants import ApprovalStatus
 from ckanext.showcase.model import ShowcaseApprovalStatus, ShowcasePackageAssociation
+from ckanext.showcase.logic import notifiy
 
 _ = tk._
 abort = tk.abort
@@ -168,6 +169,13 @@ def manage_datasets_view(id):
                 else:
                     successful_adds.append(dataset_id)
             if successful_adds:
+                notifiy.showcase_create(tk.g.pkg_dict['id'])
+                
+                # UPDATE the state
+                showcase_obj = model.Package.get(tk.g.pkg_dict['id'])
+                showcase_obj.state = 'active'
+                model.Session.commit()
+                
                 h.flash_success(
                     tk.ungettext(
                         "The dataset has been added to the showcase.",

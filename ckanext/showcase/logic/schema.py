@@ -41,9 +41,12 @@ natural_number_validator = tk.get_validator("natural_number_validator")
 int_validator = tk.get_validator("int_validator")
 
 
+from ckan.logic.schema import validator_args, ValidatorFactory
 
-
-def showcase_base_schema():
+@validator_args
+def showcase_base_schema(
+    default: ValidatorFactory
+):
     schema = {
         'id': [empty],
         'revision_id': [ignore],
@@ -56,7 +59,7 @@ def showcase_base_schema():
         'notes_ar': [convert_to_extras, not_empty, unicode_safe],
         'reuse_type': [convert_to_extras, not_empty, validate_reuse_types],
         'url': [ignore_missing, url_validator],
-        'state': [ignore_not_package_admin, ignore_missing],
+        'state': [default('draft')],
         'type': [ignore_missing, unicode_safe],
         '__extras': [ignore],
         '__junk': [empty],
@@ -76,7 +79,10 @@ def showcase_create_schema():
     return showcase_base_schema()
 
 
-def showcase_update_schema():
+@validator_args
+def showcase_update_schema(
+    default: ValidatorFactory
+):
     schema = showcase_base_schema()
 
     # Users can (optionally) supply the package id when updating a package, but
@@ -91,6 +97,7 @@ def showcase_update_schema():
     # Supplying the package title when updating a package is optional, if it's
     # not supplied the title will not be changed.
     schema['title'] = [ignore_missing, unicode_safe]
+    schema['state'] = [ignore_missing]
 
     return schema
 

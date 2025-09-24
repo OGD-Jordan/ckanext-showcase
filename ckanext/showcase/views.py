@@ -9,6 +9,7 @@ import ckan.lib.helpers as h
 import ckan.plugins.toolkit as tk
 import ckan.views.dataset as dataset
 import ckan.lib.captcha as captcha
+from ckan.common import g
 
 import ckanext.showcase.utils as utils
 
@@ -97,9 +98,78 @@ def read(id):
 
 class EditView(dataset.EditView):
     def get(self, id, data=None, errors=None, error_summary=None):
-        utils.check_new_view_auth()
-        return super(EditView, self).get(utils.DATASET_TYPE_NAME, id, data,
-                                         errors, error_summary)
+        context = self._prepare()
+        utils.check_edit_view_auth(id)
+
+        package_type = 'showcase'
+        try:
+            view_context = context.copy()
+            view_context['for_view'] = True
+            pkg_dict = tk.get_action(u'ckanext_showcase_show')(
+                view_context, {u'id': id})
+            context[u'for_edit'] = True
+            old_data = tk.get_action(u'ckanext_showcase_show')(context, {u'id': id})
+            # old data is from the database and data is passed from the
+            # user if there is a validation error. Use users data if there.
+            if data:
+                old_data.update(data)
+            data = old_data
+        except (dataset.NotFound, dataset.NotAuthorized):
+            return base.abort(404, _(u'Dataset not found'))
+        assert data is not None
+
+        pkg = context.get(u"package")
+        resources_json = h.dump_json(data.get(u'resources', []))
+        user = current_user.name
+        try:
+            tk.check_access(u'ckanext_showcase_update', context, {'id':id})
+        except dataset.NotAuthorized:
+            return base.abort(
+                403,
+                _(u'User %r not authorized to edit %s') % (user, id)
+            )
+        
+        errors = errors or {}
+        form_snippet = dataset._get_pkg_template(
+            u'package_form', package_type=package_type
+        )
+        form_vars: dict = {
+            u'data': data,
+            u'errors': errors,
+            u'error_summary': error_summary,
+            u'action': u'edit',
+            u'dataset_type': package_type,
+            u'form_style': u'edit'
+        }
+        errors_json = h.dump_json(errors)
+
+        # TODO: remove
+        g.pkg = pkg
+        g.resources_json = resources_json
+        g.errors_json = errors_json
+
+        dataset._setup_template_variables(
+            context, {u'id': id}, package_type=package_type
+        )
+
+        # we have already completed stage 1
+        form_vars[u'stage'] = [u'active']
+
+        edit_template = dataset._get_pkg_template(u'edit_template', package_type)
+        return base.render(
+            edit_template,
+            extra_vars={
+                u'form_vars': form_vars,
+                u'form_snippet': form_snippet,
+                u'dataset_type': package_type,
+                u'pkg_dict': pkg_dict,
+                u'pkg': pkg,
+                u'resources_json': resources_json,
+                u'form_snippet': form_snippet,
+                u'errors_json': errors_json
+            }
+        )
+
 
     def post(self, id):
         if tk.check_ckan_version(min_version='2.10.0'):

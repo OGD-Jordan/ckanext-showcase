@@ -19,19 +19,15 @@ showcase_package_association_create_schema = \
 log = logging.getLogger(__name__)
 
 
-@notify_after_action(notifiy.showcase_create)
 def showcase_create(context, data_dict):
     '''Upload the image and continue with package creation.'''
 
     tk.check_access('ckanext_showcase_create',context, data_dict)
     # force type to 'showcase'
+
     data_dict['type'] = 'showcase'
-    upload = uploader.get_uploader('showcase')
-
-    upload.update_data_dict(data_dict, 'image_url',
-                            'image_upload', 'clear_upload')
-
-    upload.upload(uploader.get_max_image_size())
+    image_data = h.single_image_upload(context, data_dict, upload_folder='showcase')
+    data_dict.update(image_data)
 
 
     updated_context = {'ignore_auth': True}
