@@ -13,7 +13,7 @@ def notify_after_action(notification_func):
             # Execute the original function and capture the result
             result = func(*args, **kwargs)
             
-            if tk.config.get('ckanext.notifications.no_notifications', False):
+            if tk.config.get('ckanext.notifications.no_notifications', False) in [True, 'True', 'true']:
                 return result
             # Extract the request id (assuming it's in the result)
             showcase_id = result.get('id') if result else None
