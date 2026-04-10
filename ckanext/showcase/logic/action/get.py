@@ -32,10 +32,13 @@ def showcase_show(context, data_dict):
 
     pkg_dict['approval_status'] = approval_status
 
-    if 'creator_user_id' in pkg_dict:
-        model = context["model"]
-        user_obj = model.User.get(pkg_dict.get('creator_user_id'))
-        pkg_dict['creator'] = md.user_dictize(user_obj, context)
+    try:
+        if 'creator_user_id' in pkg_dict:
+            model = context["model"]
+            user_obj = model.User.get(pkg_dict.get('creator_user_id'))
+            pkg_dict['creator'] = md.user_dictize(user_obj, context) if user_obj else {}
+    except Exception as e:
+        print(f"SHOWCASE_DEBUG 8.5: {str(e)}")
 
     return pkg_dict
 

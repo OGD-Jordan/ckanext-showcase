@@ -11,7 +11,7 @@
   <td>{{ showcase.display_title }}</td>
 
   <td>
-    {% if h.check_access('end_user_dashboard_view_auth', {'id': showcase.creator['name']}) %}
+    {% if h.check_access('end_user_dashboard_view_auth', {'id': showcase.creator.name or ""}) %}
       <a href="{{ h.url_for('ogddashboard.end_user', id=showcase.creator['name']) }}">
         {{ showcase.creator.fullname or showcase.creator.name }}
       </a>
